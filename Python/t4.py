@@ -6,12 +6,11 @@
 # TODO:
 #       create Game class
 #       create Player and CPU_Player classes
-#       Player will hold human player info: name, marker
-#       and function to play the game: make_move
+#       Player will hold human player info: name, marker and function to play the game: make_move
 #       CPU_Player will inherit from Player and override place_marker
 #       create a turn function for easy computer difficulty (random.choice)
 #       create a turn algorithm for impossible difficulty
-#           - check if center is available, it it is, take it
+#           - check if center is available, if it is, take it
 #           - create can_win function which checks all of the winning positions and looks for one that
 #               has two current player's markers and an empty space
 #           - create have_to_cover function which is similar to above but checks for opponent's markers
