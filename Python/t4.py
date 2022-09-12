@@ -19,13 +19,13 @@
 #               both positions
 #       create a medium difficulty randomly choosing turns from easy and impossible
 
-# import Game
-# import Player
+import Game
+import Player
 
 def select_players():
         '''
         "Player vs player" or "player vs CPU" game mode selector.
-        Returns choice a string which is passed to the start_game function.
+        Returns choice as a string which is passed to the start_game function.
         '''
         choices = {1: ("player", "player"), 2: ("player", "cpu"), 3: ("cpu", "player")}
         print('1 - Player (X) vs Player (O)')
@@ -42,7 +42,13 @@ def start_game(choices):
     '''
     Accepts an interable with players, and returns a game object with those player types.
     '''
-    pass
+    '''
+    This function is relying heavily on indexing which makes the code unreadable.
+    Perhaps define another function, get_player_object(), that returns a Player or CPU_Player object based on a
+    passed string.
+    '''
+    players = {'player':Player.Player(), 'cpu':Player.CPU_Player()}
+    return Game.Game(players[choices[0]], players[choices[1]])
 
 
 def check_restart():
