@@ -6,3 +6,6 @@ class Player:
     def take_turn(self, available_positions):
         position = int(input(f"{self.name}'s turn. Select a position {available_positions}:"))
         return position
+
+class CPU_Player(Player):
+    pass
