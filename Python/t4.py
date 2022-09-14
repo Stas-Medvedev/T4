@@ -4,8 +4,11 @@
 # diagonals: 0,4,8; 2,4,6;
 
 # TODO:
+#       During player creation, accept a CPU difficulty argument
 #       create Game class
 #       create Player and CPU_Player classes
+#       Either CPU_Player class needs a difficulty parameter, and move needs to be selected
+#           based on that, or there need to be separate classes for easy, medium and hard CPU players
 #       Player will hold human player info: name, marker and function to play the game: make_move
 #       CPU_Player will inherit from Player and override place_marker
 #       create a turn function for easy computer difficulty (random.choice)
