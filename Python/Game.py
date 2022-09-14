@@ -67,9 +67,9 @@ class Game:
             winner = False
             return winning_position, winner
 
-        for position in self.winning_positions:
-            if ''.join([self.current_positions[i] for i in position]) == self.current_player.marker * 3:
-                winning_position = position
+        for positions in self.winning_positions:
+            if ''.join([self.current_positions[i] for i in positions]) == self.current_player.marker * 3:
+                winning_position = positions
                 winner = True
                 return winning_position, winner
 
