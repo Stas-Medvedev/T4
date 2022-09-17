@@ -4,7 +4,7 @@
 # diagonals: 0,4,8; 2,4,6;
 
 # TODO:
-#       During player creation, accept a CPU difficulty argument
+#       (DONE) During player creation, accept a CPU difficulty argument
 #       create Game class
 #       create Player and CPU_Player classes for each CPU difficulty
 #       Player will hold human player info: name, marker and function to play the game: make_move
