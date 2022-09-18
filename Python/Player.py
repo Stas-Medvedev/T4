@@ -1,4 +1,7 @@
 class Player:
+    '''
+    Player class for human player.
+    '''
     def __init__(self, name, marker):
         self.name = name
         self.marker = marker
@@ -8,10 +11,26 @@ class Player:
         return position
 
 class Easy_CPU_Player(Player):
-    pass
+    '''
+    Easy CPU player selects an available space at random
+    '''
+    def take_turn(self, available_positions):
+        pass
 
 class Medium_CPU_Player(Player):
-    pass
+    '''
+    Medium CPU player randomly chooses between Easy and Hard CPU players' moves
+    '''
+    def take_turn(self, available_positions):
+        pass
+    def easy_turn(self, available_positions):
+        pass
+    def hard_turn(self, available_positions):
+        pass
 
 class Hard_CPU_Player(Player):
-    pass
+    '''
+    Hard CPU player follows an algorithm to make sure to not lose a game
+    '''
+    def take_turn(self, available_positions):
+        pass
