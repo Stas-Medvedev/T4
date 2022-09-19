@@ -24,9 +24,15 @@ class Medium_CPU_Player(Player):
     Medium CPU player randomly chooses between Easy and Hard CPU players' moves
     '''
     def take_turn(self, available_positions):
-        pass
+        move_choice = random.choice([0,1])
+        if move_choice == 0:
+            self.easy_turn(available_positions)
+        else:
+            self.hard_turn(available_positions)
+
     def easy_turn(self, available_positions):
-        pass
+        return random.choice(available_positions)
+
     def hard_turn(self, available_positions):
         pass
 
