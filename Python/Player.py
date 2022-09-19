@@ -1,3 +1,5 @@
+import random
+
 class Player:
     '''
     Player class for human player.
@@ -15,7 +17,7 @@ class Easy_CPU_Player(Player):
     Easy CPU player selects an available space at random
     '''
     def take_turn(self, available_positions):
-        pass
+        return random.choice(available_positions)
 
 class Medium_CPU_Player(Player):
     '''
