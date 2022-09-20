@@ -41,4 +41,17 @@ class Hard_CPU_Player(Player):
     Hard CPU player follows an algorithm to make sure to not lose a game
     '''
     def take_turn(self, available_positions):
+        '''
+        Can win: a winning position with 2 own markers and an empty space
+        Need to cover: a winning position with 2 of opponent's markers and an empty space
+        Can fork: two winning positions that have an own marker each and an intersecting empty space
+
+        If center is available, take that.
+        If can win, choose the remainng empty space.
+        If need to cover, choose the remaining empty space.
+        If can fork, choose the intersecting space.
+        Pick a space from a winning position with that already has one own marker,
+        this will require the opponent to cover, make sure that the opponent can't fork with the cover.
+        Pick a random space. (will probably only be used one the first turn if center is unavailable)
+        '''
         pass
