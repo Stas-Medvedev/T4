@@ -23,6 +23,15 @@ class Hard_CPU_Player(Player):
     '''
     Hard CPU player follows an algorithm to make sure to not lose a game
     '''
+    def can_win(available_positions):
+        pass
+
+    def need_to_cover(available_positions):
+        pass
+
+    def can_fork(available_positions):
+        pass
+    
     def take_turn(self, available_positions):
         '''
         Can win: a winning position with 2 own markers and an empty space
