@@ -4,8 +4,7 @@ class Player:
     '''
     Player class for human player.
     '''
-    WINNING_POSITIONS = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]]
-
+    
     def __init__(self, name, marker):
         self.name = name
         self.marker = marker
@@ -25,8 +24,18 @@ class Hard_CPU_Player(Player):
     '''
     Hard CPU player follows an algorithm to make sure to not lose a game
     '''
-    def can_win(available_positions):
-        pass
+    WINNING_POSITIONS = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]]
+
+    # This class needs access to the game board
+
+    def can_win(self, available_positions):
+        for positions in self.WINNING_POSITIONS:
+            total = 0
+            for position in positions:
+                if current_positions[position] == self.marker: total += 1
+                if current_positions[position] == ' ': blank = position
+        if total == 2: return blank + 1
+        return 0
 
     def need_to_cover(available_positions):
         pass
