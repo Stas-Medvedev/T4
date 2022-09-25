@@ -34,7 +34,7 @@ class Hard_CPU_Player(Player):
             for position in positions:
                 if current_positions[position] == self.marker: total += 1
                 if current_positions[position] == ' ': blank = position
-        if total == 2: return blank + 1
+            if total == 2: return blank + 1
         return 0
 
     def need_to_cover(self):
