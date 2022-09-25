@@ -28,7 +28,7 @@ class Hard_CPU_Player(Player):
 
     # This class needs access to the game board
 
-    def can_win(self, available_positions):
+    def can_win(self):
         for positions in self.WINNING_POSITIONS:
             total = 0
             for position in positions:
@@ -37,8 +37,16 @@ class Hard_CPU_Player(Player):
         if total == 2: return blank + 1
         return 0
 
-    def need_to_cover(available_positions):
-        pass
+    def need_to_cover(self):
+        for positions in self.WINNING_POSITIONS:
+            total = 0
+            for position in positions:
+                current_position = current_positions[position]
+                if current_position != self.marker and current_position != ' ':
+                    total += 1
+                if current_position == ' ': blank = position
+        if total == 2: return blank + 1
+        return 0
 
     def can_fork(available_positions):
         pass
