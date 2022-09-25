@@ -45,7 +45,7 @@ class Hard_CPU_Player(Player):
                 if current_position != self.marker and current_position != ' ':
                     total += 1
                 if current_position == ' ': blank = position
-        if total == 2: return blank + 1
+            if total == 2: return blank + 1
         return 0
 
     def can_fork(available_positions):
