@@ -5,11 +5,12 @@
 
 # TODO:
 #       (DONE) During player creation, accept a CPU difficulty argument
+#       create Board class that will hold the playing board information for the current game
 #       create Game class
-#       create Player and CPU_Player classes for each CPU difficulty
+#       (DONE) create Player and CPU_Player classes for each CPU difficulty
 #       Player will hold human player info: name, marker and function to play the game: make_move
 #       CPU_Player will inherit from Player and override place_marker
-#       create a turn function for easy computer difficulty (random.choice)
+#       (DONE) create a turn function for easy computer difficulty (random.choice)
 #       create a turn algorithm for impossible difficulty
 #           - check if center is available, if it is, take it
 #           - create can_win function which checks all of the winning positions and looks for one that
@@ -18,7 +19,7 @@
 #           - create can_fork function which will look through pairs of winning positions
 #               looking for a pair that has one marker and two spaces in each where a space is shared by
 #               both positions
-#       create a medium difficulty randomly choosing turns from easy and impossible
+#       (DONE) create a medium difficulty randomly choosing turns from easy and impossible
 
 import Game
 import Player
