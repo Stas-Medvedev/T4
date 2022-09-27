@@ -21,8 +21,8 @@
 #               both positions
 #       (DONE) create a medium difficulty randomly choosing turns from easy and impossible
 
-import Game
-import Player
+import game
+import player
 
 def get_human_player_object(marker):
     '''
@@ -34,7 +34,7 @@ def get_human_player_object(marker):
     '''
     name = input('Enter player name:')
 
-    return Player.Player(name, marker)
+    return player.Player(name, marker)
 
 def select_CPU_difficulty():
     '''
@@ -56,11 +56,11 @@ def get_cpu_player_object(marker):
     '''
     difficulty = select_CPU_difficulty()
     if difficulty == 'easy':
-        return Player.Easy_CPU_Player('CPU', marker)
+        return player.Easy_CPU_Player('CPU', marker)
     elif difficulty == 'medium':
-        return Player.Medium_CPU_Player('CPU', marker)
+        return player.Medium_CPU_Player('CPU', marker)
     else:
-        return Player.Hard_CPU_Player('CPU', marker)
+        return player.Hard_CPU_Player('CPU', marker)
 
 def get_player_object(kind, marker):
     if kind == 'human':
@@ -103,7 +103,7 @@ def get_game_object(players):
     '''
     Accepts an interable with players, and returns a game object with those player types.
     '''
-    return Game.Game(players[0], players[1])
+    return game.Game(players[0], players[1])
 
 
 def check_restart():
