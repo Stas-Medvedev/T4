@@ -7,7 +7,7 @@
 #       (DONE) During player creation, accept a CPU difficulty argument
 #       create Board class that will hold the playing board information for the current game
 #       create Game class
-#       move UI functions into a UI file (perhaps create a UI class)
+#       create UI class
 #       (DONE) create Player and CPU_Player classes for each CPU difficulty
 #       Player will hold human player info: name, marker and function to play the game: make_move
 #       CPU_Player will inherit from Player and override place_marker
