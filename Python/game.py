@@ -1,45 +1,12 @@
 class Game:
     winning_positions = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]]
 
-    available_positions = list(range(1,10))
-    current_positions = [' '] * 9
-
-    def __init__(self, player1, player2):
+    def __init__(self, player1, player2, board):
         # pass two player objects upon initialization
         self.player1 = player1
         self.player2 = player2
         self.current_player = self.player1
-
-    def display_grid(positions):
-        '''
-        Displays the playing grid.
-        '''
-        row1 = "|".join(x for x in positions[:3])
-        row2 = "|".join(x for x in positions[3:6])
-        row3 = "|".join(x for x in positions[6:])
-        row_separator = '-+-+-'
-        print()
-        print(row3)
-        print(row_separator)
-        print(row2)
-        print(row_separator)
-        print(row1)
-        print()
-
-    def display_instructions(self):
-        '''
-        Displays instructions and the cell numbers.
-        '''
-        print('Classic tic-tac-toe. To play, select a position number to place your marker according to the grid below')
-        self.display_grid([str(x) for x in self.available_positions])
-
-    def update_grid(self, position, marker):
-        '''
-        Updates the current_positions list to include the most recent marker
-        and removes the recent position from available_positions.
-        '''
-        self.current_positions[position - 1] = marker
-        self.available_positions.remove(position)
+        self.board = board
 
     def change_current_player(self):
         self.current_player = self.player2 if self.current_player == self.player1 else self.player1
