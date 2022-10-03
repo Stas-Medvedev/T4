@@ -3,18 +3,6 @@ import game
 
 class UI:
     
-    def get_human_player_object(marker):
-        '''
-        Returns a player object for human players.
-        Takes marker as an argument passed from the calling function to make sure
-        that the first player get 'X' and second gets 'O'.
-        This can be changed in the future, possibly allowing both players to play
-        with the same marker.
-        '''
-        name = input('Enter player name:')
-
-        return player.Player(name, marker)
-
     def select_CPU_difficulty():
         '''
         Lets the user select CPU difficulty and returns a string that is used by
@@ -29,11 +17,11 @@ class UI:
         
         return difficulties[choice]
 
-    def get_cpu_player_object(marker):
+    def get_cpu_player_object(self, marker):
         '''
         Return a CPU_Player object based on selected difficulty.
         '''
-        difficulty = select_CPU_difficulty()
+        difficulty = self.select_CPU_difficulty()
         if difficulty == 'easy':
             return player.Easy_CPU_Player('CPU', marker)
         elif difficulty == 'medium':
@@ -41,11 +29,23 @@ class UI:
         else:
             return player.Hard_CPU_Player('CPU', marker)
 
-    def get_player_object(kind, marker):
-        if kind == 'human':
-            player = get_human_player_object(marker)
+    def get_human_player_object(marker):
+        '''
+        Returns a player object for human players.
+        Takes marker as an argument passed from the calling function to make sure
+        that the first player get 'X' and second gets 'O'.
+        This can be changed in the future, possibly allowing both players to play
+        with the same marker.
+        '''
+        name = input('Enter player name:')
+
+        return player.Player(name, marker)
+
+    def get_player_object(self, player_type, marker):
+        if player_type == 'human':
+            player = self.get_human_player_object(marker)
         else:
-            player = get_cpu_player_object(marker)
+            player = self.get_cpu_player_object(marker)
 
         return player
 
@@ -66,15 +66,15 @@ class UI:
 
         return player_pairs[choice]
         
-    def get_players():
+    def get_players(self):
         '''
         "Player vs player" or "player vs CPU" game mode selector.
         Returns a pair of Player objects that will be used to create a Game object.
         '''
-        selection = get_player_selection()
+        selection = self.get_player_selection()
         
-        player1 = get_player_object(selection[0], 'X')
-        player2 = get_player_object(selection[1], 'O')
+        player1 = self.get_player_object(selection[0], 'X')
+        player2 = self.get_player_object(selection[1], 'O')
             
         return [player1, player2]
 
