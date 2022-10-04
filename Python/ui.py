@@ -2,6 +2,9 @@ import player
 import game
 
 class UI:
+    def __init__(self):
+        players = self.get_players()
+        return self.get_game_object(players)
     
     def select_CPU_difficulty():
         '''
@@ -57,7 +60,7 @@ class UI:
         player_pairs = {'1': ("player", "player"), '2': ("player", "cpu"), '3': ("cpu", "player")}
         print('1 - Player (X) vs Player (O)')
         print('2 - Player (X) vs CPU (O)')
-        print('3 - CPU (X) vs Player(O)')
+        print('3 - CPU (X) vs Player (O)')
         choice = input('Select game mode ([1],2,3):')
         while choice not in ['', '1', '2', '3']:
             choice = input('Select game mode ([1],2,3):')
