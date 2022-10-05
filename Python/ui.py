@@ -1,8 +1,10 @@
 import player
 import game
+from board import Board
 
 class UI:
     def __init__(self):
+        self.board = Board()
         players = self.get_players()
         return self.get_game_object(players)
     
@@ -81,8 +83,45 @@ class UI:
             
         return [player1, player2]
 
-    def get_game_object(players):
+    def get_game_object(self, players):
         '''
         Accepts an interable with players, and returns a game object with those player types.
         '''
-        return game.Game(players[0], players[1])
+        return game.Game(players[0], players[1], self.board)
+
+    def display_board(self, markers):
+        '''
+        Displays the playing board with the provided markers.
+        '''
+        row1 = "|".join(x for x in markers[:3])
+        row2 = "|".join(x for x in markers[3:6])
+        row3 = "|".join(x for x in markers[6:])
+        row_separator = '-+-+-'
+        print()
+        print(row3)
+        print(row_separator)
+        print(row2)
+        print(row_separator)
+        print(row1)
+        print()
+
+    def display_instructions(self):
+        '''
+        Displays instructions and the cell numbers.
+        '''
+        print('Classic tic-tac-toe. To play, select a position number to place your marker according to the grid below')
+        self.display_board([str(x) for x in range(1, 10)])
+
+    def display_current_board(self):
+        '''
+        Displays the current playing board.
+        '''
+        self.display_board(self.board.current_markers)
+
+    def update_board(self, position, marker):
+        '''
+        Updates the current_positions list to include the most recent marker
+        and removes the recent position from available_positions.
+        '''
+        self.board.current_markers[position - 1] = marker
+        self.board.available_positions.remove(position)
