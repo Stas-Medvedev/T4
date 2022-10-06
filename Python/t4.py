@@ -5,10 +5,15 @@
 
 # TODO:
 #       (DONE) During player creation, accept a CPU difficulty argument
-#       create Board class that will hold the playing board information for the current game
+#       (DONE) create Board class that will hold the playing board information for the current game
+#       work on separating and encorporating the responsibilities of the UI and Game classes
+#           - which one exactly does what?
+#           - if UI is responsible for displaying and intake all of the information,
+#             how do I integrate the Game class methods into it?
+#           - do I call the UI methods from within the Game class to run the game?
 #       create Game class
 #       (DONE) create UI class
-#       incorporate Board class into the UI class:
+#       (DONE) incorporate Board class into the UI class:
 #           - Board class should hold board information
 #           - UI class should take care of displaying the board
 #       (DONE) move UI methods from this file to the UI class
