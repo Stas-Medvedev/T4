@@ -6,11 +6,15 @@
 # TODO:
 #       (DONE) During player creation, accept a CPU difficulty argument
 #       (DONE) create Board class that will hold the playing board information for the current game
+#       Maybe turn Board into a dataclass
 #       work on separating and encorporating the responsibilities of the UI and Game classes
 #           - which one exactly does what?
 #           - if UI is responsible for displaying and intake all of the information,
 #             how do I integrate the Game class methods into it?
 #           - do I call the UI methods from within the Game class to run the game?
+#           - Game should probably create an instance of the UI class rather than the other way around
+#           - that means modifying the current setup of the UI initializer
+#           - that also means that Game class won't get player in the __init__ but at some point later
 #       create Game class
 #       (DONE) create UI class
 #       (DONE) incorporate Board class into the UI class:
