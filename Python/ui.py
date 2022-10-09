@@ -1,12 +1,9 @@
 import player
 import game
-from board import Board
 
 class UI:
-    def __init__(self):
-        self.board = Board()
-        players = self.get_players()
-        return self.get_game_object(players)
+    def __init__(self, board):
+        self.board = board
     
     def select_CPU_difficulty():
         '''
