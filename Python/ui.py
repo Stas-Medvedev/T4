@@ -35,7 +35,7 @@ class UI:
         '''
         Returns a player object for human players.
         Takes marker as an argument passed from the calling function to make sure
-        that the first player get 'X' and second gets 'O'.
+        that the first player gets 'X' and second gets 'O'.
         This can be changed in the future, possibly allowing both players to play
         with the same marker.
         '''
