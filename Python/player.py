@@ -30,6 +30,10 @@ class Hard_CPU_Player(Player):
     # This class needs access to the game board
 
     def can_win(self):
+        '''
+        Checks if it's possible to win with the next move.
+        If so, returns the position. Otherwise returns 0.
+        '''
         for positions in self.WINNING_POSITIONS:
             total = 0
             for position in positions:
@@ -39,6 +43,11 @@ class Hard_CPU_Player(Player):
         return 0
 
     def need_to_cover(self):
+        '''
+        Checks if the opponent could win with the next move.
+        If so, returns the position that needs to be covered.
+        Otherwise returns 0.
+        '''
         for positions in self.WINNING_POSITIONS:
             total = 0
             for position in positions:
@@ -50,6 +59,10 @@ class Hard_CPU_Player(Player):
         return 0
 
     def can_fork(self):
+        '''
+        Checks if it's possible to have two sets of positions that could win 
+        on the following turn since the opponent can cover only one of them.
+        '''
         pass
     
     def take_turn(self):
@@ -62,7 +75,7 @@ class Hard_CPU_Player(Player):
         If can win, choose the remainng empty space.
         If need to cover, choose the remaining empty space.
         If can fork, choose the intersecting space.
-        Pick a space from a winning position with that already has one own marker,
+        Pick a space from a winning position that already has one own marker,
         this will require the opponent to cover, make sure that the opponent can't fork with the cover.
         Pick a random space. (will probably only be used one the first turn if center is unavailable)
         '''
