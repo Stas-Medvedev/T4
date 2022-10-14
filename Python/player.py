@@ -84,7 +84,7 @@ class Hard_CPU_Player(Player):
         this will require the opponent to cover, make sure that the opponent can't fork with the cover.
         Pick a random space. (will probably only be used one the first turn if center is unavailable)
         '''
-        pass
+        if 5 in self.board.available_positions: return 5
 
 class Medium_CPU_Player(Hard_CPU_Player):
     '''
