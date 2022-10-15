@@ -39,6 +39,9 @@ class Hard_CPU_Player(Player):
             for position in positions:
                 if self.board.current_positions[position] == self.marker: total += 1
                 if self.board.current_positions[position] == ' ': blank = position
+            # this doesn't account for winning positions with an opponent marker
+            # in that case, it will try to return either an unitizlied variable
+            # or a value set while checking a previous winning position
             if total == 2: return blank + 1
         return 0
 
@@ -85,6 +88,12 @@ class Hard_CPU_Player(Player):
         Pick a random space. (will probably only be used one the first turn if center is unavailable)
         '''
         if 5 in self.board.available_positions: return 5
+        # calling can_win, need_to_cover, and can_fork might be better dones by assigning the return
+        # value to a variable in order to not make the function run again, something like
+        # position = self.can_win()
+        # if position: return position
+        # reminder: 0 is an acceptable position.
+        # all positions accepted in a turn get -1 to be converted into an index
 
 class Medium_CPU_Player(Hard_CPU_Player):
     '''
