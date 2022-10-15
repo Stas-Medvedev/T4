@@ -37,11 +37,12 @@ class Hard_CPU_Player(Player):
         for positions in self.WINNING_POSITIONS:
             total = 0
             for position in positions:
-                if self.board.current_positions[position] == self.marker: total += 1
-                if self.board.current_positions[position] == ' ': blank = position
-            # this doesn't account for winning positions with an opponent marker
-            # in that case, it will try to return either an unitizlied variable
-            # or a value set while checking a previous winning position
+                current_position = self.board.current_positions[position]
+                # if there's an opponent's marker in the current winning position,
+                # move on to the next winning position
+                if current_position != self.marker and current_position != ' ': break
+                if current_position == self.marker: total += 1
+                if current_position == ' ': blank = position
             if total == 2: return blank + 1
         return 0
 
