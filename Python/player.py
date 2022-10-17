@@ -68,12 +68,12 @@ class Hard_CPU_Player(Player):
         on the following turn since the opponent can cover only one of them.
         '''
         '''
-        Check if a winning position has two empty spaces.
-        If it does, check if there's another winning position that contains either
-        of the two spaces and one marker.
+        Check which winning positions have two empty spaces and an own marker.
+        If there are at least two, check if any of them interset.
+        Return the first intersection. Return 0 otherwise.
         '''
         pass
-    
+
     def take_turn(self):
         '''
         Can win: a winning position with 2 own markers and an empty space
