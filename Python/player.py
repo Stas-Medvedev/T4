@@ -72,7 +72,17 @@ class Hard_CPU_Player(Player):
         If there are at least two, check if any of them interset.
         Return the first intersection. Return 0 otherwise.
         '''
-        pass
+        # collect winning positions with an own marker and two spaces
+        candidates = []
+        for positions in self.WINNING_POSITIONS:
+            total = 0
+            for position in positions:
+                current_position = self.board.current_positions[position]
+                # if current position is an opponent's marker, we can't fork,
+                # so move on to the next set of winning positions
+                if current_position != self.marker and current_position != ' ': break
+                if current_position == self.marker: total += 1
+            if total == 1: candidates.append(positions)
 
     def take_turn(self):
         '''
