@@ -84,6 +84,9 @@ class Hard_CPU_Player(Player):
                 if current_position == self.marker: total += 1
             if total == 1: candidates.append(positions)
 
+        # we need at least 2 winning positions to be able to fork
+        if len(candidates) < 2: return 0
+
     def take_turn(self):
         '''
         Can win: a winning position with 2 own markers and an empty space
