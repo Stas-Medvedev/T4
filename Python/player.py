@@ -66,6 +66,24 @@ class Hard_CPU_Player(Player):
         '''
         Checks if it's possible to have two sets of positions that could win 
         on the following turn since the opponent can cover only one of them.
+        For example, in the following scenario,
+        
+         | |O   
+        -+-+-   
+        O|X|    
+        -+-+-
+        X| |
+
+        placing an 'X' in position 3 (bottom right) would 'fork'
+        by giving the opponent two positions to cover (2 and 7)
+        on the next move.
+        
+         | |O
+        -+-+-
+        O|X|
+        -+-+-
+        X| |X
+
         '''
         '''
         Check which winning positions have two empty spaces and an own marker.
@@ -86,6 +104,8 @@ class Hard_CPU_Player(Player):
 
         # we need at least 2 winning positions to be able to fork
         if len(candidates) < 2: return 0
+
+        # loop over candidates to look for the position to fork
 
     def take_turn(self):
         '''
