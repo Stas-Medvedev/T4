@@ -105,7 +105,26 @@ class Hard_CPU_Player(Player):
         # we need at least 2 winning positions to be able to fork
         if len(candidates) < 2: return 0
 
-        # loop over candidates to look for the position to fork
+        # use a double loop to compare all candidates to each other
+        # and return the first intersecting empty space
+        # This function can be optimized by storing only the empty space
+        # locations in candidates. This will reduce the number of stored
+        # positions and remove the need to check if there's a marker
+        # at any of the positions stored in candidates.
+        for i in range(len(candidates)-1):
+            for j in range(i+1, len(candidates)):
+                current_candidate = candidates[i]
+                compared_candidate = candidates[j]
+                for position in current_candidate:
+                    # if the position is a space, check if it's also in compared_candidate
+                    if self.board.current_positions[position] == ' ':
+                        if position in compared_candidate:
+                            return position
+
+        # if loop returns no intersections, return 0
+        return 0
+
+
 
     def take_turn(self):
         '''
