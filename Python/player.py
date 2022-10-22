@@ -133,7 +133,7 @@ class Hard_CPU_Player(Player):
         Can fork: two winning positions that have an own marker each and an intersecting empty space
 
         If center is available, take that.
-        If can win, choose the remainng empty space.
+        If can win, choose the remaining empty space.
         If need to cover, choose the remaining empty space.
         If can fork, choose the intersecting space.
         Pick a space from a winning position that already has one own marker,
