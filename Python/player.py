@@ -148,6 +148,8 @@ class Hard_CPU_Player(Player):
         # otherwise, the function would need to be called again
         # reminder: 0 is not an acceptable position (acceptable positions are 1-9).
         # all positions accepted in a turn get -1 to be converted into an index
+        position = self.can_win()
+        if position: return position
 
 class Medium_CPU_Player(Hard_CPU_Player):
     '''
