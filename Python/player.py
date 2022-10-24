@@ -150,6 +150,8 @@ class Hard_CPU_Player(Player):
         # all positions accepted in a turn get -1 to be converted into an index
         position = self.can_win()
         if position: return position
+        position = self.need_to_cover()
+        if position: return position
 
 class Medium_CPU_Player(Hard_CPU_Player):
     '''
