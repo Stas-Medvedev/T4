@@ -119,7 +119,7 @@ class Hard_CPU_Player(Player):
                     # if the position is a space, check if it's also in compared_candidate
                     if self.board.current_positions[position] == ' ':
                         if position in compared_candidate:
-                            return position
+                            return position + 1
 
         # if loop returns no intersections, return 0
         return 0
