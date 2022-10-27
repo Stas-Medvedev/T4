@@ -37,7 +37,7 @@ class Hard_CPU_Player(Player):
         for positions in self.WINNING_POSITIONS:
             total = 0
             for position in positions:
-                current_position = self.board.current_positions[position]
+                current_position = self.board.current_markers[position]
                 # if there's an opponent's marker in the current winning position,
                 # move on to the next winning position
                 if current_position != self.marker and current_position != ' ': break
@@ -55,7 +55,7 @@ class Hard_CPU_Player(Player):
         for positions in self.WINNING_POSITIONS:
             total = 0
             for position in positions:
-                current_position = self.board.current_positions[position]
+                current_position = self.board.current_markers[position]
                 if current_position != self.marker and current_position != ' ':
                     total += 1
                 if current_position == ' ': blank = position
@@ -95,7 +95,7 @@ class Hard_CPU_Player(Player):
         for positions in self.WINNING_POSITIONS:
             total = 0
             for position in positions:
-                current_position = self.board.current_positions[position]
+                current_position = self.board.current_markers[position]
                 # if current position is an opponent's marker, we can't fork,
                 # so move on to the next set of winning positions
                 if current_position != self.marker and current_position != ' ': break
@@ -117,7 +117,7 @@ class Hard_CPU_Player(Player):
                 compared_candidate = candidates[j]
                 for position in current_candidate:
                     # if the position is a space, check if it's also in compared_candidate
-                    if self.board.current_positions[position] == ' ':
+                    if self.board.current_markers[position] == ' ':
                         if position in compared_candidate:
                             return position + 1
 
