@@ -34,10 +34,8 @@
 #               looking for a pair that has one marker and two spaces in each where a space is shared by
 #               both positions
 #       (DONE) create a medium difficulty randomly choosing turns from easy and impossible
-#       Go through all CPU move functions to make sure they are returning the correct position
-#           - Current positions on a board are saved in a list which is 0-indexed
-#           - Turns accepted from a human are 1-indexed
-#           - Make sure the CPU move function outputs provide the correct indexing
+#       Make sure all take_turn functions return a number between 1 and 9 (same as the initial available positions)
+#       In computer's turn functions, replace self.board.current_positions with self.board.current_markers
 
 def check_restart():
     '''
