@@ -4,8 +4,6 @@
 # diagonals: 0,4,8; 2,4,6;
 
 # TODO:
-#       (DONE) During player creation, accept a CPU difficulty argument
-#       (DONE) create Board class that will hold the playing board information for the current game
 #       Maybe turn Board into a dataclass
 #       work on separating and encorporating the responsibilities of the UI and Game classes
 #           - which one exactly does what?
@@ -16,15 +14,6 @@
 #           - that means modifying the current setup of the UI initializer
 #           - that also means that Game class won't get player in the __init__ but at some point later
 #       create Game class
-#       (DONE) create UI class
-#       (DONE) incorporate Board class into the UI class:
-#           - Board class should hold board information
-#           - UI class should take care of displaying the board
-#       (DONE) move UI methods from this file to the UI class
-#       (DONE) create Player and CPU_Player classes for each CPU difficulty
-#       Player will hold human player info: name, marker and function to play the game: make_move
-#       CPU_Player will inherit from Player and override place_marker
-#       (DONE) create a turn function for easy computer difficulty (random.choice)
 #       create a turn algorithm for impossible difficulty
 #           - check if center is available, if it is, take it
 #           - create can_win function which checks all of the winning positions and looks for one that
@@ -33,9 +22,7 @@
 #           - create can_fork function which will look through pairs of winning positions
 #               looking for a pair that has one marker and two spaces in each where a space is shared by
 #               both positions
-#       (DONE) create a medium difficulty randomly choosing turns from easy and impossible
 #       Make sure all take_turn functions return a number between 1 and 9 (same as the initial available positions)
-#       In computer's turn functions, replace self.board.current_positions with self.board.current_markers
 
 def check_restart():
     '''
