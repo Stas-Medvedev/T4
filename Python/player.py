@@ -68,21 +68,21 @@ class Hard_CPU_Player(Player):
         on the following turn since the opponent can cover only one of them.
         For example, in the following scenario,
         
-         | |O   
-        -+-+-   
+         | |O  
+        -+-+-  
         O|X|    
-        -+-+-
-        X| |
+        -+-+-  
+        X| |   
 
         placing an 'X' in position 3 (bottom right) would 'fork'
         by giving the opponent two positions to cover (2 and 7)
         on the next move.
         
-         | |O
-        -+-+-
-        O|X|
-        -+-+-
-        X| |X
+         | |O  
+        -+-+-  
+        O|X|   
+        -+-+-  
+        X| |X   
 
         '''
         '''
