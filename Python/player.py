@@ -152,6 +152,8 @@ class Hard_CPU_Player(Player):
         if position: return position
         position = self.need_to_cover()
         if position: return position
+        position = self.can_fork()
+        if position: return position
 
 class Medium_CPU_Player(Hard_CPU_Player):
     '''
