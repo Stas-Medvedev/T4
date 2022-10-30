@@ -141,13 +141,6 @@ class Hard_CPU_Player(Player):
         Pick a random space. (will probably only be used one the first turn if center is unavailable)
         '''
         if 5 in self.board.available_positions: return 5
-        # calling can_win, need_to_cover, and can_fork might be better done by saving the return
-        # value to a variable, something like
-        # position = self.can_win()
-        # if position: return position
-        # otherwise, the function would need to be called again
-        # reminder: 0 is not an acceptable position (acceptable positions are 1-9).
-        # all positions accepted in a turn get -1 to be converted into an index
         position = self.can_win()
         if position: return position
         position = self.need_to_cover()
