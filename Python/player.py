@@ -124,7 +124,13 @@ class Hard_CPU_Player(Player):
         # if loop returns no intersections, return 0
         return 0
 
-
+    def add_to_existing_marker(self):
+        '''
+        Looks for a winning position that already has an own marker,
+        and makes sure that adding another marker to a possible position
+        won't result in the opponent being able to fork while covering.
+        '''
+        pass
 
     def take_turn(self):
         '''
