@@ -24,6 +24,7 @@
 #               both positions
 #       Make sure all take_turn functions return a number between 1 and 9 (same as the initial available positions)
 #       update can_fork() to store only positions for blanks
+
 def check_restart():
     '''
     Checks if the player(s) would like to play another match.
