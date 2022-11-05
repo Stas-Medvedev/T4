@@ -98,7 +98,7 @@ class Hard_CPU_Player(Player):
                 current_position = self.board.current_markers[position]
                 # if current position is an opponent's marker, we can't fork,
                 # so move on to the next set of winning positions
-                if current_position != self.marker and current_position != ' ': break
+                if current_position not in [self.marker, ' ']: break
                 if current_position == self.marker: total += 1
             if total == 1: candidates.append(positions)
 
