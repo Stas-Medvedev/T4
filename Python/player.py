@@ -93,14 +93,21 @@ class Hard_CPU_Player(Player):
         # collect winning positions with an own marker and two spaces
         candidates = []
         for positions in self.WINNING_POSITIONS:
-            total = 0
+            current_candidate = []
+            add_to_list = True
             for position in positions:
                 current_position = self.board.current_markers[position]
                 # if current position is an opponent's marker, we can't fork,
                 # so move on to the next set of winning positions
-                if current_position not in [self.marker, ' ']: break
-                if current_position == self.marker: total += 1
-            if total == 1: candidates.append(positions)
+                if current_position not in [self.marker, ' ']:
+                    # need a boolean in case the first two positions in the winning position
+                    # are spaces and the last one is an opponent's marker
+                    add_to_list = False
+                    break
+                # storing only the positions of spaces
+                if current_position == ' ': current_candidate.append(position)
+            # save only positions with 2 spaces
+            if len(current_candidate) == 2 and add_to_list: candidates.append(current_candidate)
 
         # we need at least 2 winning positions to be able to fork
         if len(candidates) < 2: return 0
