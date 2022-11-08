@@ -13,7 +13,7 @@
 #           - that means modifying the current setup of the UI initializer
 #           - that also means that Game class won't get player in the __init__ but at some point later
 #       Make sure all take_turn functions return a number between 1 and 9 (same as the initial available positions)
-#       update can_fork() to store only positions for blanks
+#       Look into updating the turn logic steps for the Hard_CPU_Player take_turn function
 
 def check_restart():
     '''
