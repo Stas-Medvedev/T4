@@ -154,9 +154,9 @@ class Hard_CPU_Player(Player):
         If can win, choose the remaining empty space.
         If need to cover, choose the remaining empty space.
         If can fork, choose the intersecting space.
-        Pick a space from a winning position that already has one own marker,
-        this will require the opponent to cover, make sure that the opponent can't fork with the cover.
-        Pick a random space. (will probably only be used one the first turn if center is unavailable)
+        If opponent can fork on next move, block the fork.
+        Pick a corner space (this will probably need hardcoded values)
+        Pick a side space
         '''
         if 5 in self.board.available_positions: return 5
         position = self.can_win()
