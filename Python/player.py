@@ -129,6 +129,13 @@ class Hard_CPU_Player(Player):
         # if loop returns no intersections, return 0
         return 0
 
+    def block_opponent_fork(self):
+        '''
+        Check if opponent can fork and their next move,
+        and if so, block it.
+        '''
+        pass
+
     def add_to_existing_marker(self):
         '''
         Looks for a winning position that already has an own marker,
