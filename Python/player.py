@@ -134,6 +134,7 @@ class Hard_CPU_Player(Player):
         Check if opponent can fork and their next move,
         and if so, block it.
         '''
+        # essentially the same code as can_fork but with own and opponent's markers swapped
         pass
 
     def add_to_existing_marker(self):
