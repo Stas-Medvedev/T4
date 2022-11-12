@@ -143,13 +143,12 @@ class Hard_CPU_Player(Player):
         and makes sure that adding another marker to a possible position
         won't result in the opponent being able to fork while covering.
         '''
+        # this function will need to be modified because the take_turn algorithm has been changed
         # look for a winning position that has a single own marker and two spaces
         for positions in self.WINNING_POSITIONS:
             for position in positions:
-                current_marker = self.board.current_marker[position]
+                current_marker = self.board.current_markers[position]
                 pass
-        # if one of the spaces is returned, check if the other can be used
-        # by the opponent to fork while covering
         pass
 
     def take_turn(self):
