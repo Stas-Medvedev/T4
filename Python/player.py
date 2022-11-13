@@ -109,6 +109,7 @@ class Hard_CPU_Player(Player):
             # save only positions with 2 spaces
             if len(current_candidate) == 2 and add_to_list: candidates.append(current_candidate)
 
+        # the code below is reused in block_opponent_fork and needs to be moved into a separate function
         # we need at least 2 winning positions to be able to fork
         if len(candidates) < 2: return 0
 
