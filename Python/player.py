@@ -114,10 +114,6 @@ class Hard_CPU_Player(Player):
 
         # use a double loop to compare all candidates to each other
         # and return the first intersecting empty space
-        # This function can be optimized by storing only the empty space
-        # locations in candidates. This will reduce the number of stored
-        # positions and remove the need to check if there's a marker
-        # at any of the positions stored in candidates.
         for i in range(len(candidates)-1):
             for j in range(i+1, len(candidates)):
                 current_candidate = candidates[i]
