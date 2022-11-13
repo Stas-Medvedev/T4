@@ -131,7 +131,40 @@ class Hard_CPU_Player(Player):
         and if so, block it.
         '''
         # essentially the same code as can_fork but with own and opponent's markers swapped
-        pass
+        # collect winning positions with an own marker and two spaces
+        candidates = []
+        for positions in self.WINNING_POSITIONS:
+            current_candidate = []
+            add_to_list = True
+            for position in positions:
+                current_position = self.board.current_markers[position]
+                # if current position is an own marker, opponent can't fork,
+                # so move on to the next set of winning positions
+                if current_position == self.marker:
+                    # need a boolean in case the first two positions in the winning position
+                    # are spaces and the last one is an own marker
+                    add_to_list = False
+                    break
+                # storing only the positions of spaces
+                if current_position == ' ': current_candidate.append(position)
+            # save only positions with 2 spaces
+            if len(current_candidate) == 2 and add_to_list: candidates.append(current_candidate)
+
+        # we need at least 2 winning positions to be able to fork
+        if len(candidates) < 2: return 0
+
+        # use a double loop to compare all candidates to each other
+        # and return the first intersecting empty space
+        for i in range(len(candidates)-1):
+            for j in range(i+1, len(candidates)):
+                current_candidate = candidates[i]
+                compared_candidate = candidates[j]
+                for position in current_candidate:
+                    if position in compared_candidate:
+                        return position + 1
+
+        # if loop returns no intersections, return 0
+        return 0
 
     def add_to_existing_marker(self):
         '''
