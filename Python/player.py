@@ -90,6 +90,12 @@ class Hard_CPU_Player(Player):
         If there are at least two, check if any of them interset.
         Return the first intersection. Return 0 otherwise.
         '''
+        #
+        # Redo the function to combine it with block_opponent_fork
+        # The two are the same except for the part that checks for the marker at current_position,
+        # and that can be put into a small function of its own.
+        #
+
         # collect winning positions with an own marker and two spaces
         candidates = []
         for positions in self.WINNING_POSITIONS:
