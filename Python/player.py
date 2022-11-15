@@ -62,6 +62,17 @@ class Hard_CPU_Player(Player):
             if total == 2: return blank + 1
         return 0
 
+    def check_marker(self, marker, own=True):
+        '''
+        Checks whether the passed marker is own (when own=True)
+        or an opponent's marker.
+        Used in can_fork.
+        '''
+        if own:
+            return marker == self.marker
+
+        return marker not in [self.marker, ' ']
+
     def can_fork(self):
         '''
         Checks if it's possible to have two sets of positions that could win 
