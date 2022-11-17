@@ -184,6 +184,32 @@ class Hard_CPU_Player(Player):
         # if loop returns no intersections, return 0
         return 0
 
+    def combined_can_fork(own=True):
+        '''
+        Checks if it's possible to have two sets of positions that could win 
+        on the following turn since the opponent can cover only one of them.
+        For example, in the following scenario,
+        
+         | |O  
+        -+-+-  
+        O|X|    
+        -+-+-  
+        X| |   
+
+        placing an 'X' in position 3 (bottom right) would 'fork'
+        by giving the opponent two positions to cover (2 and 7)
+        on the next move.
+        
+         | |O  
+        -+-+-  
+        O|X|   
+        -+-+-  
+        X| |X   
+
+        own=True checks own forks. own=False checks for opponent's forks.
+        '''
+        pass
+
     def add_to_existing_marker(self):
         '''
         Looks for a winning position that already has an own marker,
