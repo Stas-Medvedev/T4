@@ -179,7 +179,7 @@ class Hard_CPU_Player(Player):
         # if loop returns no intersections, return 0
         return 0
 
-    def combined_can_fork(own=True):
+    def combined_can_fork(self, own):
         '''
         Checks if it's possible to have two sets of positions that could win 
         on the following turn since the opponent can cover only one of them.
@@ -203,7 +203,40 @@ class Hard_CPU_Player(Player):
 
         own=True checks own forks. own=False checks for opponent's forks.
         '''
-        pass
+        # collect winning positions with an appropriate marker and two spaces
+        candidates = []
+        for positions in self.WINNING_POSITIONS:
+            current_candidate = []
+            add_to_list = True
+            for position in positions:
+                current_position = self.board.current_markers[position]
+                # if current position is an opposite marker, we can't fork,
+                # so move on to the next set of winning positions
+                if self.check_marker(current_position, not own):
+                    # need a boolean in case the first two positions in the winning position
+                    # are spaces and the last one is an opposite marker
+                    add_to_list = False
+                    break
+                # storing only the positions of spaces
+                if current_position == ' ': current_candidate.append(position)
+            # save only positions with 2 spaces
+            if len(current_candidate) == 2 and add_to_list: candidates.append(current_candidate)
+
+        # we need at least 2 candidates to be able to fork
+        if len(candidates) < 2: return 0
+
+        # use a double loop to compare all candidates to each other
+        # and return the first intersecting empty space
+        for i in range(len(candidates)-1):
+            for j in range(i+1, len(candidates)):
+                current_candidate = candidates[i]
+                compared_candidate = candidates[j]
+                for position in current_candidate:
+                    if position in compared_candidate:
+                        return position + 1
+
+        # if loop returns no intersections, return 0
+        return 0
 
     def add_to_existing_marker(self):
         '''
