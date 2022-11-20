@@ -273,9 +273,7 @@ class Hard_CPU_Player(Player):
         if position: return position
         position = self.can_fork()
         if position: return position
-        # need to write a function that will loop through the winning positions and pick one that already has an own marker.
-        # The function will also need to check if the remaining position that will need to be covered can be used by the
-        # opponent to fork
+        
 
 class Medium_CPU_Player(Hard_CPU_Player):
     '''
