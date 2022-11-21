@@ -73,7 +73,7 @@ class Hard_CPU_Player(Player):
 
         return marker not in [self.marker, ' ']
 
-    def combined_can_fork(self, own):
+    def can_fork(self, own):
         '''
         Checks if it's possible to have two sets of positions that could win 
         on the following turn since the opponent can cover only one of them.
