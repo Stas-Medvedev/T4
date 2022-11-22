@@ -165,7 +165,9 @@ class Hard_CPU_Player(Player):
         if position: return position
         position = self.need_to_cover()
         if position: return position
-        position = self.can_fork()
+        position = self.can_fork(own=True)
+        if position: return position
+        position = self.can_fork(own=False)
         if position: return position
         
 
