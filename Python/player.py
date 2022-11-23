@@ -132,20 +132,6 @@ class Hard_CPU_Player(Player):
         # if loop returns no intersections, return 0
         return 0
 
-    def add_to_existing_marker(self):
-        '''
-        Looks for a winning position that already has an own marker,
-        and makes sure that adding another marker to a possible position
-        won't result in the opponent being able to fork while covering.
-        '''
-        # this function will need to be modified because the take_turn algorithm has been changed
-        # look for a winning position that has a single own marker and two spaces
-        for positions in self.WINNING_POSITIONS:
-            for position in positions:
-                current_marker = self.board.current_markers[position]
-                pass
-        pass
-
     def take_turn(self):
         '''
         Can win: a winning position with 2 own markers and an empty space
