@@ -132,6 +132,12 @@ class Hard_CPU_Player(Player):
         # if loop returns no intersections, return 0
         return 0
 
+    def take_corner_or_side(self):
+        '''
+        Take a corner based on logic. If none available, take a side.
+        '''
+        pass
+    
     def take_turn(self):
         '''
         Can win: a winning position with 2 own markers and an empty space
