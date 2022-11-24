@@ -136,7 +136,23 @@ class Hard_CPU_Player(Player):
         '''
         Take a corner based on logic. If none available, take a side.
         '''
-        pass
+        # If take_turn gets to this function, the center has already been taken.
+        # Start by looking at the number of available positions.
+        # If there are 8 (only 1 is taken), the taken space is the center,
+        # so take any of the corners
+        if len(self.board.available_positions) == 8: return random.choice([1, 3, 7, 9])
+        # If there are 7 available positions, it means we have the center
+        # and the opponent has the other position.
+        # The square we should take up depends on what the opponent took.
+        if len(self.board.available_positions) == 7:
+            # If the oppoent took a side, taking any corner will lead to a win,
+            # so chech the side positions for an opponent's marker.
+            for position in [2, 4, 6, 8]:
+                if self.check_marker(self.board.available_positions[position], own=False):
+                    return random.choice([1, 3, 7, 9])
+            # If the opponent took a corner,
+            # ...
+            
     
     def take_turn(self):
         '''
