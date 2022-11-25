@@ -145,13 +145,15 @@ class Hard_CPU_Player(Player):
         # and the opponent has the other position.
         # The square we should take up depends on what the opponent took.
         if len(self.board.available_positions) == 7:
-            # If the oppoent took a side, taking any corner will lead to a win,
-            # so chech the side positions for an opponent's marker.
-            for position in [2, 4, 6, 8]:
-                if self.check_marker(self.board.available_positions[position], own=False):
-                    return random.choice([1, 3, 7, 9])
-            # If the opponent took a corner,
-            # ...
+            # If the opponent took a corner, place a marker in the opposite corner
+            # to try to get a mistake.
+            opp_positions = {1:9, 3:7, 7:3, 9:1}
+            for key in opp_positions.keys():
+                if self.check_marker(self.board.available_positions[key], own=False):
+                    return opp_positions[key]
+            # For any other position, return a corner.
+            # This could be implemented alone without the dictionary logic above.
+            return random.choice([1, 3, 7, 9])
             
     
     def take_turn(self):
