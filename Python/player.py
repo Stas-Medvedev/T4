@@ -136,6 +136,12 @@ class Hard_CPU_Player(Player):
         '''
         Take a corner based on logic. If none available, take a side.
         '''
+        ###
+        # This code doesn't check if the returned position is actually available.
+        # That needs to be addressed.
+        ###
+
+
         # If take_turn gets to this function, the center has already been taken.
         # Start by looking at the number of available positions.
         # If there are 8 (only 1 is taken), the taken space is the center,
