@@ -148,8 +148,7 @@ class Hard_CPU_Player(Player):
         # so take any of the corners
         corner_positions = [1, 3, 7, 9]
         random.shuffle(corner_positions)
-        if len(self.board.available_positions) == 8:
-            pass
+        if len(self.board.available_positions) == 8: return corner_positions[0]
         # If there are 7 available positions, it means we have the center
         # and the opponent has the other position.
         # The square we should take up depends on what the opponent took.
