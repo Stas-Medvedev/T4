@@ -160,8 +160,7 @@ class Hard_CPU_Player(Player):
                 if self.check_marker(self.board.available_positions[key], own=False):
                     return opp_positions[key]
             # For any other position, return a corner.
-            # This could be implemented alone without the dictionary logic above.
-            return random.choice([1, 3, 7, 9])
+            return corner_positions[0] 
             
     
     def take_turn(self):
