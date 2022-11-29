@@ -160,7 +160,10 @@ class Hard_CPU_Player(Player):
                 if self.check_marker(self.board.available_positions[key], own=False):
                     return opp_positions[key]
             # For any other position, return a corner.
-            return corner_positions[0] 
+            return corner_positions[0]
+        # if 3 or more positions have been taken, other functions should be able to cover
+        # most cases, so this function should run through corners and then sides,
+        # and return one of them (this will need to be tested) 
             
     
     def take_turn(self):
