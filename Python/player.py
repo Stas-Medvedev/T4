@@ -164,7 +164,13 @@ class Hard_CPU_Player(Player):
         # if 3 or more positions have been taken, other functions should be able to cover
         # most cases, so this function should run through corners and then sides,
         # and return one of them (this will need to be tested) 
-            
+        for corner in corner_positions:
+            if corner in self.board.available_positions: return corner
+        
+        sides = [2, 4, 6, 8]
+        random.shuffle(sides)
+        for side in sides:
+            if side in self.board.available_positions: return side
     
     def take_turn(self):
         '''
