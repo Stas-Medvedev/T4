@@ -165,6 +165,22 @@ class Hard_CPU_Player(Player):
         random.shuffle(sides)
         for side in sides:
             if side in self.board.available_positions: return side
+
+    def check_diagonal_case(self):
+        '''
+        Checks a special case when going second on second turn (4th turn overall).
+        
+        In cases
+        
+         | |X      X| |
+        -+-+-      -+-+-  
+         |O|   or   |O|
+        -+-+-      -+-+- 
+        X| |        | |X,
+
+        
+        '''
+        pass
     
     def take_turn(self):
         '''
