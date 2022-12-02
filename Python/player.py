@@ -189,6 +189,7 @@ class Hard_CPU_Player(Player):
         if position: return position
         position = self.can_fork(own=False)
         if position: return position
+        return self.take_corner_or_side()
         
 
 class Medium_CPU_Player(Hard_CPU_Player):
