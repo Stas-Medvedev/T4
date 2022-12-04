@@ -178,7 +178,9 @@ class Hard_CPU_Player(Player):
         -+-+-      -+-+- 
         X| |        | |X,
 
-        
+        can_fork function would place a marker in one of the available corners,
+        and that would lead to a loss. The correct move is to place a marker on
+        one of the available sides.
         '''
         pass
     
