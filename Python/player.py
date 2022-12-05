@@ -182,7 +182,22 @@ class Hard_CPU_Player(Player):
         and that would lead to a loss. The correct move is to place a marker on
         one of the available sides.
         '''
-        pass
+        # if any of the following conditions are not met, this case doesn't apply:
+        # there are exactly 6 avaliable positions, 
+        # the center position has an own marker,
+        # either of the corner combinations have opponent's markers
+        if len(self.board.available_positions) != 6: return 0
+        if not self.check_marker(self.board.current_markers[4], own=True): return 0
+        
+        corner_1 = self.check_marker(self.board.current_markers[0], own=False)
+        corner_9 = self.check_marker(self.board.current_markers[8], own=False)
+        corner_3 = self.check_marker(self.board.current_markers[3], own=False)
+        corner_7 = self.check_marker(self.board.current_markers[6], own=False)
+        if (corner_1 and corner_9) or (corner_3 and corner_7):
+            sides = [2, 4, 6, 8]
+            return random.choice(sides)
+
+        return 0
     
     def take_turn(self):
         '''
