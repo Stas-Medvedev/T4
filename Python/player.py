@@ -218,8 +218,8 @@ class Hard_CPU_Player(Player):
         if position: return position
         position = self.need_to_cover()
         if position: return position
-        # need a function to check the special case when going second and taking
-        # the center with the opponent taking two opposing corners
+        position = self.check_diagonal_case
+        if position: return position
         position = self.can_fork(own=True)
         if position: return position
         position = self.can_fork(own=False)
