@@ -213,6 +213,8 @@ class Hard_CPU_Player(Player):
         Pick a corner space (this will probably need hardcoded values)
         Pick a side space
         '''
+        # refactor this code to use a list of callables and iterate through it
+        # instead of using multiple if statements
         if 5 in self.board.available_positions: return 5
         position = self.can_win()
         if position: return position
