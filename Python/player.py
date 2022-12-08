@@ -208,6 +208,7 @@ class Hard_CPU_Player(Player):
         If center is available, take that.
         If can win, choose the remaining empty space.
         If need to cover, choose the remaining empty space.
+        Check the special diagonal case when going second.
         If can fork, choose the intersecting space.
         If opponent can fork on next move, block the fork.
         Pick a corner space (this will probably need hardcoded values)
