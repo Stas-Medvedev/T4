@@ -213,19 +213,22 @@ class Hard_CPU_Player(Player):
         Pick a corner space (this will probably need hardcoded values)
         Pick a side space
         '''
-        # refactor this code to use a list of callables and iterate through it
-        # instead of using multiple if statements
         if 5 in self.board.available_positions: return 5
-        position = self.can_win()
-        if position: return position
-        position = self.need_to_cover()
-        if position: return position
-        position = self.check_diagonal_case
-        if position: return position
-        position = self.can_fork(own=True)
-        if position: return position
-        position = self.can_fork(own=False)
-        if position: return position
+
+        move_strategies = [self.can_win, self.need_to_cover, self.check_diagonal_case]
+        for strategy in move_strategies:
+            position = strategy()
+            if position: return position
+        # position = self.can_win()
+        # if position: return position
+        # position = self.need_to_cover()
+        # if position: return position
+        # position = self.check_diagonal_case
+        # if position: return position
+        for own in [True, False]:
+            position = self.can_fork(own=own)
+            if position: return position
+
         return self.take_corner_or_side()
         
 
