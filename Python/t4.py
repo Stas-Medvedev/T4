@@ -13,16 +13,6 @@
 #           - that means modifying the current setup of the UI initializer
 #           - that also means that Game class won't get player in the __init__ but at some point later
 #       Make sure all take_turn functions return a number between 1 and 9 (same as the initial available positions)
-#       take_turn needs to account for the following scenario when playing as O
-#
-#         | |X
-#        -+-+-
-#         |O|
-#        -+-+-
-#        X| |
-#
-#       can_fork(own=False) would result in a corner move which would lead to a loss.
-#
 #       Add type hints to functions
 
 def check_restart():
