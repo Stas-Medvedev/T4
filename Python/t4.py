@@ -15,7 +15,7 @@
 #       Make sure all take_turn functions return a number between 1 and 9 (same as the initial available positions)
 #       Add type hints to functions
 
-def check_restart():
+def check_restart() -> bool:
     '''
     Checks if the player(s) would like to play another match.
     Returns True if yes, False if no.
