@@ -1,11 +1,12 @@
 import player
 import game
+from board import Board
 
 class UI:
-    def __init__(self, board):
+    def __init__(self, board: Board):
         self.board = board
     
-    def select_CPU_difficulty():
+    def select_CPU_difficulty() -> str:
         '''
         Lets the user select CPU difficulty and returns a string that is used by
         get_cpu_player_object() to return the appropriate CPU_Player object.
@@ -19,7 +20,7 @@ class UI:
         
         return difficulties[choice]
 
-    def get_cpu_player_object(self, marker):
+    def get_cpu_player_object(self, marker: str):
         '''
         Return a CPU_Player object based on selected difficulty.
         '''
