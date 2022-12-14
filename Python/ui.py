@@ -87,7 +87,7 @@ class UI:
         '''
         return Game(players[0], players[1], self.board)
 
-    def display_board(self, markers):
+    def display_board(self, markers) -> None:
         '''
         Displays the playing board with the provided markers.
         '''
@@ -103,20 +103,20 @@ class UI:
         print(row1)
         print()
 
-    def display_instructions(self):
+    def display_instructions(self) -> None:
         '''
         Displays instructions and the cell numbers.
         '''
         print('Classic tic-tac-toe. To play, select a position number to place your marker according to the grid below')
         self.display_board([str(x) for x in range(1, 10)])
 
-    def display_current_board(self):
+    def display_current_board(self) -> None:
         '''
         Displays the current playing board.
         '''
         self.display_board(self.board.current_markers)
 
-    def update_board(self, position, marker):
+    def update_board(self, position, marker) -> None:
         '''
         Updates the current_positions list to include the most recent marker
         and removes the recent position from available_positions.
