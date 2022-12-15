@@ -52,7 +52,7 @@ class UI:
 
         return player
 
-    def get_player_selection() -> tuple:
+    def get_player_selection() -> tuple[str, str]:
         '''
         Prompts the user to make a player type selection, and returns a tuple of player types
         that is used to generate the appropriate player objects.
@@ -69,7 +69,7 @@ class UI:
 
         return player_pairs[choice]
         
-    def get_players(self) -> list:
+    def get_players(self) -> list[Player]:
         '''
         "Player vs player" or "player vs CPU" game mode selector.
         Returns a pair of Player objects that will be used to create a Game object.
@@ -81,13 +81,13 @@ class UI:
             
         return [player1, player2]
 
-    def get_game_object(self, players: list) -> Game:
+    def get_game_object(self, players: list[Player]) -> Game:
         '''
         Accepts an interable with players, and returns a game object with those player types.
         '''
         return Game(players[0], players[1], self.board)
 
-    def display_board(self, markers: list) -> None:
+    def display_board(self, markers: list[str]) -> None:
         '''
         Displays the playing board with the provided markers.
         '''
