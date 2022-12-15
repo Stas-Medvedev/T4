@@ -32,7 +32,7 @@ class UI:
         else:
             return Hard_CPU_Player('CPU', marker)
 
-    def get_human_player_object(marker) -> Player:
+    def get_human_player_object(marker: str) -> Player:
         '''
         Returns a player object for human players.
         Takes marker as an argument passed from the calling function to make sure
@@ -44,7 +44,7 @@ class UI:
 
         return Player(name, marker)
 
-    def get_player_object(self, player_type, marker) -> Player:
+    def get_player_object(self, player_type: str, marker: str) -> Player:
         if player_type == 'human':
             player = self.get_human_player_object(marker)
         else:
@@ -81,13 +81,13 @@ class UI:
             
         return [player1, player2]
 
-    def get_game_object(self, players) -> Game:
+    def get_game_object(self, players: list) -> Game:
         '''
         Accepts an interable with players, and returns a game object with those player types.
         '''
         return Game(players[0], players[1], self.board)
 
-    def display_board(self, markers) -> None:
+    def display_board(self, markers: list) -> None:
         '''
         Displays the playing board with the provided markers.
         '''
@@ -116,7 +116,7 @@ class UI:
         '''
         self.display_board(self.board.current_markers)
 
-    def update_board(self, position, marker) -> None:
+    def update_board(self, position: int, marker: str) -> None:
         '''
         Updates the current_positions list to include the most recent marker
         and removes the recent position from available_positions.
