@@ -17,6 +17,7 @@
 #       Add type hints to functions
 #       UI class has get_game_object method which might be unnecessary, and 
 #                Game object should instantiate a UI class
+#       UI class also has update_board method. Is that the correct place for it?
 
 def check_restart() -> bool:
     '''
