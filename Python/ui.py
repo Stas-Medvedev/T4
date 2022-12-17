@@ -115,11 +115,3 @@ class UI:
         Displays the current playing board.
         '''
         self.display_board(self.board.current_markers)
-
-    def update_board(self, position: int, marker: str) -> None:
-        '''
-        Updates the current_positions list to include the most recent marker
-        and removes the recent position from available_positions.
-        '''
-        self.board.current_markers[position - 1] = marker
-        self.board.available_positions.remove(position)
