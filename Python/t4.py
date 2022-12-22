@@ -7,11 +7,10 @@
 #           - Game should probably create an instance of the UI class rather than the other way around
 #           - that means modifying the current setup of the UI initializer
 #           - that also means that Game class won't get player in the __init__ but at some point later
-#       Make sure all take_turn functions return a number between 1 and 9 (same
-#                as the initial available positions)
 #       Add type hints to functions
-#       UI class has get_game_object method which might be unnecessary, and 
-#                Game object should instantiate a UI class
+#       Remove board as an object attribute in the player class and instead pass the current board 
+#           from the game class when calling the take_turn method
+#       Look into abstracting the Player and UI classes in the Game class by using protocols
 
 def check_restart() -> bool:
     '''
