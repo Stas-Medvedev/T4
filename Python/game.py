@@ -1,8 +1,13 @@
 from board import Board
+from typing import Protocol
 
 # add protocols for Player and UI classes
 # add UI object implementation
 # add type hints
+
+class Player(Protocol):
+    def take_turn(self, board: Board) -> int:
+        ...
 
 class Game:
     winning_positions = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]]
