@@ -5,21 +5,20 @@ class Player:
     Player class for human player.
     '''
     
-    def __init__(self, name, marker, board):
+    def __init__(self, name, marker):
         self.name = name
         self.marker = marker
-        self.board = board
 
-    def take_turn(self):
-        position = int(input(f"{self.name}'s turn. Select a position {self.board.available_positions}:"))
+    def take_turn(self, board):
+        position = int(input(f"{self.name}'s turn. Select a position {board.available_positions}:"))
         return position
 
 class Easy_CPU_Player(Player):
     '''
     Easy CPU player selects an available space at random
     '''
-    def take_turn(self):
-        return random.choice(self.board.available_positions)
+    def take_turn(self, board):
+        return random.choice(board.available_positions)
 
 class Hard_CPU_Player(Player):
     '''
@@ -29,7 +28,7 @@ class Hard_CPU_Player(Player):
 
     # This class needs access to the game board
 
-    def can_win(self):
+    def can_win(self, board):
         '''
         Checks if it's possible to win with the next move.
         If so, returns the position. Otherwise returns 0.
@@ -37,7 +36,7 @@ class Hard_CPU_Player(Player):
         for positions in self.WINNING_POSITIONS:
             total = 0
             for position in positions:
-                current_position = self.board.current_markers[position]
+                current_position = board.current_markers[position]
                 # if there's an opponent's marker in the current winning position,
                 # move on to the next winning position
                 if current_position != self.marker and current_position != ' ': break
@@ -46,7 +45,7 @@ class Hard_CPU_Player(Player):
             if total == 2: return blank + 1
         return 0
 
-    def need_to_cover(self):
+    def need_to_cover(self, board):
         '''
         Checks if the opponent could win with the next move.
         If so, returns the position that needs to be covered.
@@ -55,7 +54,7 @@ class Hard_CPU_Player(Player):
         for positions in self.WINNING_POSITIONS:
             total = 0
             for position in positions:
-                current_position = self.board.current_markers[position]
+                current_position = board.current_markers[position]
                 if current_position != self.marker and current_position != ' ':
                     total += 1
                 if current_position == ' ': blank = position
@@ -73,7 +72,7 @@ class Hard_CPU_Player(Player):
 
         return marker not in [self.marker, ' ']
 
-    def can_fork(self, own):
+    def can_fork(self, own, board):
         '''
         Checks if it's possible to have two sets of positions that could win 
         on the following turn since the opponent can cover only one of them.
@@ -103,7 +102,7 @@ class Hard_CPU_Player(Player):
             current_candidate = []
             add_to_list = True
             for position in positions:
-                current_position = self.board.current_markers[position]
+                current_position = board.current_markers[position]
                 # if current position is an opposite marker, we can't fork,
                 # so move on to the next set of winning positions
                 if self.check_marker(current_position, not own):
