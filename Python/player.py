@@ -131,7 +131,7 @@ class Hard_CPU_Player(Player):
         # if loop returns no intersections, return 0
         return 0
 
-    def take_corner_or_side(self):
+    def take_corner_or_side(self, board):
         '''
         Take a corner based on logic. If none available, take a side.
         '''
@@ -141,16 +141,16 @@ class Hard_CPU_Player(Player):
         # so take any of the corners
         corner_positions = [1, 3, 7, 9]
         random.shuffle(corner_positions)
-        if len(self.board.available_positions) == 8: return corner_positions[0]
+        if len(board.available_positions) == 8: return corner_positions[0]
         # If there are 7 available positions, it means we have the center
         # and the opponent has the other position.
         # The square we should take up depends on what the opponent took.
-        if len(self.board.available_positions) == 7:
+        if len(board.available_positions) == 7:
             # If the opponent took a corner, place a marker in the opposite corner
             # to try to get a mistake.
             opp_positions = {1:9, 3:7, 7:3, 9:1}
             for key in opp_positions.keys():
-                if self.check_marker(self.board.available_positions[key], own=False):
+                if self.check_marker(board.available_positions[key], own=False):
                     return opp_positions[key]
             # For any other position, return a corner.
             return corner_positions[0]
@@ -158,14 +158,14 @@ class Hard_CPU_Player(Player):
         # most cases, so this function should run through corners and then sides,
         # and return one of them (this will need to be tested) 
         for corner in corner_positions:
-            if corner in self.board.available_positions: return corner
+            if corner in board.available_positions: return corner
         
         sides = [2, 4, 6, 8]
         random.shuffle(sides)
         for side in sides:
-            if side in self.board.available_positions: return side
+            if side in board.available_positions: return side
 
-    def check_diagonal_case(self):
+    def check_diagonal_case(self, board):
         '''
         Checks a special case when going second on second turn (4th turn overall).
         
@@ -185,20 +185,20 @@ class Hard_CPU_Player(Player):
         # there are exactly 6 avaliable positions, 
         # the center position has an own marker,
         # either of the corner combinations have opponent's markers
-        if len(self.board.available_positions) != 6: return 0
-        if not self.check_marker(self.board.current_markers[4], own=True): return 0
+        if len(board.available_positions) != 6: return 0
+        if not self.check_marker(board.current_markers[4], own=True): return 0
         
-        corner_1 = self.check_marker(self.board.current_markers[0], own=False)
-        corner_9 = self.check_marker(self.board.current_markers[8], own=False)
-        corner_3 = self.check_marker(self.board.current_markers[3], own=False)
-        corner_7 = self.check_marker(self.board.current_markers[6], own=False)
+        corner_1 = self.check_marker(board.current_markers[0], own=False)
+        corner_9 = self.check_marker(board.current_markers[8], own=False)
+        corner_3 = self.check_marker(board.current_markers[3], own=False)
+        corner_7 = self.check_marker(board.current_markers[6], own=False)
         if (corner_1 and corner_9) or (corner_3 and corner_7):
             sides = [2, 4, 6, 8]
             return random.choice(sides)
 
         return 0
     
-    def take_turn(self):
+    def take_turn(self, board):
         '''
         Can win: a winning position with 2 own markers and an empty space
         Need to cover: a winning position with 2 of opponent's markers and an empty space
@@ -213,7 +213,7 @@ class Hard_CPU_Player(Player):
         Pick a corner space (this will probably need hardcoded values)
         Pick a side space
         '''
-        if 5 in self.board.available_positions: return 5
+        if 5 in board.available_positions: return 5
 
         move_strategies = [self.can_win, self.need_to_cover, self.check_diagonal_case]
         for strategy in move_strategies:
@@ -236,9 +236,9 @@ class Medium_CPU_Player(Hard_CPU_Player):
     '''
     Medium CPU player randomly chooses between Easy and Hard CPU players' moves
     '''
-    def take_turn(self):
+    def take_turn(self, board):
         move_choice = random.choice([0,1])
         if move_choice == 0:
-            return random.choice(self.board.available_positions)
+            return random.choice(board.available_positions)
         else:
-            super().take_turn()
+            super().take_turn(board)
