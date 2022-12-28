@@ -11,6 +11,9 @@
 #       Remove board as an object attribute in the player class and instead pass the current board 
 #           from the game class when calling the take_turn method
 #       Look into abstracting the Player and UI classes in the Game class by using protocols
+#           - add necessary methods for the UI class to the protocol
+#           - consider using a protocol for Board as well
+#       Start running the code to debug
 
 def check_restart() -> bool:
     '''
