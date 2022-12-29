@@ -13,6 +13,7 @@
 #       Look into abstracting the Player and UI classes in the Game class by using protocols
 #           - add necessary methods for the UI class to the protocol
 #           - consider using a protocol for Board as well
+#       Consider building the restart check and scorekeeping functionality into the Game class
 #       Start running the code to debug
 
 def check_restart() -> bool:
