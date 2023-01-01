@@ -12,7 +12,15 @@ class Player(Protocol):
         ...
 
 class UI(Protocol):
-    ...
+    @staticmethod
+    def get_player_selection() -> tuple[str, str]:
+        ...
+    
+    @staticmethod
+    def select_cpu_difficulty() -> str:
+        ...
+
+    
 
 class Game:
     winning_positions = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]]
