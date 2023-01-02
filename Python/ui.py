@@ -6,6 +6,23 @@ class UI:
     def __init__(self, board: Board):
         self.board = board
     
+    def get_player_selection() -> tuple[str, str]:
+        '''
+        Prompts the user to make a player type selection, and returns a tuple of player types
+        that is used to generate the appropriate player objects.
+        '''
+        player_pairs = {'1': ("player", "player"), '2': ("player", "cpu"), '3': ("cpu", "player")}
+        print('1 - Player (X) vs Player (O)')
+        print('2 - Player (X) vs CPU (O)')
+        print('3 - CPU (X) vs Player (O)')
+        choice = input('Select game mode ([1],2,3):')
+        while choice not in ['', '1', '2', '3']:
+            choice = input('Select game mode ([1],2,3):')
+        if choice == '':
+            choice = '1'
+
+        return player_pairs[choice]
+        
     def select_CPU_difficulty() -> str:
         '''
         Lets the user select CPU difficulty and returns a string that is used by
@@ -52,23 +69,6 @@ class UI:
 
         return player
 
-    def get_player_selection() -> tuple[str, str]:
-        '''
-        Prompts the user to make a player type selection, and returns a tuple of player types
-        that is used to generate the appropriate player objects.
-        '''
-        player_pairs = {'1': ("player", "player"), '2': ("player", "cpu"), '3': ("cpu", "player")}
-        print('1 - Player (X) vs Player (O)')
-        print('2 - Player (X) vs CPU (O)')
-        print('3 - CPU (X) vs Player (O)')
-        choice = input('Select game mode ([1],2,3):')
-        while choice not in ['', '1', '2', '3']:
-            choice = input('Select game mode ([1],2,3):')
-        if choice == '':
-            choice = '1'
-
-        return player_pairs[choice]
-        
     def get_players(self) -> list[Player]:
         '''
         "Player vs player" or "player vs CPU" game mode selector.
@@ -80,12 +80,6 @@ class UI:
         player2 = self.get_player_object(selection[1], 'O')
             
         return [player1, player2]
-
-    def get_game_object(self, players: list[Player]) -> Game:
-        '''
-        Accepts an interable with players, and returns a game object with those player types.
-        '''
-        return Game(players[0], players[1], self.board)
 
     def display_board(self, markers: list[str]) -> None:
         '''
