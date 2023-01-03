@@ -13,8 +13,8 @@
 #       Look into abstracting the Player and UI classes in the Game class by using protocols
 #           - add necessary methods for the UI class to the protocol
 #           - consider using a protocol for Board as well
-#       Modify Game initializer to take a UI class instance and use it to get players for the game
 #       Consider building the restart check and scorekeeping functionality into the Game class
+#       UI class has display_board and display_current_board methods. Is the second one needed?
 #       Start running the code to debug
 
 def check_restart() -> bool:
