@@ -4,7 +4,10 @@ from typing import Protocol
 # add protocols for Player and UI classes
 # add the UI class methods needed for the protocol
 # add UI object implementation
-# consider replacing Board import with a protocol for consistency
+# can't use Board as a protocol because a new Board object needs to be created
+#   for every match, and unless an instance of this Game class is being created
+#   each time by something else, a Board object needs to be created within the 
+#   Game class and can't be injected
 # add type hints
 
 class Player(Protocol):
