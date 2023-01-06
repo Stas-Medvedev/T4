@@ -13,10 +13,7 @@
 #       Look into abstracting the Player and UI classes in the Game class by using protocols
 #           - add necessary methods for the UI class to the protocol
 #           - consider using a protocol for Board as well
-#       Consider building the restart check and scorekeeping functionality into the Game class
-#           This won't allow usage of Protocol for the Board class. Consider building a GameLauncher
-#           class or something along those lines that will create Game class instances. Or just
-#           avoid using Protocol for Board within the Game class
+#       Create GameManager class that will keep track of scores and create the necessary class instances
 #       UI class has display_board and display_current_board methods. Is the second one needed?
 #       Start running the code to debug
 
