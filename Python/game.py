@@ -1,4 +1,3 @@
-from board import Board
 from typing import Protocol
 
 # add protocols for Player and UI classes
@@ -6,6 +5,9 @@ from typing import Protocol
 # add UI object implementation
 # add Board class protocol
 # add type hints
+
+class Board(Protocol):
+    ...
 
 class Player(Protocol):
     def take_turn(self, board: Board) -> int:
@@ -19,8 +21,6 @@ class UI(Protocol):
     @staticmethod
     def select_cpu_difficulty() -> str:
         ...
-
-    
 
 class Game:
     winning_positions = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]]
