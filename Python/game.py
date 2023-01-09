@@ -1,4 +1,4 @@
-from typing import Protocol
+from typing import Protocol, List
 
 # add protocols for Player and UI classes
 # add the UI class methods needed for the protocol
@@ -7,8 +7,9 @@ from typing import Protocol
 # add type hints
 
 class Board(Protocol):
-    ...
-
+    available_positions: List[int]
+    current_markers: List[str]
+    
 class Player(Protocol):
     def take_turn(self, board: Board) -> int:
         ...
