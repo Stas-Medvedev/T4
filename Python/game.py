@@ -3,7 +3,7 @@ from typing import Protocol, List
 # add protocols for Player and UI classes
 # add the UI class methods needed for the protocol
 # add UI object implementation
-#   player selection functions of UI should be GameManager and not here
+#   player selection functions of UI should be in GameManager and not here
 #   game class should receive all the necessary objects to run a single game
 # add Board class protocol
 # add type hints
