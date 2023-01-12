@@ -10,9 +10,7 @@
 #       Add type hints to functions
 #       Remove board as an object attribute in the player class and instead pass the current board 
 #           from the game class when calling the take_turn method
-#       Look into abstracting the Player and UI classes in the Game class by using protocols
-#           - add necessary methods for the UI class to the protocol
-#           - consider using a protocol for Board as well
+#       Move all of the interfaces into an interface file
 #       Create GameManager class that will keep track of scores and create the necessary class instances
 #       UI class has display_board and display_current_board methods. Is the second one needed?
 #       Start running the code to debug
