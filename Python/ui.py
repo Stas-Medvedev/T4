@@ -2,6 +2,12 @@ from player import Player, Easy_CPU_Player, Medium_CPU_Player, Hard_CPU_Player
 from game import Game
 from board import Board
 
+'''
+TODO:
+    - Go through the functions and see if any of them need to be moved to the GameManager class
+    - Check if any of the imports can be replaced with interfaces
+'''
+
 class UI:
     def __init__(self, board: Board):
         self.board = board
