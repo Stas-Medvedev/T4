@@ -6,3 +6,7 @@ from typing import Protocol, List
 class Board(Protocol):
     available_positions: List[int]
     current_markers: List[str]
+
+class Player(Protocol):
+    def take_turn(self, board: Board) -> int:
+        ...
