@@ -13,7 +13,6 @@
 #       Move all of the interfaces into an interface file
 #       Create GameManager class that will keep track of scores and create the necessary class instances
 #       UI class has display_board and display_current_board methods. Is the second one needed?
-#       Install pytest
 #       Write unit tests
 #       Start running the code to debug
 
