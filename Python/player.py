@@ -1,5 +1,13 @@
 import random
 
+'''
+TODO:
+    - import Board protocol
+    - add Board type hints
+    - Secure take_turn method in Player class against input that can't be
+    converted to int
+'''
+
 class Player:
     '''
     Player class for human player.
