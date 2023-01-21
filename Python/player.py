@@ -1,9 +1,8 @@
 import random
+from interfaces import Board
 
 '''
 TODO:
-    - import Board protocol
-    - add Board type hints
     - Secure take_turn method in Player class against input that can't be
     converted to int
 '''
@@ -17,7 +16,7 @@ class Player:
         self.name = name
         self.marker = marker
 
-    def take_turn(self, board) -> int:
+    def take_turn(self, board: Board) -> int:
         position = int(input(f"{self.name}'s turn. Select a position {board.available_positions}:"))
         return position
 
@@ -25,7 +24,7 @@ class Easy_CPU_Player(Player):
     '''
     Easy CPU player selects an available space at random
     '''
-    def take_turn(self, board) -> int:
+    def take_turn(self, board: Board) -> int:
         return random.choice(board.available_positions)
 
 class Hard_CPU_Player(Player):
@@ -34,7 +33,7 @@ class Hard_CPU_Player(Player):
     '''
     WINNING_POSITIONS = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]]
 
-    def can_win(self, board) -> int:
+    def can_win(self, board: Board) -> int:
         '''
         Checks if it's possible to win with the next move.
         If so, returns the position. Otherwise returns 0.
@@ -51,7 +50,7 @@ class Hard_CPU_Player(Player):
             if total == 2: return blank + 1
         return 0
 
-    def need_to_cover(self, board) -> int:
+    def need_to_cover(self, board: Board) -> int:
         '''
         Checks if the opponent could win with the next move.
         If so, returns the position that needs to be covered.
@@ -67,7 +66,7 @@ class Hard_CPU_Player(Player):
             if total == 2: return blank + 1
         return 0
 
-    def check_marker(self, marker, own=True) -> bool:
+    def check_marker(self, marker: str, own: bool = True) -> bool:
         '''
         Checks whether the passed marker is own (when own=True)
         or an opponent's marker.
@@ -78,7 +77,7 @@ class Hard_CPU_Player(Player):
 
         return marker not in [self.marker, ' ']
 
-    def can_fork(self, own, board) -> int:
+    def can_fork(self, own: bool, board: Board) -> int:
         '''
         Checks if it's possible to have two sets of positions that could win 
         on the following turn since the opponent can cover only one of them.
@@ -137,7 +136,7 @@ class Hard_CPU_Player(Player):
         # if loop returns no intersections, return 0
         return 0
 
-    def take_corner_or_side(self, board) -> int:
+    def take_corner_or_side(self, board: Board) -> int:
         '''
         Take a corner based on logic. If none available, take a side.
         '''
@@ -171,7 +170,7 @@ class Hard_CPU_Player(Player):
         for side in sides:
             if side in board.available_positions: return side
 
-    def check_diagonal_case(self, board) -> int:
+    def check_diagonal_case(self, board: Board) -> int:
         '''
         Checks a special case when going second on second turn (4th turn overall).
         
@@ -204,7 +203,7 @@ class Hard_CPU_Player(Player):
 
         return 0
     
-    def take_turn(self, board) -> int:
+    def take_turn(self, board: Board) -> int:
         '''
         Can win: a winning position with 2 own markers and an empty space
         Need to cover: a winning position with 2 of opponent's markers and an empty space
@@ -242,7 +241,7 @@ class Medium_CPU_Player(Hard_CPU_Player):
     '''
     Medium CPU player randomly chooses between Easy and Hard CPU players' moves
     '''
-    def take_turn(self, board) -> int:
+    def take_turn(self, board: Board) -> int:
         move_choice = random.choice([0,1])
         if move_choice == 0:
             return random.choice(board.available_positions)
