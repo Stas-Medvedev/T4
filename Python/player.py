@@ -17,7 +17,11 @@ class Player:
         self.marker = marker
 
     def take_turn(self, board: Board) -> int:
-        position = int(input(f"{self.name}'s turn. Select a position {board.available_positions}:"))
+        try:
+            position = int(input(f"{self.name}'s turn. Select a position {board.available_positions}:"))
+        except:
+            self.take_turn(board)
+        if position not in board.available_positions: self.take_turn(board)
         return position
 
 class Easy_CPU_Player(Player):
