@@ -1,12 +1,6 @@
 import random
 from interfaces import Board
 
-'''
-TODO:
-    - Secure take_turn method in Player class against input that can't be
-    converted to int
-'''
-
 class Player:
     '''
     Player class for human player.
@@ -17,12 +11,12 @@ class Player:
         self.marker = marker
 
     def take_turn(self, board: Board) -> int:
-        try:
-            position = int(input(f"{self.name}'s turn. Select a position {board.available_positions}:"))
-        except:
-            self.take_turn(board)
-        if position not in board.available_positions: self.take_turn(board)
-        return position
+        available_positions_strings = [str(position) for position in board.available_positions]
+        position = input(f"{self.name}'s turn. Select a position {board.available_positions}:")
+        while position not in available_positions_strings:
+            position = input(f"{self.name}'s turn. Select a position {board.available_positions}:")
+            
+        return int(position)
 
 class Easy_CPU_Player(Player):
     '''
