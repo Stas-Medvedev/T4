@@ -1,4 +1,5 @@
 from typing import Protocol, List
+from interfaces import Board, Player
 
 # add protocols for Player and UI classes
 # add the UI class methods needed for the protocol
@@ -7,14 +8,6 @@ from typing import Protocol, List
 #   game class should receive all the necessary objects to run a single game
 # add Board class protocol
 # add type hints
-
-class Board(Protocol):
-    available_positions: List[int]
-    current_markers: List[str]
-    
-class Player(Protocol):
-    def take_turn(self, board: Board) -> int:
-        ...
 
 class UI(Protocol):
     @staticmethod
