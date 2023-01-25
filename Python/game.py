@@ -2,6 +2,8 @@ from typing import Protocol, List
 from interfaces import Board, Player
 
 # go through the current methods and add/remove functionality as necessary
+#   update methods to include changed Player.take_turn() functionality
+#   take into account functionality that will be handled by GameManager
 # add protocols for Player and UI classes
 # add the UI class methods needed for the protocol
 # add UI object implementation
