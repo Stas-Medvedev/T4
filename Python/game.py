@@ -1,6 +1,7 @@
 from typing import Protocol, List
 from interfaces import Board, Player
 
+# go through the current methods and add/remove functionality as necessary
 # add protocols for Player and UI classes
 # add the UI class methods needed for the protocol
 # add UI object implementation
