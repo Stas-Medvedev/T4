@@ -27,6 +27,7 @@ class Game:
     def __init__(self, player1: Player, player2: Player, board: Board, ui: UI):
         self.player1 = player1
         self.player2 = player2
+        self.current_player = self.player1
         self.board = board
         self.ui = ui
 
