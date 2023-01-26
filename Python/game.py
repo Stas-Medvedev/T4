@@ -41,10 +41,19 @@ class Game:
         and displays the updated game grid.
         '''
         position = self.current_player.take_turn(self)
-        while position not in self.available_positions:
+        # The take_turn method should already be checking if the position is 
+        # available. This is just to make sure. 
+        while position not in self.board.available_positions:
+            print(f'{position} is not an available position.')
             position = self.current_player.take_turn(self)
+
+        '''
+        update_grid and display_grid methods have been removed. There are
+        replacement methods in the UI class.
+
         self.update_grid(position, self.current_player.marker)
         self.display_grid(self.current_positions)
+        '''
 
     def check_winner(self):
         '''
