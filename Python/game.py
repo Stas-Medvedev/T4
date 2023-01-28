@@ -49,11 +49,13 @@ class Game:
 
         '''
         update_grid and display_grid methods have been removed. There are
-        replacement methods in the UI class.
-
-        self.update_grid(position, self.current_player.marker)
-        self.display_grid(self.current_positions)
+        replacement methods in the UI (for display_grid) and Board (for 
+        update_grid) classes.
         '''
+
+        # self.update_grid(position, self.current_player.marker)
+        # self.display_grid(self.current_positions)
+        
 
     def check_winner(self):
         '''
