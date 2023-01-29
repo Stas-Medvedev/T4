@@ -6,6 +6,8 @@ from board import Board
 TODO:
     - Go through the functions and see if any of them need to be moved to the GameManager class
     - Check if any of the imports can be replaced with interfaces
+    - This class gets a Board object as an attribute. Is that the right way to go about it
+        or should only the necessary information be passed to the class methods?
 '''
 
 class UI:
