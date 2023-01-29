@@ -53,7 +53,7 @@ class Game:
         update_grid) classes.
         '''
 
-        # self.update_grid(position, self.current_player.marker)
+        self.board.update(position, self.current_player.marker)
         # self.display_grid(self.current_positions)
         
 
