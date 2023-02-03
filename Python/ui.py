@@ -46,6 +46,7 @@ class UI:
         
         return difficulties[choice]
 
+    # Move to GameManager
     def get_cpu_player_object(self, marker: str) -> Player:
         '''
         Return a CPU_Player object based on selected difficulty.
@@ -58,6 +59,7 @@ class UI:
         else:
             return Hard_CPU_Player('CPU', marker)
 
+    # Move to GameManager and replace with get_plaayer_name()
     def get_human_player_object(marker: str) -> Player:
         '''
         Returns a player object for human players.
