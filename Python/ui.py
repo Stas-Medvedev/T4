@@ -15,7 +15,6 @@ class UI:
     def __init__(self, board: Board):
         self.board = board
     
-    # Either move get_player_selection to GameManager or use this method in UI protocol
     def get_player_selection() -> tuple[str, str]:
         '''
         Prompts the user to make a player type selection, and returns a tuple of player types
