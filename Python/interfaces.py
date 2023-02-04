@@ -13,3 +13,12 @@ class Board(Protocol):
 class Player(Protocol):
     def take_turn(self, board: Board) -> int:
         ...
+
+class UI(Protocol):
+    def get_player_selection() -> tuple[str, str]:
+        ...
+
+    def select_CPU_difficulty() -> str:
+        ...
+
+    
