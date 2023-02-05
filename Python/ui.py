@@ -72,6 +72,7 @@ class UI:
 
         return Player(name, marker)
 
+    # Move to GameManager?
     def get_player_object(self, player_type: str, marker: str) -> Player:
         if player_type == 'human':
             player = self.get_human_player_object(marker)
