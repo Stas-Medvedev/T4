@@ -72,7 +72,7 @@ class UI:
 
         return Player(name, marker)
 
-    # Move to GameManager?
+    # Move to GameManager
     def get_player_object(self, player_type: str, marker: str) -> Player:
         if player_type == 'human':
             player = self.get_human_player_object(marker)
@@ -81,6 +81,7 @@ class UI:
 
         return player
 
+    # Move to GameManager
     def get_players(self) -> list[Player]:
         '''
         "Player vs player" or "player vs CPU" game mode selector.
@@ -116,6 +117,7 @@ class UI:
         print('Classic tic-tac-toe. To play, select a position number to place your marker according to the grid below')
         self.display_board([str(x) for x in range(1, 10)])
 
+    # Will probably be removed, and display_board will be used alone
     def display_current_board(self) -> None:
         '''
         Displays the current playing board.
