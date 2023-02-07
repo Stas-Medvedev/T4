@@ -21,4 +21,8 @@ class UI(Protocol):
     def select_CPU_difficulty() -> str:
         ...
 
-    
+    def display_board(board: Board) -> None:
+        ...
+
+    def display_instructions() -> None:
+        ... 
