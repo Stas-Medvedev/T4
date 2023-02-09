@@ -1,2 +1,7 @@
 class GameManager:
+    '''
+    The purpose of the GameManager class is to manage game instances.
+    This class will get user input and create instances of all of the
+    necessary classes. It will also keep track of scores and restarts.
+    '''
     pass
