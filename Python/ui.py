@@ -1,5 +1,4 @@
-from player import Player, Easy_CPU_Player, Medium_CPU_Player, Hard_CPU_Player
-from board import Board
+from interfaces import Board
 
 '''
 TODO:
