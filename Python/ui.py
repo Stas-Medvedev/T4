@@ -2,10 +2,6 @@ from interfaces import Board
 
 '''
 TODO:
-    - Go through the functions and see if any of them need to be moved to the GameManager class
-        - move get_cpu_player_object()
-        - move get_human_player_object() and perhaps replace with get_player_name()
-    - Check if any of the imports can be replaced with interfaces
     - This class gets a Board object as an attribute. Is that the right way to go about it
         or should only the necessary information be passed to the class methods?
 '''
