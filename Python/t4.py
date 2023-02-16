@@ -18,5 +18,11 @@
 
 # TODO: Write a `main()` function
 
+from game_manager import GameManager
+
+def main() -> None:
+   gm = GameManager()
+   gm.run() 
+
 if __name__ == '__main__':
-   pass 
+   main()
