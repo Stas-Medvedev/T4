@@ -16,8 +16,6 @@
 #       Write unit tests
 #       Start running the code to debug
 
-# TODO: Write a `main()` function
-
 from game_manager import GameManager
 
 def main() -> None:
