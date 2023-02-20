@@ -12,7 +12,6 @@ class GameManager:
         self.board = Board()
         self.ui = UI(self.board)
 
-    # Move to GameManager
     def get_cpu_player_object(self, marker: str) -> Player:
         '''
         Return a CPU_Player object based on selected difficulty.
@@ -25,7 +24,6 @@ class GameManager:
         else:
             return Hard_CPU_Player('CPU', marker)
 
-    # Move to GameManager and replace with get_plaayer_name()
     def get_human_player_object(marker: str) -> Player:
         '''
         Returns a player object for human players.
@@ -38,7 +36,6 @@ class GameManager:
 
         return Player(name, marker)
 
-    # Move to GameManager
     def get_player_object(self, player_type: str, marker: str) -> Player:
         if player_type == 'human':
             player = self.get_human_player_object(marker)
@@ -47,7 +44,6 @@ class GameManager:
 
         return player
 
-    # Move to GameManager
     def get_players(self) -> list[Player]:
         '''
         "Player vs player" or "player vs CPU" game mode selector.
