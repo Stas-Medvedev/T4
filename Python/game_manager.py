@@ -49,7 +49,7 @@ class GameManager:
         "Player vs player" or "player vs CPU" game mode selector.
         Returns a pair of Player objects that will be used to create a Game object.
         '''
-        selection = self.get_player_selection()
+        selection = self.ui.get_player_selection()
         
         player1 = self.get_player_object(selection[0], 'X')
         player2 = self.get_player_object(selection[1], 'O')
