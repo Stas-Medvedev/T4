@@ -9,7 +9,6 @@ class GameManager:
     necessary classes. It will also keep track of scores and restarts.
     '''
     def __init__(self):
-        self.board = Board()
         self.ui = UI(self.board)
 
     def get_cpu_player_object(self, marker: str) -> Player:
@@ -71,4 +70,14 @@ class GameManager:
         return True
 
     def run(self):
+        '''
+        Action order:
+        ============
+        - Get player selection
+        - Instantiate player objects
+        - Instantiate board object
+        - Instantiate game object
+        - After a game is completed, check restart
+        - Update scores if necessary
+        '''
         pass
