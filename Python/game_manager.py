@@ -73,11 +73,12 @@ class GameManager:
         '''
         Action order:
         ============
-        - Get player selection
-        - Instantiate player objects
+        - [DONE] Get player selection
+        - [DONE] Instantiate player objects
         - Instantiate board object
         - Instantiate game object
         - After a game is completed, check restart
         - Update scores if necessary
         '''
-        pass
+        players = self.get_players()
+        self.player1, self.player2 = players[0], players[1]
