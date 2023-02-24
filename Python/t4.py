@@ -8,6 +8,8 @@
 #           - that means modifying the current setup of the UI initializer
 #           - that also means that Game class won't get player in the __init__ but at some point later
 #       Create GameManager class that will keep track of scores and create the necessary class instances
+#           - Create player and game instances inside GameManager
+#           - Remove player creation/selection functionality from the Game class
 #       UI class has display_board and display_current_board methods. Is the second one needed?
 #       Write unit tests
 #       Start running the code to debug
