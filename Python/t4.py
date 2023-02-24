@@ -11,6 +11,7 @@
 #       UI class has display_board and display_current_board methods. Is the second one needed?
 #       Write unit tests
 #       Start running the code to debug
+# get better internet
 
 from game_manager import GameManager
 
