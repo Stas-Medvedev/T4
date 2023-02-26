@@ -81,4 +81,3 @@ class GameManager:
         - Update scores if necessary
         '''
         players = self.get_players()
-        self.player1, self.player2 = players[0], players[1]
