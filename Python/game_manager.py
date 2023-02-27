@@ -1,3 +1,4 @@
+from game import Game
 from player import Player, Easy_CPU_Player, Medium_CPU_Player, Hard_CPU_Player
 from board import Board
 from ui import UI
@@ -9,8 +10,7 @@ class GameManager:
     necessary classes. It will also keep track of scores and restarts.
     '''
     def __init__(self):
-        self.board = Board()
-        self.ui = UI(self.board)
+        self.ui = UI()
 
     def get_cpu_player_object(self, marker: str) -> Player:
         '''
@@ -74,12 +74,14 @@ class GameManager:
         '''
         Action order:
         ============
+        - Display instructions
         - [DONE] Get player selection
         - [DONE] Instantiate player objects
-        - Instantiate board object
-        - Instantiate game object
+        - [DONE] Instantiate board object
+        - [DONE] Instantiate game object
         - After a game is completed, check restart
         - Update scores if necessary
         '''
         players = self.get_players()
-        game = Game()
+        board = Board()
+        game = Game(players[0], players[1], board, self.ui)
