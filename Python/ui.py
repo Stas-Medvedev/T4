@@ -1,14 +1,4 @@
-from interfaces import Board
-
-'''
-TODO:
-    - This class gets a Board object as an attribute. Is that the right way to go about it
-        or should only the necessary information be passed to the class methods?
-'''
-
 class UI:
-    def __init__(self, board: Board):
-        self.board = board
     
     def get_player_selection() -> tuple[str, str]:
         '''
@@ -63,10 +53,3 @@ class UI:
         '''
         print('Classic tic-tac-toe. To play, select a position number to place your marker according to the grid below')
         self.display_board([str(x) for x in range(1, 10)])
-
-    # Will probably be removed, and display_board will be used alone
-    def display_current_board(self) -> None:
-        '''
-        Displays the current playing board.
-        '''
-        self.display_board(self.board.current_markers)
