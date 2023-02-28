@@ -82,6 +82,7 @@ class GameManager:
         - After a game is completed, check restart
         - Update scores if necessary
         '''
+        self.ui.display_instructions()
         players = self.get_players()
         board = Board()
         game = Game(players[0], players[1], board, self.ui)
