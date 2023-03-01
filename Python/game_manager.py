@@ -86,3 +86,4 @@ class GameManager:
         players = self.get_players()
         board = Board()
         game = Game(players[0], players[1], board, self.ui)
+        restart = self.check_restart()
