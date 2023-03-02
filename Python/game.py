@@ -11,6 +11,8 @@ from interfaces import Board, Player
 #   game class should receive all the necessary objects to run a single game
 # add Board class protocol
 # add type hints
+# class needs a play() method to play a full game to completion
+
 
 class UI(Protocol):
     @staticmethod
@@ -88,3 +90,6 @@ class Game:
             final_markers[i] = player.marker
         self.display_grid(final_markers)
         print(f'{player.name} won the game!')
+
+    def play(self):
+        pass
