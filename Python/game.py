@@ -92,4 +92,7 @@ class Game:
         print(f'{player.name} won the game!')
 
     def play(self):
+        '''
+        Plays a game of tik-tak-toe
+        '''
         pass
