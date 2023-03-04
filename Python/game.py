@@ -95,4 +95,13 @@ class Game:
         '''
         Plays a game of tik-tak-toe
         '''
+        '''
+        Action order:
+        ============
+        Take turn
+        Check winner
+        If winner: display winner and end game
+        Change player
+        Repeat
+        '''
         pass
