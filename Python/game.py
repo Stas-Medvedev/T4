@@ -12,6 +12,7 @@ from interfaces import Board, Player
 # add Board class protocol
 # add type hints
 # class needs a play() method to play a full game to completion
+# remove unnecessary returns from check_winner
 
 
 class UI(Protocol):
@@ -104,4 +105,5 @@ class Game:
         Change player
         Repeat
         '''
-        pass
+        self.accept_turn()
+        # self.check_winner()
