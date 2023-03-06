@@ -16,11 +16,9 @@ from interfaces import Board, Player
 
 
 class UI(Protocol):
-    @staticmethod
     def get_player_selection() -> tuple[str, str]:
         ...
     
-    @staticmethod
     def select_cpu_difficulty() -> str:
         ...
 
