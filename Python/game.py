@@ -1,5 +1,5 @@
 from typing import Protocol, List
-from interfaces import Board, Player
+from interfaces import Board, Player, UI
 
 # go through the current methods and add/remove functionality as necessary
 #   update methods to include changed Player.take_turn() functionality
@@ -13,14 +13,6 @@ from interfaces import Board, Player
 # add type hints
 # class needs a play() method to play a full game to completion
 # remove unnecessary returns from check_winner
-
-
-class UI(Protocol):
-    def get_player_selection() -> tuple[str, str]:
-        ...
-    
-    def select_cpu_difficulty() -> str:
-        ...
 
 class Game:
     winning_positions = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]]
