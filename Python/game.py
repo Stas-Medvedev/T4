@@ -4,14 +4,7 @@ from interfaces import Board, Player, UI
 # go through the current methods and add/remove functionality as necessary
 #   update methods to include changed Player.take_turn() functionality
 #   take into account functionality that will be handled by GameManager
-# add protocols for Player and UI classes
-# add the UI class methods needed for the protocol
-# add UI object implementation
-#   player selection functions of UI should be in GameManager and not here
-#   game class should receive all the necessary objects to run a single game
-# add Board class protocol
 # add type hints
-# class needs a play() method to play a full game to completion
 # remove unnecessary returns from check_winner
 
 class Game:
