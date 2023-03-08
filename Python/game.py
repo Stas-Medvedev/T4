@@ -17,10 +17,10 @@ class Game:
         self.board = board
         self.ui = ui
 
-    def change_current_player(self):
+    def change_current_player(self) -> None:
         self.current_player = self.player2 if self.current_player == self.player1 else self.player1
 
-    def accept_turn(self):
+    def accept_turn(self) -> None:
         '''
         Takes in a position, makes sure the position is available,
         calls update_grid to update current_positions and available_positions,
@@ -43,7 +43,7 @@ class Game:
         # self.display_grid(self.current_positions)
         
 
-    def check_winner(self):
+    def check_winner(self) -> list | None:
         '''
         Checks if there is a winner.
         Returns the winning position and True if there is, None and False otherwise.
@@ -64,7 +64,7 @@ class Game:
         winner = False
         return winning_position, winner
 
-    def display_winner(self, player, winning_position):
+    def display_winner(self, player, winning_position) -> None:
         '''
         Displays the board with the winning line and marker.
         Used at the end of a match with a winner.
@@ -75,7 +75,7 @@ class Game:
         self.display_grid(final_markers)
         print(f'{player.name} won the game!')
 
-    def play(self):
+    def play(self) -> None:
         '''
         Plays a game of tik-tak-toe
         '''
