@@ -4,7 +4,6 @@ from interfaces import Board, Player, UI
 # go through the current methods and add/remove functionality as necessary
 #   update methods to include changed Player.take_turn() functionality
 #   take into account functionality that will be handled by GameManager
-# add type hints
 # remove unnecessary returns from check_winner
 
 class Game:
