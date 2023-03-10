@@ -5,7 +5,7 @@ from typing import Protocol, List
 
 class Board(Protocol):
     available_positions: List[int]
-    current_markers: List[str]
+    markers: List[str]
 
     def update(self, position: int, marker: str) -> None:
         ...
