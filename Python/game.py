@@ -1,10 +1,8 @@
-from typing import Protocol, List
 from interfaces import Board, Player, UI
 
 # go through the current methods and add/remove functionality as necessary
 #   update methods to include changed Player.take_turn() functionality
 #   take into account functionality that will be handled by GameManager
-# remove unnecessary returns from check_winner
 
 class Game:
     winning_positions = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]]
@@ -48,20 +46,14 @@ class Game:
         Returns the winning position and True if there is, None and False otherwise.
         '''
         # if there have been less than 5 turns, there can't be a winner
-        if len(self.available_positions) > 4:
-            winning_position = None
-            winner = False
-            return winning_position, winner
+        if len(self.board.available_positions) > 4:
+            return None 
 
         for positions in self.winning_positions:
-            if ''.join([self.current_positions[i] for i in positions]) == self.current_player.marker * 3:
-                winning_position = positions
-                winner = True
-                return winning_position, winner
+            if ''.join([self.board.markers[i] for i in positions]) == self.current_player.marker * 3:
+                return positions 
 
-        winning_position = None
-        winner = False
-        return winning_position, winner
+        return None 
 
     def display_winner(self, player, winning_position) -> None:
         '''
