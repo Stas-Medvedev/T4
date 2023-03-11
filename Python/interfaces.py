@@ -11,6 +11,9 @@ class Board(Protocol):
         ...
 
 class Player(Protocol):
+    name: str
+    marker: str
+    
     def take_turn(self, board: Board) -> int:
         ...
 

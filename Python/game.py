@@ -80,4 +80,7 @@ class Game:
         Repeat
         '''
         self.accept_turn()
-        # self.check_winner()
+        winning_position = self.check_winner()
+        if winning_position:
+            self.display_winner(self.current_player, winning_position)
+            print(f'\n{self.current_player.name}')
