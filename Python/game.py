@@ -79,11 +79,12 @@ class Game:
         Change player
         Repeat
         '''
-        self.accept_turn()
-        winning_position = self.check_winner()
-        if winning_position:
-            self.display_winner(self.current_player, winning_position)
-            print(f'\n{self.current_player.name} won!\n')
-            return
-        
-        self.change_current_player()
+        while True:
+            self.accept_turn()
+            winning_position = self.check_winner()
+            if winning_position:
+                self.display_winner(self.current_player, winning_position)
+                print(f'\n{self.current_player.name} won!\n')
+                return
+            
+            self.change_current_player()
