@@ -37,7 +37,6 @@ class Game:
         '''
 
         self.board.update(position, self.current_player.marker)
-        # self.display_grid(self.current_positions)
         
 
     def check_winner(self) -> list | None:
@@ -74,6 +73,7 @@ class Game:
         Action order:
         ============
         Take turn
+        Display board
         Check winner
         If winner: display winner and end game
         Change player
@@ -81,6 +81,7 @@ class Game:
         '''
         while True:
             self.accept_turn()
+            self.ui.display_board(self.board.markers)
             winning_position = self.check_winner()
             if winning_position:
                 self.display_winner(self.current_player, winning_position)
