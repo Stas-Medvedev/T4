@@ -92,5 +92,6 @@ class Game:
             
             if self.board.available_positions == []:
                 print("\nIt's a tie.\n")
+                return
             
             self.change_current_player()
