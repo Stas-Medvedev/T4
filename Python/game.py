@@ -67,9 +67,7 @@ class Game:
 
     def play(self) -> None:
         '''
-        Plays a game of tik-tak-toe
-        '''
-        '''
+        Plays a game of tic-tac-toe
         Action order:
         ============
         Take turn
