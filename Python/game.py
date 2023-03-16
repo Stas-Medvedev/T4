@@ -1,7 +1,5 @@
 from interfaces import Board, Player, UI
 
-#  Update display_winner to use UI and Player class items
-
 class Game:
     winning_positions = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]]
 
@@ -59,8 +57,8 @@ class Game:
         '''
         final_markers = [' '] * 9
         for i in winning_position:
-            final_markers[i] = player.marker
-        self.display_grid(final_markers)
+            final_markers[i] = self.current_player.marker
+        self.ui.display_board(final_markers)
         print(f'{player.name} won the game!')
 
     def play(self) -> None:
