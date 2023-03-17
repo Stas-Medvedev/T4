@@ -81,6 +81,8 @@ class GameManager:
         - [DONE] Instantiate game object
         - After a game is completed, check restart
         - Update scores if necessary
+
+        TODO: wrap game creation, check_restart, and score update into a while loop
         '''
         self.ui.display_instructions()
         players = self.get_players()
