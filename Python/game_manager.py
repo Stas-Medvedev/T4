@@ -79,13 +79,14 @@ class GameManager:
         - [DONE] Instantiate player objects
         - [DONE] Instantiate board object
         - [DONE] Instantiate game object
-        - After a game is completed, check restart
+        - [DONE] After a game is completed, check restart
         - Update scores if necessary
-
-        TODO: wrap game creation, check_restart, and score update into a while loop
         '''
         self.ui.display_instructions()
         players = self.get_players()
-        board = Board()
-        game = Game(players[0], players[1], board, self.ui)
-        restart = self.check_restart()
+        restart = True
+        while restart:
+            board = Board()
+            game = Game(players[0], players[1], board, self.ui)
+            game.play()
+            restart = self.check_restart()
