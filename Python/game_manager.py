@@ -11,6 +11,7 @@ class GameManager:
     '''
     def __init__(self):
         self.ui = UI()
+        self.scores = [0, 0, 0]
 
     def get_cpu_player_object(self, marker: str) -> Player:
         '''
