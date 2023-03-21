@@ -63,7 +63,7 @@ class Game:
         self.ui.display_board(final_markers)
         print(f'{player.name} won the game!')
 
-    def play(self) -> None:
+    def play(self) -> int:
         '''
         Plays a game of tic-tac-toe
         Action order:
@@ -84,10 +84,12 @@ class Game:
             if winning_position:
                 self.display_winner(self.current_player, winning_position)
                 print(f'\n{self.current_player.name} won!\n')
-                return
+                if self.current_player == self.player1:
+                    return 1
+                return 2
             
             if self.board.available_positions == []:
                 print("\nIt's a tie.\n")
-                return
+                return 0
             
             self.change_current_player()
