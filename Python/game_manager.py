@@ -89,5 +89,6 @@ class GameManager:
         while restart:
             board = Board()
             game = Game(players[0], players[1], board, self.ui)
-            game.play()
+            winner = game.play()
+            self.scores[winner] += 1
             restart = self.check_restart()
