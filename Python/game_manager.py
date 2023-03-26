@@ -57,7 +57,7 @@ class GameManager:
             
         return [player1, player2]
 
-    def check_restart():
+    def check_restart() -> bool:
         '''
         Checks if the player(s) would like to play another match.
         Returns True if yes, False if no.
@@ -71,7 +71,7 @@ class GameManager:
             return False
         return True
 
-    def run(self):
+    def run(self) -> None:
         '''
         Action order:
         ============
