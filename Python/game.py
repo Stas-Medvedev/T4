@@ -1,6 +1,9 @@
 from interfaces import Board, Player, UI
 
 class Game:
+    '''
+    Game class the manages an instance of one game and its dependencies.
+    '''
     winning_positions = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]]
 
     def __init__(self, player1: Player, player2: Player, board: Board, ui: UI) -> None:
@@ -11,6 +14,9 @@ class Game:
         self.ui = ui
 
     def change_current_player(self) -> None:
+        '''
+        Swaps the current player.
+        '''
         self.current_player = self.player2 if self.current_player == self.player1 else self.player1
 
     def accept_turn(self) -> None:
