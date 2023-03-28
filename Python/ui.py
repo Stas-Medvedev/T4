@@ -6,7 +6,7 @@ class UI:
         Prompts the user to make a player type selection, and returns a tuple of player types
         that is used to generate the appropriate player objects.
         '''
-        player_pairs = {'1': ("player", "player"), '2': ("player", "cpu"), '3': ("cpu", "player")}
+        player_pairs = {'1': ("human", "human"), '2': ("human", "cpu"), '3': ("cpu", "human")}
         print('1 - Player (X) vs Player (O)')
         print('2 - Player (X) vs CPU (O)')
         print('3 - CPU (X) vs Player (O)')
