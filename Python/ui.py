@@ -1,5 +1,6 @@
 class UI:
     
+    @staticmethod
     def get_player_selection() -> tuple[str, str]:
         '''
         Prompts the user to make a player type selection, and returns a tuple of player types
