@@ -26,7 +26,7 @@ class GameManager:
             return Hard_CPU_Player('CPU', marker)
 
     @staticmethod
-    def get_human_player_object(marker: str) -> Player:
+    def get_human_player_object(marker: str, order: int) -> Player:
         '''
         Returns a player object for human players.
         Takes marker as an argument passed from the calling function to make sure
@@ -34,13 +34,13 @@ class GameManager:
         This can be changed in the future, possibly allowing both players to play
         with the same marker.
         '''
-        name = input('Enter player name:')
+        name = input(f'Enter player name (player {order}): ')
 
         return Player(name, marker)
 
-    def get_player_object(self, player_type: str, marker: str) -> Player:
+    def get_player_object(self, player_type: str, marker: str, order: int) -> Player:
         if player_type == 'human':
-            player = self.get_human_player_object(marker)
+            player = self.get_human_player_object(marker, order)
         else:
             player = self.get_cpu_player_object(marker)
 
@@ -53,8 +53,8 @@ class GameManager:
         '''
         selection = self.ui.get_player_selection()
         
-        player1 = self.get_player_object(selection[0], 'X')
-        player2 = self.get_player_object(selection[1], 'O')
+        player1 = self.get_player_object(selection[0], 'X', 1)
+        player2 = self.get_player_object(selection[1], 'O', 2)
             
         return [player1, player2]
 
