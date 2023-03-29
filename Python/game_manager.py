@@ -25,6 +25,7 @@ class GameManager:
         else:
             return Hard_CPU_Player('CPU', marker)
 
+    @staticmethod
     def get_human_player_object(marker: str) -> Player:
         '''
         Returns a player object for human players.
