@@ -25,7 +25,7 @@ class Game:
         calls update_grid to update current_positions and available_positions,
         and displays the updated game grid.
         '''
-        position = self.current_player.take_turn(self)
+        position = self.current_player.take_turn(self.board)
         # The take_turn method should already be checking if the position is 
         # available. This is just to make sure. 
         while position not in self.board.available_positions:
