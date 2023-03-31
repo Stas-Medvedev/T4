@@ -87,7 +87,6 @@ class Game:
             
             if winning_position:
                 self.display_winner(self.current_player, winning_position)
-                print(f'\n{self.current_player.name} won!\n')
                 if self.current_player == self.player1:
                     return 1
                 return 2
