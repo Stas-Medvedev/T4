@@ -11,7 +11,6 @@ class GameManager:
     '''
     def __init__(self):
         self.ui = UI()
-        self.scores = [0, 0, 0]
 
     def get_cpu_player_object(self, marker: str) -> Player:
         '''
@@ -86,10 +85,12 @@ class GameManager:
         '''
         self.ui.display_instructions()
         players = self.get_players()
+        scores = [0, 0, 0]
         restart = True
         while restart:
             board = Board()
             game = Game(players[0], players[1], board, self.ui)
             winner = game.play()
             self.scores[winner] += 1
+            print(f'{players[0].name}: {scores[0]}  {players[1].name}: {scores[1]}  Ties: {scores[2]}')
             restart = self.check_restart()
