@@ -63,7 +63,7 @@ class Game:
         '''
         final_markers = [' '] * 9
         for i in winning_position:
-            final_markers[i] = self.current_player.marker
+            final_markers[i] = player.marker
         self.ui.display_board(final_markers)
         print(f'{player.name} won the game!')
 
