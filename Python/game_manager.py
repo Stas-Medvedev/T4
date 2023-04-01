@@ -57,6 +57,7 @@ class GameManager:
             
         return [player1, player2]
 
+    @staticmethod
     def check_restart() -> bool:
         '''
         Checks if the player(s) would like to play another match.
@@ -92,5 +93,5 @@ class GameManager:
             game = Game(players[0], players[1], board, self.ui)
             winner = game.play()
             scores[winner] += 1
-            print(f'{players[0].name}: {scores[0]}  {players[1].name}: {scores[1]}  Ties: {scores[2]}')
+            print(f'/nScores - {players[0].name}: {scores[0]}  {players[1].name}: {scores[1]}  Ties: {scores[2]}')
             restart = self.check_restart()
