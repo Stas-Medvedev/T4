@@ -91,6 +91,6 @@ class GameManager:
             board = Board()
             game = Game(players[0], players[1], board, self.ui)
             winner = game.play()
-            self.scores[winner] += 1
+            scores[winner] += 1
             print(f'{players[0].name}: {scores[0]}  {players[1].name}: {scores[1]}  Ties: {scores[2]}')
             restart = self.check_restart()
