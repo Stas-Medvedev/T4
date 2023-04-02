@@ -3,8 +3,10 @@ class Board:
     Class to hold the information on filled markers and available
     spaces for the current game.
     '''
-    available_positions = list(range(1,10))
-    markers = [' '] * 9
+
+    def __init__(self):
+        self.available_positions = list(range(1,10))
+        self.markers = [' '] * 9
 
     def update(self, position: int, marker: str) -> None:
         '''
