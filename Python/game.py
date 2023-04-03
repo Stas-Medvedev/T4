@@ -88,11 +88,11 @@ class Game:
             if winning_position:
                 self.display_winner(self.current_player, winning_position)
                 if self.current_player == self.player1:
-                    return 1
-                return 2
+                    return 0
+                return 1
             
             if self.board.available_positions == []:
                 print("\nIt's a tie.\n")
-                return 0
+                return 2
             
             self.change_current_player()
