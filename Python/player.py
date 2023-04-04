@@ -12,9 +12,9 @@ class Player:
 
     def take_turn(self, board: Board) -> int:
         available_positions_strings = [str(position) for position in board.available_positions]
-        position = input(f"{self.name}'s turn. Select a position {board.available_positions}:")
+        position = input(f"{self.name}'s turn. Select a position {board.available_positions}: ")
         while position not in available_positions_strings:
-            position = input(f"{self.name}'s turn. Select a position {board.available_positions}:")
+            position = input(f"{self.name}'s turn. Select a position {board.available_positions}: ")
             
         return int(position)
 
