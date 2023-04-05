@@ -67,7 +67,7 @@ class GameManager:
         '''
         restart = input('Play again? [Y]/N:').lower()
         while restart not in ['', 'y', 'n']:
-            restart = input('Play again? [Y]/N:').lower()
+            restart = input('Play again? [Y]/N: ').lower()
         if restart == 'n':
             return False
         return True
