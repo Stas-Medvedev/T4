@@ -10,9 +10,9 @@ class UI:
         print('1 - Player (X) vs Player (O)')
         print('2 - Player (X) vs CPU (O)')
         print('3 - CPU (X) vs Player (O)')
-        choice = input('Select game mode ([1],2,3):')
+        choice = input('Select game mode ([1],2,3): ')
         while choice not in ['', '1', '2', '3']:
-            choice = input('Select game mode ([1],2,3):')
+            choice = input('Select game mode ([1],2,3): ')
         if choice == '':
             choice = '1'
 
