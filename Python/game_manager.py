@@ -16,7 +16,7 @@ class GameManager:
         '''
         Return a CPU_Player object based on selected difficulty.
         '''
-        difficulty = self.select_CPU_difficulty()
+        difficulty = self.ui.select_CPU_difficulty()
         if difficulty == 'easy':
             return Easy_CPU_Player('CPU', marker)
         elif difficulty == 'medium':
