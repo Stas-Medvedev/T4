@@ -18,6 +18,7 @@ class UI:
 
         return player_pairs[choice]
         
+    @staticmethod
     def select_CPU_difficulty() -> str:
         '''
         Lets the user select CPU difficulty and returns a string that is used by
