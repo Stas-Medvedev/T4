@@ -25,9 +25,9 @@ class UI:
         get_cpu_player_object() to return the appropriate CPU_Player object.
         '''
         difficulties = {'1':'easy', '2':'medium', '3':'hard'}
-        choice = input('Select CPU difficulty: [1] - Easy, 2 - Medium, 3 - Hard:')
+        choice = input('Select CPU difficulty ([1] - Easy, 2 - Medium, 3 - Hard): ')
         while choice not in ['', '1', '2', '3']:
-                choice = input('Select CPU difficulty: [1] - Easy, 2 - Medium, 3 - Hard:')
+                choice = input('Select CPU difficulty ([1] - Easy, 2 - Medium, 3 - Hard): ')
         if choice == '':
             choice = '1'
         
