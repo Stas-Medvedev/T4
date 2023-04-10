@@ -65,7 +65,7 @@ class GameManager:
         Used as the conditional for the while loop in the main logic.
         Script ends when this function returns False.
         '''
-        restart = input('Play again? [Y]/N:').lower()
+        restart = input('Play again? [Y]/N: ').lower()
         while restart not in ['', 'y', 'n']:
             restart = input('Play again? [Y]/N: ').lower()
         if restart == 'n':
