@@ -57,21 +57,6 @@ class GameManager:
             
         return [player1, player2]
 
-    @staticmethod
-    def check_restart() -> bool:
-        '''
-        Checks if the player(s) would like to play another match.
-        Returns True if yes, False if no.
-        Used as the conditional for the while loop in the main logic.
-        Script ends when this function returns False.
-        '''
-        restart = input('Play again? [Y]/N: ').lower()
-        while restart not in ['', 'y', 'n']:
-            restart = input('Play again? [Y]/N: ').lower()
-        if restart == 'n':
-            return False
-        return True
-
     def run(self) -> None:
         '''
         Action order:
@@ -94,4 +79,4 @@ class GameManager:
             winner = game.play()
             scores[winner] += 1
             print(f'\nScores - {players[0].name}: {scores[0]}  {players[1].name}: {scores[1]}  Ties: {scores[2]}')
-            restart = self.check_restart()
+            restart = self.ui.check_restart()

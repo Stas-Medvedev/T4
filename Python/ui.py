@@ -32,6 +32,21 @@ class UI:
             choice = '1'
         
         return difficulties[choice]
+    
+    @staticmethod
+    def check_restart() -> bool:
+        '''
+        Checks if the player(s) would like to play another match.
+        Returns True if yes, False if no.
+        Used as the conditional for the while loop in the main logic.
+        Script ends when this function returns False.
+        '''
+        restart = input('Play again? [Y]/N: ').lower()
+        while restart not in ['', 'y', 'n']:
+            restart = input('Play again? [Y]/N: ').lower()
+        if restart == 'n':
+            return False
+        return True
 
     def display_board(self, markers: list[str]) -> None:
         '''
