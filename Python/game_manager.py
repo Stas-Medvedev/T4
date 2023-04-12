@@ -71,6 +71,7 @@ class GameManager:
         '''
         self.ui.display_instructions()
         players = self.get_players()
+        player_names = [players[0].name, players[1].name]
         scores = [0, 0, 0]
         restart = True
         while restart:
@@ -78,5 +79,5 @@ class GameManager:
             game = Game(players[0], players[1], board, self.ui)
             winner = game.play()
             scores[winner] += 1
-            print(f'\nScores - {players[0].name}: {scores[0]}  {players[1].name}: {scores[1]}  Ties: {scores[2]}')
+            self.ui.display_scores(player_names, scores)
             restart = self.ui.check_restart()

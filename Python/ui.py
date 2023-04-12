@@ -70,3 +70,7 @@ class UI:
         '''
         print('Classic tic-tac-toe. To play, select a position number to place your marker according to the grid below')
         self.display_board([str(x) for x in range(1, 10)])
+
+    @staticmethod
+    def display_scores(player_names: list[str], scores: list[int]) -> None:
+        print(f'\nScores - {player_names[0]}: {scores[0]}  {player_names[1]}: {scores[1]}  Ties: {scores[2]}')
