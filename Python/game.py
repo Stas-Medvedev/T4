@@ -30,7 +30,7 @@ class Game:
         # available. This is just to make sure. 
         while position not in self.board.available_positions:
             print(f'{position} is not an available position.')
-            position = self.current_player.take_turn(self)
+            position = self.current_player.take_turn(self.board)
 
         '''
         update_grid and display_grid methods have been removed. There are
