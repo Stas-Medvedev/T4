@@ -220,7 +220,7 @@ class Hard_CPU_Player(Player):
 
         move_strategies = [self.can_win, self.need_to_cover, self.check_diagonal_case]
         for strategy in move_strategies:
-            position = strategy()
+            position = strategy(board)
             if position: return position
         # position = self.can_win()
         # if position: return position
