@@ -39,7 +39,7 @@ class Hard_CPU_Player(Player):
         for positions in self.WINNING_POSITIONS:
             total = 0
             for position in positions:
-                current_position = board.current_markers[position]
+                current_position = board.markers[position]
                 # if there's an opponent's marker in the current winning position,
                 # move on to the next winning position
                 if current_position != self.marker and current_position != ' ': break
