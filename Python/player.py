@@ -57,7 +57,7 @@ class Hard_CPU_Player(Player):
         for positions in self.WINNING_POSITIONS:
             total = 0
             for position in positions:
-                current_position = board.current_markers[position]
+                current_position = board.markers[position]
                 if current_position != self.marker and current_position != ' ':
                     total += 1
                 if current_position == ' ': blank = position
