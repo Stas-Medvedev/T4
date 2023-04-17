@@ -229,7 +229,7 @@ class Hard_CPU_Player(Player):
         # position = self.check_diagonal_case
         # if position: return position
         for own in [True, False]:
-            position = self.can_fork(own=own)
+            position = self.can_fork(own=own, board=board)
             if position: return position
 
         return self.take_corner_or_side()
