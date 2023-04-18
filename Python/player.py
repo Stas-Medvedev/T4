@@ -189,12 +189,12 @@ class Hard_CPU_Player(Player):
         # the center position has an own marker,
         # either of the corner combinations have opponent's markers
         if len(board.available_positions) != 6: return 0
-        if not self.check_marker(board.current_markers[4], own=True): return 0
+        if not self.check_marker(board.markers[4], own=True): return 0
         
-        corner_1 = self.check_marker(board.current_markers[0], own=False)
-        corner_9 = self.check_marker(board.current_markers[8], own=False)
-        corner_3 = self.check_marker(board.current_markers[3], own=False)
-        corner_7 = self.check_marker(board.current_markers[6], own=False)
+        corner_1 = self.check_marker(board.markers[0], own=False)
+        corner_9 = self.check_marker(board.markers[8], own=False)
+        corner_3 = self.check_marker(board.markers[3], own=False)
+        corner_7 = self.check_marker(board.markers[6], own=False)
         if (corner_1 and corner_9) or (corner_3 and corner_7):
             sides = [2, 4, 6, 8]
             return random.choice(sides)
