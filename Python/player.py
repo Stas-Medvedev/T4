@@ -105,7 +105,7 @@ class Hard_CPU_Player(Player):
             current_candidate = []
             add_to_list = True
             for position in positions:
-                current_position = board.current_markers[position]
+                current_position = board.markers[position]
                 # if current position is an opposite marker, we can't fork,
                 # so move on to the next set of winning positions
                 if self.check_marker(current_position, not own):
