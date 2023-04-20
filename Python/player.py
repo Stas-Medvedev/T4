@@ -1,6 +1,8 @@
 import random
 from interfaces import Board
 
+# TODO: One of Hard CPU turn functions returns a None. Needs to be fixed.
+
 class Player:
     '''
     Player class for human player.
