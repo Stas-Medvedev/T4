@@ -2,6 +2,7 @@ import random
 from interfaces import Board
 
 # TODO: One of Hard CPU turn functions returns a None. Needs to be fixed.
+#       - Add unit tests for this
 
 class Player:
     '''
