@@ -26,8 +26,8 @@ class Game:
         and displays the updated game grid.
         '''
         position = self.current_player.take_turn(self.board)
-        # The take_turn method should already be checking if the position is 
-        # available. This is just to make sure. 
+        # The take_turn method for human player checks if the position is 
+        # available. This ensures that a CPU move is valid too. 
         while position not in self.board.available_positions:
             print(f'{position} is not an available position.')
             position = self.current_player.take_turn(self.board)
