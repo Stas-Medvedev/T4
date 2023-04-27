@@ -1,8 +1,7 @@
 # TODO:
-#       Write unit tests
 #       Start running the code to debug:
 #           - Player vs Player [DONE]
-#           - Player vs Easy CPU
+#           - Player vs Easy CPU [DONE]
 #           - Player vs Medium CPU
 #           - Player vs Hard CPU
 
