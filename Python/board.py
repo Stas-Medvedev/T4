@@ -11,6 +11,8 @@ class Board:
     def update(self, position: int, marker: str) -> None:
         '''
         Updates the board with the most recent marker.
+        Position is a number between 1 and 9, hence (position - 1)
+        is used for indexing.
         '''
         self.markers[position - 1] = marker
         self.available_positions.remove(position)
