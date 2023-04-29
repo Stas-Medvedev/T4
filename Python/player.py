@@ -8,7 +8,6 @@ class Player:
     '''
     Player class for human player.
     '''
-    
     def __init__(self, name: str, marker:str) -> None:
         self.name = name
         self.marker = marker
