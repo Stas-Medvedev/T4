@@ -1,4 +1,4 @@
-from Python import player
+import player
 from board import Board
 from pytest import MonkeyPatch
 
