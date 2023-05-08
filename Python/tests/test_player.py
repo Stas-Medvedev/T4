@@ -5,6 +5,7 @@ from pytest import MonkeyPatch
 # Look into parameterizing tests for CPU players with different boards
 # Create multiple boards for different games scenarios
 # and test each CPU class on those boards (mostly, this is for Hard CPU)
+# docs for reference: https://docs.pytest.org/en/6.2.x/parametrize.html
 
 def test_human_player(monkeypatch: MonkeyPatch) -> None:
     test_player = player.Player(name='Test', marker='X')
