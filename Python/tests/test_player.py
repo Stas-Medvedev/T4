@@ -9,15 +9,32 @@ from pytest import MonkeyPatch
 
 # Generating boards for testing:
 # Need at least one board to test each of the Hard_CPU move sub-routines
+# 
 # Sub-routines and boards
 # =======================
-# Take 5 if available
-# 2nd move   1st move
-#  | |X       | |
-# -+-+-      -+-+-  
+# 
+# Take 5 if available:
+# As X       As O
+#  | |       X| |
+# -+-+-      -+-+-
 #  | |        | |
-# -+-+-      -+-+- 
+# -+-+-      -+-+-
 #  | |        | | 
+#
+# Can win:
+# As X       As O
+#  | |X      X|X|
+# -+-+-      -+-+-
+# O|x|        |X|
+# -+-+-      -+-+-
+#  |O|       O| |O
+# 
+# As X       As O
+# X| |X      X|O|
+# -+-+-      -+-+-
+# O|x|       X|X|O
+# -+-+-      -+-+-
+# O|O|        |X|O
 
 def test_human_player(monkeypatch: MonkeyPatch) -> None:
     test_player = player.Player(name='Test', marker='X')
