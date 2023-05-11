@@ -35,6 +35,14 @@ from pytest import MonkeyPatch
 # O|x|       X|X|O
 # -+-+-      -+-+-
 # O|O|        |X|O
+#
+# Need to cover:
+# As X       As O
+#  | |O      O|X|
+# -+-+-      -+-+-
+# X|O|       X|X|
+# -+-+-      -+-+-
+#  |X|        |O|
 
 def test_human_player(monkeypatch: MonkeyPatch) -> None:
     test_player = player.Player(name='Test', marker='X')
