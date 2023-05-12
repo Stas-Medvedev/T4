@@ -43,6 +43,14 @@ from pytest import MonkeyPatch
 # X|O|       X|X|
 # -+-+-      -+-+-
 #  |X|        |O|
+#
+# Check diagonal case:
+# As O       As O
+# X| |        | |X
+# -+-+-      -+-+-
+#  |O|        |O|
+# -+-+-      -+-+-
+#  | |X      X| |
 
 def test_human_player(monkeypatch: MonkeyPatch) -> None:
     test_player = player.Player(name='Test', marker='X')
