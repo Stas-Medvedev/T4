@@ -7,6 +7,10 @@ from pytest import MonkeyPatch
 # and test each CPU class on those boards (mostly, this is for Hard CPU)
 # docs for reference: https://docs.pytest.org/en/6.2.x/parametrize.html
 
+# The boards below are intended to be used as tests for Hard_CPU_Player.take_turn()
+# They can also be used as test for individual turn sub-functions
+# as long as expected returns are adjusted accordingly.
+
 # Generating boards for testing:
 # Need at least one board to test each of the Hard_CPU move sub-routines
 # 
@@ -53,6 +57,12 @@ from pytest import MonkeyPatch
 #  | |X      X| |
 #
 # Can fork:
+# As X       As O
+# X| |        |X|
+# -+-+-      -+-+-
+# O|X|       X|O|X
+# -+-+-      -+-+-
+#  | |O       |O|
 
 def test_human_player(monkeypatch: MonkeyPatch) -> None:
     test_player = player.Player(name='Test', marker='X')
