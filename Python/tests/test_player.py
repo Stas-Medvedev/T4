@@ -63,6 +63,21 @@ from pytest import MonkeyPatch
 # O|X|       X|O|X
 # -+-+-      -+-+-
 #  | |O       |O|
+# 
+# Take corner or side:
+# As X       As O
+#  |O|X       | |X
+# -+-+-      -+-+-
+#  |X|O      X|X|O
+# -+-+-      -+-+-
+# O|X|O      O| |
+# 
+# As X       As O
+#  | |        | |
+# -+-+-      -+-+-
+#  |X|        |X|
+# -+-+-      -+-+-
+# O| |        | |
 
 def test_human_player(monkeypatch: MonkeyPatch) -> None:
     test_player = player.Player(name='Test', marker='X')
