@@ -78,6 +78,8 @@ from pytest import MonkeyPatch
 #  |X|        |X|
 # -+-+-      -+-+-
 # O| |        | |
+# 
+# Convert tha above boards into arrays for Board objects
 
 def test_human_player(monkeypatch: MonkeyPatch) -> None:
     test_player = player.Player(name='Test', marker='X')
