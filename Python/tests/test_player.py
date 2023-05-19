@@ -85,6 +85,12 @@ from pytest import MonkeyPatch
 # Convert tha above boards into arrays for Board objects
 # Need to create available_positions and markers arrays
 
+def convert_board_string(board_string: str) -> Board:
+    '''
+    Converts a multiline string representation of a board into a Board object
+    '''
+    pass
+
 def test_human_player(monkeypatch: MonkeyPatch) -> None:
     test_player = player.Player(name='Test', marker='X')
     board = Board()
