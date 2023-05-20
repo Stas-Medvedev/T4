@@ -89,6 +89,12 @@ def convert_board_string(board_string: str) -> Board:
     '''
     Converts a multiline string representation of a board into a Board object
     '''
+    # Don't validate string fomat
+    # Split the string on new line
+    # Take entries 4, 2, and 0
+    # Split those on the pipe character
+    # Combine and move all to the markers array
+    # Add empty spaces to the available_positions array
     pass
 
 def test_human_player(monkeypatch: MonkeyPatch) -> None:
