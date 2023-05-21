@@ -95,7 +95,10 @@ def convert_board_string(board_string: str) -> Board:
     # Split those on the pipe character
     # Combine and move all to the markers array
     # Add empty spaces to the available_positions array
-    pass
+    board_string = board_string.split('\n')
+    board_string = board_string[-1::-2]
+    board_string = ''.join(board_string)
+
 
 def test_human_player(monkeypatch: MonkeyPatch) -> None:
     test_player = player.Player(name='Test', marker='X')
