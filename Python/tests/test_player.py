@@ -97,7 +97,9 @@ def convert_board_string(board_string: str) -> Board:
     # Add empty spaces to the available_positions array
     board_string = board_string.split('\n')
     board_string = board_string[-1::-2]
-    board_string = ''.join(board_string)
+    board_string = '|'.join(board_string)
+    markers = board_string.split('|')
+    available_positions = [i+1 for i in range(9) if markers[i]==' ']
 
 
 def test_human_player(monkeypatch: MonkeyPatch) -> None:
