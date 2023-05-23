@@ -100,6 +100,7 @@ def convert_board_string(board_string: str) -> Board:
     board_string = '|'.join(board_string)
     markers = board_string.split('|')
     available_positions = [i+1 for i in range(9) if markers[i]==' ']
+    # Add the above to a Board object
 
 
 def test_human_player(monkeypatch: MonkeyPatch) -> None:
