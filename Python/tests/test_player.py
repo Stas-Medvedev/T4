@@ -85,24 +85,6 @@ from pytest import MonkeyPatch
 # Convert tha above boards into arrays for Board objects
 # Need to create available_positions and markers arrays
 
-def convert_board_string(board_string: str) -> Board:
-    '''
-    Converts a multiline string representation of a board into a Board object
-    '''
-    # Don't validate string fomat
-    # Split the string on new line
-    # Take entries 4, 2, and 0
-    # Split those on the pipe character
-    # Combine and move all to the markers array
-    # Add empty spaces to the available_positions array
-    board_string = board_string.split('\n')
-    board_string = board_string[-1::-2]
-    board_string = '|'.join(board_string)
-    markers = board_string.split('|')
-    available_positions = [i+1 for i in range(9) if markers[i]==' ']
-    # Add the above to a Board object
-
-
 def test_human_player(monkeypatch: MonkeyPatch) -> None:
     test_player = player.Player(name='Test', marker='X')
     board = Board()

@@ -16,3 +16,21 @@ class Board:
         '''
         self.markers[position - 1] = marker
         self.available_positions.remove(position)
+
+    @classmethod
+    def board_from_string(cls, board_string: str):
+        '''
+        Converts a multiline string representation of a board into a Board object
+        '''
+        # Don't validate string fomat
+        # Split the string on new line
+        # Take entries 4, 2, and 0
+        # Split those on the pipe character
+        # Combine and move all to the markers array
+        # Add empty spaces to the available_positions array
+        board_string = board_string.split('\n')
+        board_string = board_string[-1::-2]
+        board_string = '|'.join(board_string)
+        markers = board_string.split('|')
+        available_positions = [i+1 for i in range(9) if markers[i]==' ']
+        # Add the above to a Board object
