@@ -17,8 +17,8 @@ class Board:
         self.markers[position - 1] = marker
         self.available_positions.remove(position)
 
-    @classmethod
-    def board_from_string(cls, board_string: str):
+    @staticmethod
+    def from_string(board_string: str) -> 'Board':
         '''
         Converts a multiline string representation of a board into a Board object
         '''
@@ -34,3 +34,8 @@ class Board:
         markers = board_string.split('|')
         available_positions = [i+1 for i in range(9) if markers[i]==' ']
         # Add the above to a Board object
+        board = Board()
+        board.available_positions = available_positions
+        board.markers = markers
+        
+        return board
