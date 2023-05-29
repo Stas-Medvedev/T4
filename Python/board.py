@@ -22,6 +22,8 @@ class Board:
         '''
         Converts a multiline string representation of a board into a Board object
         '''
+        # TODO: Check for extraneous spaces at the beginning and end of the line
+        #       and raise an error if they are found
         # Don't validate string fomat
         # Split the string on new line
         # Take entries 4, 2, and 0
