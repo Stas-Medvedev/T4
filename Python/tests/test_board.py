@@ -7,3 +7,4 @@ def test_update_board() -> None:
     assert board.markers == ['X'] + [' ']*8
 
 # TODO: Write several test for various possible from_string inputs
+# Can use some from test cases for player
