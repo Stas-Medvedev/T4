@@ -10,4 +10,8 @@ def test_update_board() -> None:
 # Can use some from test cases for player
 
 def test_from_string() -> None:
-    pass
+    board_string = ''' | |
+-+-+-
+ | | 
+-+-+-
+ | | '''
