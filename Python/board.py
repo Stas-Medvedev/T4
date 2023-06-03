@@ -22,9 +22,7 @@ class Board:
         '''
         Converts a multiline string representation of a board into a Board object
         '''
-        # TODO: Check for extraneous spaces at the beginning and end of the line
-        #       and raise an error if they are found
-        # Don't validate string fomat
+        # Validate string fomat
         # Split the string on new line
         # Take entries 4, 2, and 0
         # Split those on the pipe character
@@ -32,6 +30,12 @@ class Board:
         # Add empty spaces to the available_positions array
         board_string = board_string.split('\n')
         board_string = board_string[-1::-2]
+
+        # check to make sure rows have the correct number of characters
+        for i in range(len(board_string)):
+            if len(board_string[i]) > 5: raise ValueError(f"Too many characters in row {i+1}")
+            if len(board_string[i] < 5): raise ValueError(f"Not enough characters in row {i+1}")
+
         board_string = '|'.join(board_string)
         markers = board_string.split('|')
         available_positions = [i+1 for i in range(9) if markers[i]==' ']
