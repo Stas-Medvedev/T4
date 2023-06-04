@@ -28,16 +28,26 @@ class Board:
         # Split those on the pipe character
         # Combine and move all to the markers array
         # Add empty spaces to the available_positions array
+
+        # Take the rows in the reverse order because the first row is 
+        # at the end of the input string and skip the separator rows 
         board_string = board_string.split('\n')
         board_string = board_string[-1::-2]
 
-        # check to make sure rows have the correct number of characters
+        # Check to make sure rows have the correct number of characters
         for i in range(len(board_string)):
             if len(board_string[i]) > 5: raise ValueError(f"Too many characters in row {i+1}")
             if len(board_string[i] < 5): raise ValueError(f"Not enough characters in row {i+1}")
 
+        # Add '|' to join rows so that all characters are separated by the same character
+        # It makes splitting in the next step easier
         board_string = '|'.join(board_string)
         markers = board_string.split('|')
+
+        # TODO: Add a check to make sure that there are no more than two 
+        # markers and spaces and that the numbers of spaces occupied by each
+        # marker are within one of each other
+        
         available_positions = [i+1 for i in range(9) if markers[i]==' ']
         # Add the above to a Board object
         board = cls()
