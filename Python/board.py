@@ -1,3 +1,5 @@
+from collections import Counter
+
 class Board:
     '''
     Class to hold the information on filled markers and available
@@ -47,7 +49,17 @@ class Board:
         # TODO: Add a check to make sure that there are no more than two 
         # markers and spaces and that the numbers of spaces occupied by each
         # marker are within one of each other
-        
+        c = Counter(markers)
+        # TODO:
+        # Make sure there are 3 or fewer keys in the counter
+        # If there is only one key, make sure it's the space
+        # If there are two keys, and space is one of them, make sure count for space is 8
+        # If there are two keys, and space is not one of them, make sure the counts
+        # for the markers are 5 and 4
+        # If there are three keys, make sure that the counts for the markers that are not
+        # space are within one of each other 
+
+
         available_positions = [i+1 for i in range(9) if markers[i]==' ']
         # Add the above to a Board object
         board = cls()
