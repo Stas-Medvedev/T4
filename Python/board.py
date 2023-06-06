@@ -49,7 +49,7 @@ class Board:
         # TODO: Add a check to make sure that there are no more than two 
         # markers and spaces and that the numbers of spaces occupied by each
         # marker are within one of each other
-        c = Counter(markers)
+        marker_counter = Counter(markers)
         # TODO:
         # Make sure there are 3 or fewer keys in the counter
         # If there is only one key, make sure it's the space
