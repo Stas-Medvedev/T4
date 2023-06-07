@@ -52,6 +52,7 @@ class Board:
         marker_counter = Counter(markers)
         # TODO:
         # Make sure there are 3 or fewer keys in the counter
+        if len(marker_counter.keys()) > 3: raise ValueError('Too many markers')
         # If there is only one key, make sure it's the space
         # If there are two keys, and space is one of them, make sure count for space is 8
         # If there are two keys, and space is not one of them, make sure the counts
