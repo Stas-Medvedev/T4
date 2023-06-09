@@ -55,6 +55,7 @@ class Board:
         # Make sure there are 3 or fewer keys in the counter
         if len(key_list) > 3: raise ValueError('Too many markers')
         # If there is only one key, make sure it's the space
+        if len(key_list) == 1 and ' ' not in key_list: raise ValueError('Invalid board: only 1 marker')
         # If there are two keys, and space is one of them, make sure count for space is 8
         # If there are two keys, and space is not one of them, make sure the counts
         # for the markers are 5 and 4
