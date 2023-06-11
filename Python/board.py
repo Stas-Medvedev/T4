@@ -61,10 +61,10 @@ class Board:
         # If there are two keys, and space is one of them, make sure count for space is 8
         if len(key_list) == 2 and marker_counter[' '] != 8:
             raise ValueError('Invalid board: only one marker passed, and it appears too many times')
-        # If there are two keys, and space is not one of them, make sure the counts
-        # for the markers are 5 and 4
-        # If there are three keys, make sure that the counts for the markers that are not
-        # space are within one of each other 
+        # If there are two keys, and space is not one of them,
+        # make sure the counts for the markers are 5 and 4
+        # If there are three keys, make sure that the counts 
+        # for the markers that are not space are within one of each other 
 
 
         available_positions = [i+1 for i in range(9) if markers[i]==' ']
