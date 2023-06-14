@@ -66,7 +66,7 @@ class Board:
         # If there are two keys, and space is not one of them,
         # make sure the counts for the markers are 5 and 4
             else: # if ' ' not in key_list
-                pass # add check
+                pass # add check, preferrably something without too many ifs
         # If there are three keys, make sure that the counts 
         # for the markers that are not space are within one of each other 
 
