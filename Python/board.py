@@ -51,9 +51,9 @@ class Board:
         # marker are within one of each other
         marker_counter = Counter(markers)
         key_list = list(marker_counter.keys())
+        key_list_len = len(key_list)
         # TODO:
         # Make sure there are 3 or fewer keys in the counter
-        key_list_len = len(key_list)
         if key_list_len > 3:
             raise ValueError('Invalid board: too many markers')
         # If there is only one key, make sure it's the space
