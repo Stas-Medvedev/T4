@@ -67,7 +67,9 @@ class Board:
         # If there are two keys, and space is not one of them,
         # make sure the counts for the markers are 5 and 4
             else: # if ' ' not in key_list
-                pass # add check, preferrably something without too many ifs
+                marker_counts = [marker_counter[key_list[0]], marker_counter[key_list[1]]]
+                if marker_counts not in [[5,4], [4,5]]:
+                    raise ValueError('Invalid board: marker counts have to be 5 and 4 for a full board')
         # If there are three keys, make sure that the counts 
         # for the markers that are not space are within one of each other 
 
