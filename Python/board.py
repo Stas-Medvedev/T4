@@ -58,10 +58,10 @@ class Board:
         if key_list_len > 3:
             raise ValueError('Invalid board: too many markers')
         # If there is only one key, make sure it's the space
-        if len(key_list) == 1 and ' ' not in key_list:
+        if key_list_len == 1 and ' ' not in key_list:
             raise ValueError('Invalid board: only 1 marker')
         # If there are two keys, and space is one of them, make sure count for space is 8
-        if len(key_list) == 2:
+        if key_list_len == 2:
             if ' ' in key_list:
                 if marker_counter[' '] != 8:
                     raise ValueError('Invalid board: only one marker passed, and it appears more than once')
