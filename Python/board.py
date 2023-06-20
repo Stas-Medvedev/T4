@@ -73,7 +73,9 @@ class Board:
                     raise ValueError('Invalid board: marker counts have to be 5 and 4 for a full board')
         # If there are three keys, make sure that the counts 
         # for the markers that are not space are within one of each other 
-
+        if key_list_len == 3:
+            if ' ' not in key_list:
+                raise ValueError('Invalid board: too many markers')
 
         available_positions = [i+1 for i in range(9) if markers[i]==' ']
         # Add the above to a Board object
