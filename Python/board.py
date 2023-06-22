@@ -76,7 +76,7 @@ class Board:
         if key_list_len == 3:
             if ' ' not in key_list:
                 raise ValueError('Invalid board: too many markers')
-            # decide on how to extract the non-space markers
+            non_space_markers = [marker for marker in key_list if marker != ' ']
 
         available_positions = [i+1 for i in range(9) if markers[i]==' ']
         # Add the above to a Board object
