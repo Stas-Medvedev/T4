@@ -77,6 +77,8 @@ class Board:
             if ' ' not in key_list:
                 raise ValueError('Invalid board: too many markers')
             non_space_markers = [marker for marker in key_list if marker != ' ']
+            if abs(marker_counter[non_space_markers[0]] - marker_counter[non_space_markers[1]]) != 1:
+                raise ValueError('Invalid board: one of the markers appears too many times')
 
         available_positions = [i+1 for i in range(9) if markers[i]==' ']
         # Add the above to a Board object
