@@ -71,13 +71,14 @@ class Board:
                 marker_counts = [marker_counter[key_list[0]], marker_counter[key_list[1]]]
                 if marker_counts not in [[5,4], [4,5]]:
                     raise ValueError('Invalid board: marker counts have to be 5 and 4 for a full board')
-        # If there are three keys, make sure that the counts 
-        # for the markers that are not space are within one of each other 
+        # If there are three keys, make sure that the counts:
+        # Check for ' '. If it's not in, there are too many markers.
+        # If it's in, make sure the counts of other markers are within one of each other 
         if key_list_len == 3:
             if ' ' not in key_list:
                 raise ValueError('Invalid board: too many markers')
-            non_space_markers = [marker for marker in key_list if marker != ' ']
-            if abs(marker_counter[non_space_markers[0]] - marker_counter[non_space_markers[1]]) != 1:
+            marker_1, marker_2 = [marker for marker in key_list if marker != ' ']
+            if abs(marker_counter[marker_1] - marker_counter[marker_2]) > 1:
                 raise ValueError('Invalid board: one of the markers appears too many times')
 
         available_positions = [i+1 for i in range(9) if markers[i]==' ']
