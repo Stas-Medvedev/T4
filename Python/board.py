@@ -46,20 +46,16 @@ class Board:
         board_string = '|'.join(board_string)
         markers = board_string.split('|')
 
-        # TODO: Add a check to make sure that there are no more than two 
-        # markers and spaces and that the numbers of spaces occupied by each
-        # marker are within one of each other
         # TODO: move the check into a separate function
         marker_counter = Counter(markers)
         key_list = list(marker_counter.keys())
         key_list_len = len(key_list)
-        # TODO:
         # Make sure there are 3 or fewer keys in the counter
         if key_list_len > 3:
             raise ValueError('Invalid board: too many markers')
         # If there is only one key, make sure it's the space
         if key_list_len == 1 and ' ' not in key_list:
-            raise ValueError('Invalid board: only 1 marker')
+            raise ValueError('Invalid board: only one marker passed with no spaces')
         # If there are two keys, and space is one of them, make sure count for space is 8
         if key_list_len == 2:
             if ' ' in key_list:
@@ -67,11 +63,11 @@ class Board:
                     raise ValueError('Invalid board: only one marker passed, and it appears more than once')
         # If there are two keys, and space is not one of them,
         # make sure the counts for the markers are 5 and 4
-            else: # if ' ' not in key_list
+            else:
                 marker_counts = [marker_counter[key_list[0]], marker_counter[key_list[1]]]
                 if marker_counts not in [[5,4], [4,5]]:
                     raise ValueError('Invalid board: marker counts have to be 5 and 4 for a full board')
-        # If there are three keys, make sure that the counts:
+        # If there are three keys:
         # Check for ' '. If it's not in, there are too many markers.
         # If it's in, make sure the counts of other markers are within one of each other 
         if key_list_len == 3:
