@@ -19,6 +19,10 @@ class Board:
         self.markers[position - 1] = marker
         self.available_positions.remove(position)
 
+    @staticmethod
+    def check_board_string(board_string: str) -> None:
+        pass
+
     @classmethod
     def from_string(cls, board_string: str) -> 'Board':
         '''
