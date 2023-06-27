@@ -20,37 +20,7 @@ class Board:
         self.available_positions.remove(position)
 
     @staticmethod
-    def check_board_string(board_string: str) -> None:
-        pass
-
-    @classmethod
-    def from_string(cls, board_string: str) -> 'Board':
-        '''
-        Converts a multiline string representation of a board into a Board object
-        '''
-        # Validate string fomat
-        # Split the string on new line
-        # Take entries 4, 2, and 0
-        # Split those on the pipe character
-        # Combine and move all to the markers array
-        # Add empty spaces to the available_positions array
-
-        # Take the rows in the reverse order because the first row is 
-        # at the end of the input string and skip the separator rows 
-        board_string = board_string.split('\n')
-        board_string = board_string[-1::-2]
-
-        # Check to make sure rows have the correct number of characters
-        for i in range(len(board_string)):
-            if len(board_string[i]) > 5: raise ValueError(f"Too many characters in row {i+1}")
-            if len(board_string[i] < 5): raise ValueError(f"Not enough characters in row {i+1}")
-
-        # Add '|' to join rows so that all characters are separated by the same character
-        # It makes splitting in the next step easier
-        board_string = '|'.join(board_string)
-        markers = board_string.split('|')
-
-        # TODO: move the check into a separate function
+    def check_board_string(markers: list[str]) -> None:
         marker_counter = Counter(markers)
         key_list = list(marker_counter.keys())
         key_list_len = len(key_list)
@@ -80,6 +50,34 @@ class Board:
             marker_1, marker_2 = [marker for marker in key_list if marker != ' ']
             if abs(marker_counter[marker_1] - marker_counter[marker_2]) > 1:
                 raise ValueError('Invalid board: one of the markers appears too many times')
+
+    @classmethod
+    def from_string(cls, board_string: str) -> 'Board':
+        '''
+        Converts a multiline string representation of a board into a Board object
+        '''
+        # Validate string fomat
+        # Split the string on new line
+        # Take entries 4, 2, and 0
+        # Split those on the pipe character
+        # Combine and move all to the markers array
+        # Add empty spaces to the available_positions array
+
+        # Take the rows in the reverse order because the first row is 
+        # at the end of the input string and skip the separator rows 
+        board_string = board_string.split('\n')
+        board_string = board_string[-1::-2]
+
+        # Check to make sure rows have the correct number of characters
+        for i in range(len(board_string)):
+            if len(board_string[i]) > 5: raise ValueError(f"Too many characters in row {i+1}")
+            if len(board_string[i] < 5): raise ValueError(f"Not enough characters in row {i+1}")
+
+        # Add '|' to join rows so that all characters are separated by the same character
+        # It makes splitting in the next step easier
+        board_string = '|'.join(board_string)
+        markers = board_string.split('|')
+        cls.check_board_string(markers)
 
         available_positions = [i+1 for i in range(9) if markers[i]==' ']
         # Add the above to a Board object
