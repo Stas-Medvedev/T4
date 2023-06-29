@@ -20,7 +20,7 @@ class Board:
         self.available_positions.remove(position)
 
     @staticmethod
-    def check_board_string(markers: list[str]) -> None:
+    def check_board_markers(markers: list[str]) -> None:
         marker_counter = Counter(markers)
         key_list = list(marker_counter.keys())
         key_list_len = len(key_list)
@@ -79,7 +79,7 @@ class Board:
         markers = board_string.split('|')
         # TODO: either rename check_board_string or pass a different object to match
         # the name to function behavior
-        cls.check_board_string(markers)
+        cls.check_board_markers(markers)
 
         available_positions = [i+1 for i in range(9) if markers[i]==' ']
         # Add the above to a Board object
