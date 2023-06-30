@@ -77,8 +77,7 @@ class Board:
         # It makes splitting in the next step easier
         board_string = '|'.join(board_string)
         markers = board_string.split('|')
-        # TODO: either rename check_board_string or pass a different object to match
-        # the name to function behavior
+        
         cls.check_board_markers(markers)
 
         available_positions = [i+1 for i in range(9) if markers[i]==' ']
