@@ -63,6 +63,8 @@ class Board:
         # Combine and move all to the markers array
         # Add empty spaces to the available_positions array
 
+        # TODO: Move string splitting and all validation into a separate function
+        
         # Take the rows in the reverse order because the first row is 
         # at the end of the input string and skip the separator rows 
         board_string = board_string.split('\n')
