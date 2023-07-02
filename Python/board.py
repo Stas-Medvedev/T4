@@ -20,6 +20,10 @@ class Board:
         self.available_positions.remove(position)
 
     @staticmethod
+    def check_board_string(board_string: str) -> None:
+        pass
+
+    @staticmethod
     def check_board_markers(markers: list[str]) -> None:
         marker_counter = Counter(markers)
         key_list = list(marker_counter.keys())
