@@ -19,9 +19,33 @@ class Board:
         self.markers[position - 1] = marker
         self.available_positions.remove(position)
 
-    @staticmethod
-    def check_board_string(board_string: str) -> None:
-        pass
+    @classmethod
+    def check_board_string(cls, board_string: str) -> list[str]:
+        # Validate string fomat
+        # Split the string on new line
+        # Take entries 4, 2, and 0
+        # Split those on the pipe character
+        # Combine and move all to the markers array
+        # Add empty spaces to the available_positions array
+
+        # Take the rows in the reverse order because the first row is 
+        # at the end of the input string and skip the separator rows 
+        board_string = board_string.split('\n')
+        board_string = board_string[-1::-2]
+
+        # Check to make sure rows have the correct number of characters
+        for i in range(len(board_string)):
+            if len(board_string[i]) > 5: raise ValueError(f"Too many characters in row {i+1}")
+            if len(board_string[i] < 5): raise ValueError(f"Not enough characters in row {i+1}")
+
+        # Add '|' to join rows so that all characters are separated by the same character
+        # It makes splitting in the next step easier
+        board_string = '|'.join(board_string)
+        markers = board_string.split('|')
+        
+        cls.check_board_markers(markers)
+
+        return markers
 
     @staticmethod
     def check_board_markers(markers: list[str]) -> None:
@@ -60,31 +84,7 @@ class Board:
         '''
         Converts a multiline string representation of a board into a Board object
         '''
-        # Validate string fomat
-        # Split the string on new line
-        # Take entries 4, 2, and 0
-        # Split those on the pipe character
-        # Combine and move all to the markers array
-        # Add empty spaces to the available_positions array
-
-        # TODO: Move string splitting and all validation into a separate function
-        
-        # Take the rows in the reverse order because the first row is 
-        # at the end of the input string and skip the separator rows 
-        board_string = board_string.split('\n')
-        board_string = board_string[-1::-2]
-
-        # Check to make sure rows have the correct number of characters
-        for i in range(len(board_string)):
-            if len(board_string[i]) > 5: raise ValueError(f"Too many characters in row {i+1}")
-            if len(board_string[i] < 5): raise ValueError(f"Not enough characters in row {i+1}")
-
-        # Add '|' to join rows so that all characters are separated by the same character
-        # It makes splitting in the next step easier
-        board_string = '|'.join(board_string)
-        markers = board_string.split('|')
-        
-        cls.check_board_markers(markers)
+        markers = cls.check_board_string(board_string)
 
         available_positions = [i+1 for i in range(9) if markers[i]==' ']
         # Add the above to a Board object
