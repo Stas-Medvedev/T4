@@ -22,6 +22,7 @@ class Board:
     @classmethod
     def check_board_string(cls, board_string: str) -> list[str]:
         # TODO: Clean up comments
+        # TODO: update docstrings
 
         # Validate string fomat
         # Split the string on new line
