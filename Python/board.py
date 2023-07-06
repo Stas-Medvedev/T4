@@ -22,7 +22,8 @@ class Board:
     @classmethod
     def check_board_string(cls, board_string: str) -> list[str]:
         # TODO: Clean up comments
-        # TODO: update docstrings
+        # TODO: Update docstrings
+        # TODO: Do separator rows need to be validated for consistency?
 
         # Validate string fomat
         # Split the string on new line
