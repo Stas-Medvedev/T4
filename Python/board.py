@@ -24,6 +24,7 @@ class Board:
         # TODO: Clean up comments
         # TODO: Update docstrings
         # TODO: Do separator rows need to be validated for consistency?
+        # TODO: Add a check to make sure there is only 1 character per marker
 
         # Validate string fomat
         # Split the string on new line
