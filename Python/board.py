@@ -23,7 +23,7 @@ class Board:
     def check_board_string(cls, board_string: str) -> list[str]:
         # TODO: Clean up comments
         # TODO: Update docstrings
-        # TODO: Do separator rows need to be validated for consistency?
+        # TODO: *DONE* Do separator rows need to be validated for consistency?
         # TODO: Add a check to make sure there is only 1 character per marker
 
         # Validate string fomat
@@ -36,6 +36,8 @@ class Board:
         # Take the rows in the reverse order because the first row is 
         # at the end of the input string and skip the separator rows 
         board_string = board_string.split('\n')
+        if board_string[1] != '-+-+-' or board_string[3] != '-+-+-':
+            raise ValueError("Invalid board: Separator rows must be in '-+-+-' format")
         board_string = board_string[-1::-2]
 
         # Check to make sure rows have the correct number of characters
