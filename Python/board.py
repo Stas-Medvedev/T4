@@ -26,8 +26,10 @@ class Board:
         # TODO: *DONE* Do separator rows need to be validated for consistency?
         # TODO: Add a check to make sure there is only 1 character per marker
 
-        # Validate string fomat
+        # Validate string fomat:
+        # ======================
         # Split the string on new line
+        # Make sure the divider rows are in '-+-+-' format
         # Take entries 4, 2, and 0
         # Split those on the pipe character
         # Combine and move all to the markers array
