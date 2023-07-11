@@ -21,6 +21,10 @@ class Board:
 
     @classmethod
     def check_board_string(cls, board_string: str) -> list[str]:
+        '''
+        Ensures that the string passed to from_string is in a correct format,
+        and raises an error otherwise.
+        '''
         # TODO: Clean up comments
         # TODO: Update docstrings
         # TODO: Add a check to make sure there is only 1 character per marker
