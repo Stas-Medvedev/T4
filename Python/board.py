@@ -64,6 +64,7 @@ class Board:
         marker_counter = Counter(markers)
         key_list = list(marker_counter.keys())
         key_list_len = len(key_list)
+        # TODO: check individual markers here
         # Make sure there are 3 or fewer keys in the counter
         if key_list_len > 3:
             raise ValueError('Invalid board: too many markers')
