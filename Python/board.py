@@ -61,10 +61,15 @@ class Board:
 
     @staticmethod
     def check_board_markers(markers: list[str]) -> None:
+        
+        # Check to make sure each marker is just one character
+        for marker in markers:
+            if len(marker) != 1:
+                raise ValueError(f'Invalid marker passed: {marker}')
+            
         marker_counter = Counter(markers)
         key_list = list(marker_counter.keys())
         key_list_len = len(key_list)
-        # TODO: check individual markers here
         # Make sure there are 3 or fewer keys in the counter
         if key_list_len > 3:
             raise ValueError('Invalid board: too many markers')
