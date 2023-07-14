@@ -27,7 +27,6 @@ class Board:
         '''
         # TODO: Clean up comments
         # TODO: Update docstrings
-        # TODO: Add a check to make sure there is only 1 character per marker
 
         # Validate string fomat:
         # ======================
