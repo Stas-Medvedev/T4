@@ -71,7 +71,9 @@ class Board:
         key_list_len = len(key_list)
         # Make sure there are 3 or fewer keys in the counter
         if key_list_len > 3:
-            raise ValueError('Invalid board: too many markers')
+            raise ValueError(f'Invalid board: too many marker types.\n\
+                             Only spaces and up to two other marker types are allowed.\n\
+                             Current marker types: {key_list}')
         # If there is only one key, make sure it's the space
         if key_list_len == 1 and ' ' not in key_list:
             raise ValueError('Invalid board: only one marker passed with no spaces')
