@@ -93,7 +93,7 @@ class Board:
         # If it's in, make sure the counts of other markers are within one of each other 
         if key_list_len == 3:
             if ' ' not in key_list:
-                raise ValueError('Invalid board: too many markers')
+                raise ValueError(f'Invalid board: too many markers. Markers: {key_list}')
             marker_1, marker_2 = [marker for marker in key_list if marker != ' ']
             if abs(marker_counter[marker_1] - marker_counter[marker_2]) > 1:
                 raise ValueError('Invalid board: one of the markers appears too many times')
