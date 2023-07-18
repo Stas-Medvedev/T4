@@ -26,6 +26,7 @@ class Board:
         '''
         # TODO: Clean up comments
         # TODO: Update docstrings
+        # TODO: Write tests
 
         # Validate string fomat:
         # ======================
