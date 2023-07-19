@@ -12,11 +12,14 @@ def test_update_board() -> None:
 # Can use some from test cases for player
 
 def test_from_string_blank() -> None:
-    board_string = (" | | "
-                    "-+-+-"
-                    " | | "
-                    "-+-+-"
-                    " | | ")
+    board_string = \
+'''
+ | | 
+-+-+-
+ | | 
+-+-+-
+ | | 
+'''
     board = Board.from_string(board_string)
     
     assert board.available_positions == list(range(1,10))
