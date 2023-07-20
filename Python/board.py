@@ -48,7 +48,7 @@ class Board:
         # Check to make sure rows have the correct number of characters
         for i in range(len(board_string)):
             if len(board_string[i]) > 5: raise ValueError(f"Too many characters in row {i+1}")
-            if len(board_string[i] < 5): raise ValueError(f"Not enough characters in row {i+1}")
+            if len(board_string[i]) < 5: raise ValueError(f"Not enough characters in row {i+1}")
 
         # Add '|' to join rows so that all characters are separated by the same character
         # It makes splitting in the next step easier
