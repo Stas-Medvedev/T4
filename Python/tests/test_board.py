@@ -24,3 +24,17 @@ def test_from_string_blank() -> None:
     
     assert board.available_positions == list(range(1,10))
     assert board.markers == [' '] * 9
+
+def test_from_string_single_marker() -> None:
+    board_string = \
+'''
+ | | 
+-+-+-
+ |X| 
+-+-+-
+ | | 
+'''
+    board = Board.from_string(board_string)
+
+    assert board.available_positions == [1, 2, 3, 4, 6, 7, 8, 9]
+    assert board.markers == [' ', ' ', ' ', ' ', 'X', ' ', ' ', ' ', ' ']
