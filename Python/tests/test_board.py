@@ -38,3 +38,5 @@ def test_from_string_single_marker() -> None:
 
     assert board.available_positions == [1, 2, 3, 4, 6, 7, 8, 9]
     assert board.markers == [' ', ' ', ' ', ' ', 'X', ' ', ' ', ' ', ' ']
+
+# TODO: write test for two single markers
