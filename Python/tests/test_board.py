@@ -66,3 +66,17 @@ O| |
 
     assert board.available_positions == [2, 3, 4, 6, 7, 8]
     assert board.markers == ['O', ' ', ' ', ' ', 'X', ' ', ' ', ' ', 'X']
+
+def test_from_string_four_proper_markers() -> None:
+    board_string = \
+'''
+ | |X
+-+-+-
+ |X| 
+-+-+-
+O| |O
+'''
+    board = Board.from_string(board_string)
+
+    assert board.available_positions == [2, 4, 6, 7, 8]
+    assert board.markers == ['O', ' ', 'O', ' ', 'X', ' ', ' ', ' ', 'X']
