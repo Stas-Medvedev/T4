@@ -150,3 +150,5 @@ O|X|O
 
     assert board.available_positions == []
     assert board.markers == ['O', 'X', 'O', 'O', 'X', 'X', 'X', 'O', 'X']
+
+# TODO: Add tests for errors
