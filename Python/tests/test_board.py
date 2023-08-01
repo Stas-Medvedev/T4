@@ -152,3 +152,4 @@ O|X|O
     assert board.markers == ['O', 'X', 'O', 'O', 'X', 'X', 'X', 'O', 'X']
 
 # TODO: Add tests for errors
+# TODO: Look into pytest.raises
