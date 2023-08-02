@@ -153,3 +153,6 @@ O|X|O
 
 # TODO: Add tests for errors
 # TODO: Look into pytest.raises
+
+def test_from_string_separator_error() -> None:
+    pass
