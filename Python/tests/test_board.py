@@ -1,4 +1,5 @@
 from board import Board
+import re
 import pytest
 
 def test_update_board() -> None:
@@ -155,4 +156,13 @@ O|X|O
 # TODO: Look into pytest.raises
 
 def test_from_string_separator_error() -> None:
-    pass
+    board_string = \
+'''
+ | | 
+---+-
+ | | 
+-+-+-
+ | | 
+'''
+    with pytest.raises(ValueError, match=re.escape("Invalid board: Separator rows must be in '-+-+-' format")):
+        board = Board.from_string(board_string)
