@@ -166,3 +166,15 @@ def test_from_string_separator_error() -> None:
 '''
     with pytest.raises(ValueError, match=re.escape("Invalid board: Separator rows must be in '-+-+-' format")):
         board = Board.from_string(board_string)
+
+def test_from_string_too_many_characters_in_row_error() -> None:
+    board_string = \
+'''
+ | | 
+-+-+-
+ | |XX
+-+-+-
+ | | 
+'''
+    with pytest.raises(ValueError, match=re.escape("Too many characters in row 2")):
+        board = Board.from_string(board_string)
