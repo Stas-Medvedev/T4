@@ -42,7 +42,7 @@ class Board:
         board_string = board_string.split('\n')
         board_string = [line for line in board_string if line != '']
         if len(board_string) != 5:
-            raise ValueError("Invalid number of rows passed. Must be 5, including the separator rows.")
+            raise ValueError("Invalid board format. Must be 5 rows, including the separators.")
         if board_string[1] != '-+-+-' or board_string[3] != '-+-+-':
             raise ValueError("Invalid board: Separator rows must be in '-+-+-' format")
         board_string = board_string[-1::-2]
