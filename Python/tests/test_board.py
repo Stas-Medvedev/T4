@@ -152,8 +152,23 @@ O|X|O
     assert board.available_positions == []
     assert board.markers == ['O', 'X', 'O', 'O', 'X', 'X', 'X', 'O', 'X']
 
-# TODO: Add tests for errors
-# TODO: Look into pytest.raises
+def test_from_string_invalid_format() -> None:
+    board_string_1 = \
+'''
+ | | 
+---+-
+ | | 
+'''
+    board_string_2 = \
+'''
+X|O|X
+'''
+
+    with pytest.raises(ValueError, match=re.escape("Invalid board format. Must be 5 rows, including the separators.")):
+        board = Board.from_string(board_string_1)
+
+    with pytest.raises(ValueError, match=re.escape("Invalid board format. Must be 5 rows, including the separators.")):
+        board = Board.from_string(board_string_2)
 
 def test_from_string_separator_error() -> None:
     board_string = \
