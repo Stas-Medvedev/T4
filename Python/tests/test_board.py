@@ -206,4 +206,16 @@ def test_from_string_not_enough_characters_in_row_error() -> None:
     with pytest.raises(ValueError, match=re.escape("Not enough characters in row 1")):
         board = Board.from_string(board_string)
 
-# TODO: Add a test for strings with wrong number of rows
+def test_from_string_invalid_marker() -> None:
+    board_string = \
+'''
+ | | 
+-+-+-
+ | | 
+-+-+-
+XXX| 
+'''
+    with pytest.raises(ValueError, match="Invalid marker passed"):
+        board = Board.from_string(board_string)
+
+# TODO: The above test should fail on the 'match', but it doesn't. Needs to be looked into.
