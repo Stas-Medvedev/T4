@@ -219,3 +219,4 @@ XXX|
         board = Board.from_string(board_string)
 
 # TODO: The above test should fail on the 'match', but it doesn't. Needs to be looked into.
+# TODO: Write a script to see the from_string method in action
