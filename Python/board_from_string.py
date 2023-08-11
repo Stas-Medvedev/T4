@@ -1,0 +1,1 @@
+# File to check performance of the from_string method of the Board class
