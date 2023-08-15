@@ -9,3 +9,5 @@ board_string = \
 -+-+-
 XXX| 
 '''
+
+board = Board.from_string(board_string)
