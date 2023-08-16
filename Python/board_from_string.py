@@ -11,3 +11,6 @@ XXX|
 '''
 
 board = Board.from_string(board_string)
+
+print(f"Markers: {board.markers}")
+print(f"Available positions: {board.available_positions}")
