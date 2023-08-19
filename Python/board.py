@@ -107,7 +107,7 @@ class Board:
         Converts a multiline string representation of a board into a Board object
         '''
         markers = cls.check_board_string(board_string)
-
+        # TODO: Consider moving check_board_markers here
         available_positions = [i+1 for i in range(9) if markers[i]==' ']
         # Add the above to a Board object
         board = cls()
