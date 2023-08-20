@@ -57,12 +57,12 @@ class Board:
         board_string = '|'.join(board_string)
         markers = board_string.split('|')
         
-        cls.check_board_markers(markers)
+        markers = cls.check_board_markers(markers)
 
         return markers
 
     @staticmethod
-    def check_board_markers(markers: list[str]) -> None:
+    def check_board_markers(markers: list[str]) -> list[str]:
         
         # Check to make sure each marker is just one character
         for marker in markers:
@@ -100,6 +100,8 @@ class Board:
             marker_1, marker_2 = [marker for marker in key_list if marker != ' ']
             if abs(marker_counter[marker_1] - marker_counter[marker_2]) > 1:
                 raise ValueError('Invalid board: one of the markers appears too many times')
+            
+        return markers
 
     @classmethod
     def from_string(cls, board_string: str) -> 'Board':
