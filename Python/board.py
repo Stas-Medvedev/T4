@@ -57,7 +57,7 @@ class Board:
         board_string = '|'.join(board_string)
         markers = board_string.split('|')
         
-        markers = cls.check_board_markers(markers)
+        cls.check_board_markers(markers)
 
         return markers
 
@@ -101,15 +101,13 @@ class Board:
             if abs(marker_counter[marker_1] - marker_counter[marker_2]) > 1:
                 raise ValueError('Invalid board: one of the markers appears too many times')
             
-        return markers
-
     @classmethod
     def from_string(cls, board_string: str) -> 'Board':
         '''
         Converts a multiline string representation of a board into a Board object
         '''
         markers = cls.check_board_string(board_string)
-        # TODO: Consider moving check_board_markers here
+
         available_positions = [i+1 for i in range(9) if markers[i]==' ']
         # Add the above to a Board object
         board = cls()
