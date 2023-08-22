@@ -218,5 +218,14 @@ XXX|
     with pytest.raises(ValueError, match=re.escape("Invalid marker passed: XXX")):
         board = Board.from_string(board_string)
 
-# TODO: The above test should fail on the 'match', but it doesn't. Needs to be looked into.
-# TODO: Write a script to see the from_string method in action
+def test_from_string_too_many_marker_types() -> None:
+    board_string = \
+'''
+ | | 
+-+-+-
+ | | 
+-+-+-
+X|O|P
+'''
+    with pytest.raises(ValueError, match=re.escape("Invalid board: too many marker types")):
+        board = Board.from_string(board_string)
