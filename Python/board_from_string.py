@@ -14,3 +14,5 @@ board = Board.from_string(board_string)     # raises "ValueError: Invalid marker
 
 print(f"Markers: {board.markers}")
 print(f"Available positions: {board.available_positions}")
+
+# TODO: Add test for missing space marker
