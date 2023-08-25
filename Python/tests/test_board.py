@@ -229,3 +229,15 @@ X|O|P
 '''
     with pytest.raises(ValueError, match=re.escape("Invalid board: too many marker types")):
         board = Board.from_string(board_string)
+
+def test_from_string_one_marker_board() -> None:
+    board_string = \
+'''
+X|X|X
+-+-+-
+X|X|X
+-+-+-
+X|X|X
+'''
+    with pytest.raises(ValueError, match=re.escape("Invalid board: only one marker passed with no spaces")):
+        board = Board.from_string(board_string)
