@@ -242,4 +242,14 @@ X|X|X
     with pytest.raises(ValueError, match=re.escape("Invalid board: only one marker passed with no spaces")):
         board = Board.from_string(board_string)
 
-# TODO: Write test to check if space count is 8 when there are two markers in key_list
+def test_from_string_double_marker_board() -> None:
+    board_string = \
+'''
+ | | 
+-+-+-
+ | | 
+-+-+-
+X| |X
+'''
+    with pytest.raises(ValueError, match=re.escape("Invalid board: only one marker passed, and it appears more than once")):
+        board = Board.from_string(board_string)
