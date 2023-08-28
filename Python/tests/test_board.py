@@ -253,3 +253,5 @@ X| |X
 '''
     with pytest.raises(ValueError, match=re.escape("Invalid board: only one marker passed, and it appears more than once")):
         board = Board.from_string(board_string)
+
+        # TODO: write next test
