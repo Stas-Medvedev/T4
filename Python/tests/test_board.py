@@ -254,4 +254,14 @@ X| |X
     with pytest.raises(ValueError, match=re.escape("Invalid board: only one marker passed, and it appears more than once")):
         board = Board.from_string(board_string)
 
-        # TODO: write next test
+def test_from_string_incorrect_full_board() -> None:
+    board_string = \
+'''
+O|O|O
+-+-+-
+O|X|O
+-+-+-
+X|O|X
+'''
+    with pytest.raises(ValueError, match=re.escape("Invalid board: marker counts have to be 5 and 4 for a full board")):
+        board = Board.from_string(board_string)
