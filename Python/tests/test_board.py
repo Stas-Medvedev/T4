@@ -265,3 +265,5 @@ X|O|X
 '''
     with pytest.raises(ValueError, match=re.escape("Invalid board: marker counts have to be 5 and 4 for a full board")):
         board = Board.from_string(board_string)
+
+        # TODO: Write test for too many markers
