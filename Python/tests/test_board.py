@@ -277,3 +277,5 @@ X|O|X
 '''
     with pytest.raises(ValueError, match=re.escape("Invalid board: too many markers. Markers:")):
         board = Board.from_string(board_string)
+
+# TODO: Add test for incomplete board with two marker types where count difference is > 1 (e.g. OOO, X)
