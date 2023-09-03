@@ -9,9 +9,6 @@ def test_update_board() -> None:
     assert board.available_positions == list(range(2,10))
     assert board.markers == ['X'] + [' '] * 8
 
-# TODO: Write several test for various possible from_string inputs
-# Can use some from test cases for player
-
 def test_from_string_blank() -> None:
     board_string = \
 '''
@@ -289,3 +286,5 @@ X|O|X
 '''
     with pytest.raises(ValueError, match=re.escape("Invalid board: one of the markers appears too many times")):
         board = Board.from_string(board_string)
+
+# TODO: Add additional string examples to tests
