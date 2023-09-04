@@ -32,10 +32,22 @@ def test_from_string_one_proper_marker() -> None:
 -+-+-
  | | 
 '''
+    board_string_2 = \
+'''
+ | | 
+-+-+-
+ | | 
+-+-+-
+O| | 
+'''
+
     board = Board.from_string(board_string)
+    board_2 = Board.from_string(board_string_2)
 
     assert board.available_positions == [1, 2, 3, 4, 6, 7, 8, 9]
     assert board.markers == [' ', ' ', ' ', ' ', 'X', ' ', ' ', ' ', ' ']
+    assert board_2.available_positions == [2, 3, 4, 5, 6, 7, 8, 9]
+    assert board_2.markers == ['O', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
 
 def test_from_string_two_proper_markers() -> None:
     board_string = \
