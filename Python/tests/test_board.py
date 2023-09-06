@@ -83,10 +83,21 @@ def test_from_string_three_proper_markers() -> None:
 -+-+-
 O| | 
 '''
+    board_string_2 = \
+'''
+ | |X
+-+-+-
+ | | 
+-+-+-
+ |X|O
+'''
     board = Board.from_string(board_string)
+    board_2 = Board.from_string(board_string_2)
 
     assert board.available_positions == [2, 3, 4, 6, 7, 8]
     assert board.markers == ['O', ' ', ' ', ' ', 'X', ' ', ' ', ' ', 'X']
+    assert board_2.available_positions == [1, 4, 5, 6, 7, 8]
+    assert board_2.markers == [' ', 'X', 'O', ' ', ' ', ' ', ' ', ' ', 'X']
 
 def test_from_string_four_proper_markers() -> None:
     board_string = \
