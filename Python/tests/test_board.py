@@ -133,6 +133,8 @@ def test_from_string_five_proper_markers() -> None:
 -+-+-
 O|X|O
 '''
+# TODO: Add another test case here
+
     board = Board.from_string(board_string)
 
     assert board.available_positions == [4, 6, 7, 8]
