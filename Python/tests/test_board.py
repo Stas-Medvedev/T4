@@ -147,7 +147,7 @@ X|X|
     assert board.available_positions == [4, 6, 7, 8]
     assert board.markers == ['O', 'X', 'O', ' ', 'X', ' ', ' ', ' ', 'X']
     assert board_2.available_positions == [1, 3, 6, 9]
-    assert board_2.markers == [' ', 'O', ' ', 'X', 'X', ' ', 'O', 'X', 'O']
+    assert board_2.markers == [' ', 'O', ' ', 'X', 'X', ' ', 'O', 'X', ' ']
 
 def test_from_string_six_proper_markers() -> None:
     board_string = \
