@@ -158,10 +158,21 @@ def test_from_string_six_proper_markers() -> None:
 -+-+-
 O|X|O
 '''
+    board_string_2 = \
+'''
+X|O| 
+-+-+-
+X|O| 
+-+-+-
+O|X| 
+'''
     board = Board.from_string(board_string)
+    board_2 = Board.from_string(board_string_2)
 
     assert board.available_positions == [4, 6, 7]
     assert board.markers == ['O', 'X', 'O', ' ', 'X', ' ', ' ', 'O', 'X']
+    assert board_2.available_positions == [3, 6, 9]
+    assert board_2.markers == ['O', 'X', ' ', 'X', 'O', ' ', 'X', 'O', ' ']
 
 def test_from_string_seven_proper_markers() -> None:
     board_string = \
