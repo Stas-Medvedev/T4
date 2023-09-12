@@ -198,6 +198,8 @@ O|X|X
 -+-+-
 O|X|O
 '''
+# TODO: Add another test case
+
     board = Board.from_string(board_string)
 
     assert board.available_positions == [7]
