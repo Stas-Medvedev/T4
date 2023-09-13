@@ -183,9 +183,19 @@ def test_from_string_seven_proper_markers() -> None:
 -+-+-
 O|X|O
 '''
-# TODO: Add another test case
+    board_string_2 = \
+'''
+X|O| 
+-+-+-
+O|O| 
+-+-+-
+O|X|X
+'''
     board = Board.from_string(board_string)
+    board_2 = Board.from_string(board_string_2)
 
+    assert board.available_positions == [4, 7]
+    assert board.markers == ['O', 'X', 'O', ' ', 'X', 'X', ' ', 'O', 'X']
     assert board.available_positions == [4, 7]
     assert board.markers == ['O', 'X', 'O', ' ', 'X', 'X', ' ', 'O', 'X']
 
