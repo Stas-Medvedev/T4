@@ -196,8 +196,8 @@ O|X|X
 
     assert board.available_positions == [4, 7]
     assert board.markers == ['O', 'X', 'O', ' ', 'X', 'X', ' ', 'O', 'X']
-    assert board.available_positions == [4, 7]
-    assert board.markers == ['O', 'X', 'O', ' ', 'X', 'X', ' ', 'O', 'X']
+    assert board_2.available_positions == [6, 9]
+    assert board_2.markers == ['O', 'X', 'X', 'O', 'O', ' ', 'X', 'O', ' ']
 
 def test_from_string_eight_proper_markers() -> None:
     board_string = \
