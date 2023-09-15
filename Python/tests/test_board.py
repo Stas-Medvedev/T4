@@ -208,12 +208,22 @@ O|X|X
 -+-+-
 O|X|O
 '''
-# TODO: Add another test case
+    board_string_2 = \
+'''
+X|O|O
+-+-+-
+O|O|X
+-+-+-
+ |X|X
+'''
 
     board = Board.from_string(board_string)
+    board_2 = Board.from_string(board_string_2)
 
     assert board.available_positions == [7]
     assert board.markers == ['O', 'X', 'O', 'O', 'X', 'X', ' ', 'O', 'X']
+    assert board_2.available_positions == [1]
+    assert board_2.markers == [' ', 'X', 'X', 'O', 'O', 'X', 'X', 'O', 'O']
 
 def test_from_string_nine_proper_markers() -> None:
     board_string = \
