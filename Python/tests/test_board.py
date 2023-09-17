@@ -234,11 +234,22 @@ O|X|X
 -+-+-
 O|X|O
 '''
-# TODO: Add another test case
+    board_string_2 = \
+'''
+O|X|X
+-+-+-
+O|X|O
+-+-+-
+X|O|X
+'''
+    
     board = Board.from_string(board_string)
+    board_2 = Board.from_string(board_string_2)
 
     assert board.available_positions == []
     assert board.markers == ['O', 'X', 'O', 'O', 'X', 'X', 'X', 'O', 'X']
+    assert board_2.available_positions == []
+    assert board_2.markers == ['X', 'O', 'X', 'O', 'X', 'O', 'O', 'X', 'X']
 
 def test_from_string_invalid_format() -> None:
     board_string_1 = \
