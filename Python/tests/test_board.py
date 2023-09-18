@@ -278,6 +278,7 @@ def test_from_string_separator_error() -> None:
 -+-+-
  | | 
 '''
+# TODO: Add additional test
     with pytest.raises(ValueError, match=re.escape("Invalid board: Separator rows must be in '-+-+-' format")):
         board = Board.from_string(board_string)
 
