@@ -291,6 +291,7 @@ def test_from_string_too_many_characters_in_row_error() -> None:
 -+-+-
  | | 
 '''
+# TODO: Add additional test
     with pytest.raises(ValueError, match=re.escape("Too many characters in row 2")):
         board = Board.from_string(board_string)
 
