@@ -304,6 +304,7 @@ def test_from_string_not_enough_characters_in_row_error() -> None:
 -+-+-
  | | 
 '''
+# TODO: Add additional test
     with pytest.raises(ValueError, match=re.escape("Not enough characters in row 1")):
         board = Board.from_string(board_string)
 
