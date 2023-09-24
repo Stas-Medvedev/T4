@@ -343,8 +343,18 @@ def test_from_string_invalid_marker() -> None:
 -+-+-
 XXX| 
 '''
+    board_string_2 = \
+'''
+ |OOO
+-+-+-
+ | | 
+-+-+-
+ | | 
+'''
     with pytest.raises(ValueError, match=re.escape("Invalid marker passed: XXX")):
         board = Board.from_string(board_string)
+    with pytest.raises(ValueError, match=re.escape("Invalid marker passed: OOO")):
+        board = Board.from_string(board_string_2)
 
 def test_from_string_too_many_marker_types() -> None:
     board_string = \
