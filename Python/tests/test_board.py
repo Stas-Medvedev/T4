@@ -365,8 +365,18 @@ def test_from_string_too_many_marker_types() -> None:
 -+-+-
 X|O|P
 '''
+    board_string_2 = \
+'''
+ |Q| 
+-+-+-
+ | | 
+-+-+-
+X|O| 
+'''
     with pytest.raises(ValueError, match=re.escape("Invalid board: too many marker types")):
         board = Board.from_string(board_string)
+    with pytest.raises(ValueError, match=re.escape("Invalid board: too many marker types")):
+        board = Board.from_string(board_string_2)
 
 def test_from_string_one_marker_board() -> None:
     board_string = \
