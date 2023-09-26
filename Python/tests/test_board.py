@@ -387,8 +387,18 @@ X|X|X
 -+-+-
 X|X|X
 '''
+    board_string_2 = \
+'''
+O|O|O
+-+-+-
+O|O|O
+-+-+-
+O|O|O
+'''
     with pytest.raises(ValueError, match=re.escape("Invalid board: only one marker passed with no spaces")):
         board = Board.from_string(board_string)
+    with pytest.raises(ValueError, match=re.escape("Invalid board: only one marker passed with no spaces")):
+        board = Board.from_string(board_string_2)
 
 def test_from_string_double_marker_board() -> None:
     board_string = \
