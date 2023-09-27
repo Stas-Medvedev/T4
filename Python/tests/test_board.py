@@ -409,8 +409,18 @@ def test_from_string_double_marker_board() -> None:
 -+-+-
 X| |X
 '''
+    board_string_2 = \
+'''
+O| | 
+-+-+-
+ | | 
+-+-+-
+O| | 
+'''
     with pytest.raises(ValueError, match=re.escape("Invalid board: only one marker passed, and it appears more than once")):
         board = Board.from_string(board_string)
+    with pytest.raises(ValueError, match=re.escape("Invalid board: only one marker passed, and it appears more than once")):
+        board = Board.from_string(board_string_2)
 
 def test_from_string_incorrect_full_board() -> None:
     board_string = \
