@@ -431,8 +431,18 @@ O|X|O
 -+-+-
 X|O|X
 '''
+    board_string_2 = \
+'''
+O|X|X
+-+-+-
+X|X|O
+-+-+-
+X|O|X
+'''
     with pytest.raises(ValueError, match=re.escape("Invalid board: marker counts have to be 5 and 4 for a full board")):
         board = Board.from_string(board_string)
+    with pytest.raises(ValueError, match=re.escape("Invalid board: marker counts have to be 5 and 4 for a full board")):
+        board = Board.from_string(board_string_2)
 
 def test_from_string_full_board_too_many_markers() -> None:
     board_string = \
