@@ -455,11 +455,11 @@ X|O|X
 '''
     board_string_2 = \
 '''
-O|X|O
--+-+-
 o|X|O
 -+-+-
-X|O|x
+X|X|O
+-+-+-
+X|O|X
 '''
     with pytest.raises(ValueError, match=re.escape("Invalid board: too many markers. Markers:")):
         board = Board.from_string(board_string)
