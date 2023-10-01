@@ -475,7 +475,17 @@ def test_from_string_incorrect_marker_count() -> None:
 -+-+-
 X|O|X
 '''
+    board_string_2 = \
+'''
+ | | 
+-+-+-
+O|X|O
+-+-+-
+ |O| 
+'''
     with pytest.raises(ValueError, match=re.escape("Invalid board: one of the markers appears too many times")):
         board = Board.from_string(board_string)
+    with pytest.raises(ValueError, match=re.escape("Invalid board: one of the markers appears too many times")):
+        board = Board.from_string(board_string_2)
 
 # TODO: Add additional string examples to tests
