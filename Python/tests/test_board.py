@@ -487,5 +487,3 @@ O|X|O
         board = Board.from_string(board_string)
     with pytest.raises(ValueError, match=re.escape("Invalid board: one of the markers appears too many times")):
         board = Board.from_string(board_string_2)
-
-# TODO: Add additional string examples to tests
