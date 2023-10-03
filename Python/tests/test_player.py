@@ -2,9 +2,6 @@ import player
 from board import Board
 from pytest import MonkeyPatch
 
-# TODO: Make a function that will convert a string representation of a board
-# like shown below into arrays that can be set as Board object attributes
-
 # Look into parameterizing tests for CPU players with different boards
 # Create multiple boards for different games scenarios
 # and test each CPU class on those boards (mostly, this is for Hard CPU)
