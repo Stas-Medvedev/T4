@@ -2,6 +2,8 @@ import player
 from board import Board
 from pytest import MonkeyPatch
 
+# TODO: Remember what I was supposed to be doing
+
 # Look into parameterizing tests for CPU players with different boards
 # Create multiple boards for different games scenarios
 # and test each CPU class on those boards (mostly, this is for Hard CPU)
