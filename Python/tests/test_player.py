@@ -3,6 +3,7 @@ from board import Board
 from pytest import MonkeyPatch
 
 # TODO: Write tests for Hard_CPU
+# TODO: Add additional test cases for existing tests
 
 # Look into parameterizing tests for CPU players with different boards
 # Create multiple boards for different games scenarios
