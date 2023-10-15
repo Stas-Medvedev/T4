@@ -6,6 +6,7 @@ from pytest import MonkeyPatch
 # TODO: Add additional test cases for existing tests
 #   - Decide if need to write new tests or can add another assert for human player
 #   - Learn how to supply multiple human inputs in PyTest (parametrize?)
+#       -- Need multiple inputs within the same call
 # TODO: Plan future work
 
 # Look into parameterizing tests for CPU players with different boards
