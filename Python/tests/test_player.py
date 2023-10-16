@@ -7,6 +7,7 @@ from pytest import MonkeyPatch
 #   - Decide if need to write new tests or can add another assert for human player
 #   - Learn how to supply multiple human inputs in PyTest (parametrize?)
 #       -- Need multiple inputs within the same call
+#       -- https://pavolkutaj.medium.com/simulating-single-and-multiple-inputs-using-pytest-and-monkeypatch-6968274f7eb9
 # TODO: Plan future work
 
 # Look into parameterizing tests for CPU players with different boards
