@@ -105,6 +105,14 @@ def test_human_player_multiple_inputs(monkeypatch: MonkeyPatch) -> None:
     position = test_player.take_turn(board)
     assert position == 3
 
+def test_human_player_multiple_inputs_2(monkeypatch: MonkeyPatch) -> None:
+    test_player = player.Player(name='Test', marker='X')
+    board = Board()
+    inputs = iter(['X', 'a', '4'])
+    monkeypatch.setattr("builtins.input", lambda _: next(inputs))
+    position = test_player.take_turn(board)
+    assert position == 4
+
 def test_Easy_cpu() -> None:
     test_player = player.Easy_CPU_Player(name='CPU', marker='X')
     board = Board()
