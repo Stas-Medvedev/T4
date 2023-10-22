@@ -123,8 +123,6 @@ def test_human_player_multiple_inputs_3(monkeypatch: MonkeyPatch) -> None:
     position = test_player.take_turn(board)
     assert position == 3
 
-    # TODO: Add a test with a board with unavailable positions, still to-do
-
 def test_Easy_cpu() -> None:
     test_player = player.Easy_CPU_Player(name='CPU', marker='X')
     board = Board()
