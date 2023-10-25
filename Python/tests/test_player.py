@@ -130,3 +130,24 @@ def test_Easy_cpu() -> None:
     board = Board()
     position = test_player.take_turn(board)
     assert position in board.available_positions
+
+board_string_1a = \
+'''
+ | | 
+-+-+-
+ | | 
+-+-+-
+ | | 
+'''
+
+board_string_1b = \
+'''
+X| | 
+-+-+-
+ | | 
+-+-+-
+ | | 
+'''
+
+board_1a = Board.from_string(board_string_1a)
+board_1b = Board.from_string(board_string_1b)
