@@ -151,3 +151,24 @@ X| |
 
 board_1a = Board.from_string(board_string_1a)
 board_1b = Board.from_string(board_string_1b)
+
+board_string_2a = \
+'''
+ | |X
+-+-+-
+O|X| 
+-+-+-
+ |O| 
+'''
+
+board_string_2b = \
+'''
+X|X| 
+-+-+-
+ |X| 
+-+-+-
+O| |O
+'''
+
+board_2a = Board.from_string(board_string_2a)
+board_2b = Board.from_string(board_string_2b)
