@@ -170,5 +170,25 @@ X|X|
 O| |O
 '''
 
+board_string_2c = \
+'''
+X| |X
+-+-+-
+O|X| 
+-+-+-
+O|O| 
+'''
+
+board_string_2d = \
+'''
+X|O| 
+-+-+-
+X|X|O
+-+-+-
+ |X|O
+'''
+
 board_2a = Board.from_string(board_string_2a)
 board_2b = Board.from_string(board_string_2b)
+board_2c = Board.from_string(board_string_2c)
+board_2d = Board.from_string(board_string_2d)
