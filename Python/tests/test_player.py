@@ -192,3 +192,24 @@ board_2a = Board.from_string(board_string_2a)
 board_2b = Board.from_string(board_string_2b)
 board_2c = Board.from_string(board_string_2c)
 board_2d = Board.from_string(board_string_2d)
+
+board_string_3a = \
+'''
+ | |O
+-+-+-
+X|O| 
+-+-+-
+ |X| 
+'''
+
+board_string_3b = \
+'''
+O|X| 
+-+-+-
+X|X| 
+-+-+-
+ |O| 
+'''
+
+board_3a = Board.from_string(board_string_3a)
+board_3b = Board.from_string(board_string_3b)
