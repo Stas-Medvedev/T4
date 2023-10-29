@@ -213,3 +213,5 @@ X|X|
 
 board_3a = Board.from_string(board_string_3a)
 board_3b = Board.from_string(board_string_3b)
+
+# TODO: Add boards for check_diagonal_case
