@@ -235,4 +235,23 @@ X| |
 board_4a = Board.from_string(board_string_4a)
 board_4b = Board.from_string(board_string_4b)
 
-# TODO: Add boards for can_fork
+board_string_5a = \
+'''
+X| | 
+-+-+-
+O|X| 
+-+-+-
+ | |O
+'''
+
+board_string_5b = \
+'''
+ |X| 
+-+-+-
+X|O|X
+-+-+-
+ |O| 
+'''
+
+board_5a = Board.from_string(board_string_5a)
+board_5b = Board.from_string(board_string_5b)
