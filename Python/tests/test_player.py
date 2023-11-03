@@ -257,3 +257,4 @@ board_5a = Board.from_string(board_string_5a)
 board_5b = Board.from_string(board_string_5b)
 
 # TODO: Make boards for take_corner_or_side
+# TODO: Consider moving board creation into individual tests
