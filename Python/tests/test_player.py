@@ -258,3 +258,39 @@ board_5b = Board.from_string(board_string_5b)
 
 # TODO: Make boards for take_corner_or_side
 # TODO: Consider moving board creation into individual tests
+
+# Take corner or side:
+# As X       As O
+#  |O|X       | |X
+# -+-+-      -+-+-
+#  |X|O      X|X|O
+# -+-+-      -+-+-
+# O|X|O      O| |
+# 
+# As X       As O
+#  | |        | |
+# -+-+-      -+-+-
+#  |X|        |X|
+# -+-+-      -+-+-
+# O| |        | |
+
+board_string_6a = \
+'''
+ |O|X
+-+-+-
+ |X|O
+-+-+-
+O|X|O
+'''
+
+board_string_6b = \
+'''
+ | |X
+-+-+-
+X|X|O
+-+-+-
+O| | 
+'''
+
+board_6a = Board.from_string(board_string_6a)
+board_6b = Board.from_string(board_string_6b)
