@@ -292,5 +292,23 @@ X|X|O
 O| | 
 '''
 
+board_string_6c = \
+'''
+ | | 
+-+-+-
+ |X| 
+-+-+-
+O| | 
+'''
+
+board_string_6d = \
+'''
+ | | 
+-+-+-
+ |X| 
+-+-+-
+ | | 
+'''
+
 board_6a = Board.from_string(board_string_6a)
 board_6b = Board.from_string(board_string_6b)
