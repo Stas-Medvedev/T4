@@ -312,3 +312,5 @@ board_string_6d = \
 
 board_6a = Board.from_string(board_string_6a)
 board_6b = Board.from_string(board_string_6b)
+board_6c = Board.from_string(board_string_6c)
+board_6d = Board.from_string(board_string_6d)
