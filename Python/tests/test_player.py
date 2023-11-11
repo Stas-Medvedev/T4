@@ -9,8 +9,6 @@ from pytest import MonkeyPatch
 #       -- Need multiple inputs within the same call
 #       -- https://pavolkutaj.medium.com/simulating-single-and-multiple-inputs-using-pytest-and-monkeypatch-6968274f7eb9
 # TODO: Plan future work
-# TODO: Start converting text boards into board objects
-#       - Convert comments below into board strings
 
 # Look into parameterizing tests for CPU players with different boards
 # Create multiple boards for different games scenarios
