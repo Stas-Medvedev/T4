@@ -149,6 +149,9 @@ X| |
 board_1a = Board.from_string(board_string_1a)
 board_1b = Board.from_string(board_string_1b)
 
+def test_take_center():
+    pass
+
 board_string_2a = \
 '''
  | |X
