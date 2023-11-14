@@ -150,7 +150,7 @@ board_1a = Board.from_string(board_string_1a)
 board_1b = Board.from_string(board_string_1b)
 
 def test_take_center():
-    pass
+    test_player = player.Hard_CPU_Player(name='CPU', marker='X')
 
 board_string_2a = \
 '''
