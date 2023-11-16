@@ -128,30 +128,29 @@ def test_Easy_cpu() -> None:
     position = test_player.take_turn(board)
     assert position in board.available_positions
 
-board_string_1a = \
-'''
- | | 
--+-+-
- | | 
--+-+-
- | | 
-'''
-
-board_string_1b = \
-'''
-X| | 
--+-+-
- | | 
--+-+-
- | | 
-'''
-
-board_1a = Board.from_string(board_string_1a)
-board_1b = Board.from_string(board_string_1b)
-
 def test_take_center():
     test_player_1 = player.Hard_CPU_Player(name='CPU', marker='X')
     test_player_2 = player.Hard_CPU_Player(name='CPU', marker='O')
+    board_string_1a = \
+    '''
+    | | 
+    -+-+-
+    | | 
+    -+-+-
+    | | 
+    '''
+
+    board_string_1b = \
+    '''
+    X| | 
+    -+-+-
+    | | 
+    -+-+-
+    | | 
+    '''
+
+    board_1a = Board.from_string(board_string_1a)
+    board_1b = Board.from_string(board_string_1b)
 
 board_string_2a = \
 '''
