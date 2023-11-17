@@ -151,6 +151,7 @@ def test_take_center():
 
     board_1a = Board.from_string(board_string_1a)
     board_1b = Board.from_string(board_string_1b)
+    # TODO: Get players to make the moves on the respective boards
 
 board_string_2a = \
 '''
