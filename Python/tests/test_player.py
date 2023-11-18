@@ -132,26 +132,31 @@ def test_take_center():
     test_player_1 = player.Hard_CPU_Player(name='CPU', marker='X')
     test_player_2 = player.Hard_CPU_Player(name='CPU', marker='O')
     board_string_1a = \
-    '''
-    | | 
-    -+-+-
-    | | 
-    -+-+-
-    | | 
-    '''
+'''
+ | | 
+-+-+-
+ | | 
+-+-+-
+ | | 
+'''
 
     board_string_1b = \
-    '''
-    X| | 
-    -+-+-
-    | | 
-    -+-+-
-    | | 
-    '''
+'''
+X| | 
+-+-+-
+ | | 
+-+-+-
+ | | 
+'''
 
     board_1a = Board.from_string(board_string_1a)
     board_1b = Board.from_string(board_string_1b)
-    # TODO: Get players to make the moves on the respective boards
+
+    position_1 = test_player_1.take_turn(board_1a)
+    position_2 = test_player_2.take_turn(board_1b)
+
+    assert position_1 == 5
+    assert position_2 == 5
 
 board_string_2a = \
 '''
