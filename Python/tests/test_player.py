@@ -158,6 +158,8 @@ X| |
     assert position_1 == 5
     assert position_2 == 5
 
+# TODO: Write test for can_win
+
 board_string_2a = \
 '''
  | |X
