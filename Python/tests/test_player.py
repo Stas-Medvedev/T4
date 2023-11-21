@@ -159,6 +159,9 @@ X| |
     assert position_2 == 5
 
 def test_can_win():
+    test_player_1 = player.Hard_CPU_Player(name='CPU', marker='X')
+    test_player_2 = player.Hard_CPU_Player(name='CPU', marker='O')
+    
     board_string_2a = \
 '''
  | |X
