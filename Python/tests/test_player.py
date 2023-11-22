@@ -203,6 +203,8 @@ X|X|O
     board_2c = Board.from_string(board_string_2c)
     board_2d = Board.from_string(board_string_2d)
 
+    # TODO: Add assert statements
+
     
 
 board_string_3a = \
