@@ -203,12 +203,15 @@ X|X|O
     board_2c = Board.from_string(board_string_2c)
     board_2d = Board.from_string(board_string_2d)
 
-    # TODO: Add take_turn statements
     position_1 = test_player_1.take_turn(board_2a)
     position_2 = test_player_2.take_turn(board_2b)
     position_3 = test_player_1.take_turn(board_2c)
     position_4 = test_player_2.take_turn(board_2d)
     # TODO: Add assert statements
+    assert position_1 == 1
+    assert position_2 == 2
+    assert position_3 in [3, 8]
+    assert position_4 == 9
 
     
 
