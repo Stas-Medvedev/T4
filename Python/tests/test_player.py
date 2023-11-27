@@ -207,7 +207,7 @@ X|X|O
     position_2 = test_player_2.take_turn(board_2b)
     position_3 = test_player_1.take_turn(board_2c)
     position_4 = test_player_2.take_turn(board_2d)
-    # TODO: Add assert statements
+
     assert position_1 == 1
     assert position_2 == 2
     assert position_3 in [3, 8]
