@@ -213,9 +213,11 @@ X|X|O
     assert position_3 in [3, 8]
     assert position_4 == 9
 
-    
+def test_need_to_cover():
+    test_player_1 = player.Hard_CPU_Player(name='CPU', marker='X')
+    test_player_2 = player.Hard_CPU_Player(name='CPU', marker='O')
 
-board_string_3a = \
+    board_string_3a = \
 '''
  | |O
 -+-+-
@@ -224,7 +226,7 @@ X|O|
  |X| 
 '''
 
-board_string_3b = \
+    board_string_3b = \
 '''
 O|X| 
 -+-+-
@@ -233,8 +235,10 @@ X|X|
  |O| 
 '''
 
-board_3a = Board.from_string(board_string_3a)
-board_3b = Board.from_string(board_string_3b)
+    board_3a = Board.from_string(board_string_3a)
+    board_3b = Board.from_string(board_string_3b)
+
+    # TOOD: Add position and assert statements
 
 board_string_4a = \
 '''
