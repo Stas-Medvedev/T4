@@ -238,7 +238,11 @@ X|X|
     board_3a = Board.from_string(board_string_3a)
     board_3b = Board.from_string(board_string_3b)
 
-    # TOOD: Add position and assert statements
+    position_1 = test_player_1.take_turn(board_3a)
+    position_2 = test_player_2.take_turn(board_3b)
+
+    assert position_1 == 1
+    assert position_2 == 6
 
 board_string_4a = \
 '''
