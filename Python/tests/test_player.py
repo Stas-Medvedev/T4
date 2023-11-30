@@ -245,9 +245,10 @@ X|X|
     assert position_2 == 6
 
 def test_check_diagonal_case():
-    pass
-
-board_string_4a = \
+    test_player_1 = player.Hard_CPU_Player(name='CPU', marker='X')
+    test_player_2 = player.Hard_CPU_Player(name='CPU', marker='O')
+    
+    board_string_4a = \
 '''
 X| | 
 -+-+-
@@ -256,7 +257,7 @@ X| |
  | |X
 '''
 
-board_string_4b = \
+    board_string_4b = \
 '''
  | |X
 -+-+-
@@ -265,8 +266,8 @@ board_string_4b = \
 X| | 
 '''
 
-board_4a = Board.from_string(board_string_4a)
-board_4b = Board.from_string(board_string_4b)
+    board_4a = Board.from_string(board_string_4a)
+    board_4b = Board.from_string(board_string_4b)
 
 board_string_5a = \
 '''
