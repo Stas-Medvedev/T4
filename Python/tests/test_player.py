@@ -244,6 +244,9 @@ X|X|
     assert position_1 == 1
     assert position_2 == 6
 
+def test_check_diagonal_case():
+    pass
+
 board_string_4a = \
 '''
 X| | 
