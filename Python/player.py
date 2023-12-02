@@ -218,11 +218,15 @@ class Hard_CPU_Player(Player):
         Pick a corner space (this will probably need hardcoded values)
         Pick a side space
         '''
+        strategy_count = 1
+        print(f'Strategy: {strategy_count}')
         if 5 in board.available_positions: return 5
 
         move_strategies = [self.can_win, self.need_to_cover, self.check_diagonal_case]
         for strategy in move_strategies:
+            strategy_count += 1
             position = strategy(board)
+            print(f'Strategy: {strategy_count}')
             if position: return position
         # position = self.can_win()
         # if position: return position
@@ -231,7 +235,9 @@ class Hard_CPU_Player(Player):
         # position = self.check_diagonal_case
         # if position: return position
         for own in [True, False]:
+            strategy_count += 1
             position = self.can_fork(own=own, board=board)
+            print(f'Strategy: {strategy_count}')
             if position: return position
 
         return self.take_corner_or_side(board)
