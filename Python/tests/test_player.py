@@ -2,7 +2,7 @@ import player
 from board import Board
 from pytest import MonkeyPatch
 
-# TODO: Add tests for individual move functions
+# TODO: Add tests for individual move functions each test using all of the boards
 
 # TODO: Write tests for Hard_CPU
 # TODO: Add additional test cases for existing tests
