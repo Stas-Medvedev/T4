@@ -4,6 +4,7 @@ from pytest import MonkeyPatch
 
 # TODO: Add tests for individual move functions each test using all of the boards
         # - Move board creation outside individual tests
+        # - Redo the tests to test specific move functions instead of their performance as part of take_turn
 
 # TODO: Write tests for Hard_CPU
 # TODO: Add additional test cases for existing tests
