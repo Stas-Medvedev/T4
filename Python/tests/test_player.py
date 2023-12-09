@@ -132,10 +132,7 @@ def test_Easy_cpu() -> None:
     position = test_player.take_turn(board)
     assert position in board.available_positions
 
-def test_take_center():
-    test_player_1 = player.Hard_CPU_Player(name='CPU', marker='X')
-    test_player_2 = player.Hard_CPU_Player(name='CPU', marker='O')
-    board_string_1a = \
+board_string_1a = \
 '''
  | | 
 -+-+-
@@ -143,8 +140,9 @@ def test_take_center():
 -+-+-
  | | 
 '''
+board_1a = Board.from_string(board_string_1a)
 
-    board_string_1b = \
+board_string_1b = \
 '''
 X| | 
 -+-+-
@@ -152,9 +150,71 @@ X| |
 -+-+-
  | | 
 '''
+board_1b = Board.from_string(board_string_1b)
 
-    board_1a = Board.from_string(board_string_1a)
-    board_1b = Board.from_string(board_string_1b)
+board_string_2a = \
+'''
+ | |X
+-+-+-
+O|X| 
+-+-+-
+ |O| 
+'''
+board_2a = Board.from_string(board_string_2a)
+
+board_string_2b = \
+'''
+X|X| 
+-+-+-
+ |X| 
+-+-+-
+O| |O
+'''
+board_2b = Board.from_string(board_string_2b)
+
+board_string_2c = \
+'''
+X| |X
+-+-+-
+O|X| 
+-+-+-
+O|O| 
+'''
+board_2c = Board.from_string(board_string_2c)
+
+board_string_2d = \
+'''
+X|O| 
+-+-+-
+X|X|O
+-+-+-
+ |X|O
+'''
+board_2d = Board.from_string(board_string_2d)
+
+board_string_3a = \
+'''
+ | |O
+-+-+-
+X|O| 
+-+-+-
+ |X| 
+'''
+board_3a = Board.from_string(board_string_3a)
+
+board_string_3b = \
+'''
+O|X| 
+-+-+-
+X|X| 
+-+-+-
+ |O| 
+'''
+board_3b = Board.from_string(board_string_3b)
+
+def test_take_center():
+    test_player_1 = player.Hard_CPU_Player(name='CPU', marker='X')
+    test_player_2 = player.Hard_CPU_Player(name='CPU', marker='O')
 
     position_1 = test_player_1.take_turn(board_1a)
     position_2 = test_player_2.take_turn(board_1b)
@@ -166,46 +226,7 @@ def test_can_win():
     test_player_1 = player.Hard_CPU_Player(name='CPU', marker='X')
     test_player_2 = player.Hard_CPU_Player(name='CPU', marker='O')
     
-    board_string_2a = \
-'''
- | |X
--+-+-
-O|X| 
--+-+-
- |O| 
-'''
 
-    board_string_2b = \
-'''
-X|X| 
--+-+-
- |X| 
--+-+-
-O| |O
-'''
-
-    board_string_2c = \
-'''
-X| |X
--+-+-
-O|X| 
--+-+-
-O|O| 
-'''
-
-    board_string_2d = \
-'''
-X|O| 
--+-+-
-X|X|O
--+-+-
- |X|O
-'''
-
-    board_2a = Board.from_string(board_string_2a)
-    board_2b = Board.from_string(board_string_2b)
-    board_2c = Board.from_string(board_string_2c)
-    board_2d = Board.from_string(board_string_2d)
 
     position_1 = test_player_1.take_turn(board_2a)
     position_2 = test_player_2.take_turn(board_2b)
@@ -221,26 +242,7 @@ def test_need_to_cover():
     test_player_1 = player.Hard_CPU_Player(name='CPU', marker='X')
     test_player_2 = player.Hard_CPU_Player(name='CPU', marker='O')
 
-    board_string_3a = \
-'''
- | |O
--+-+-
-X|O| 
--+-+-
- |X| 
-'''
 
-    board_string_3b = \
-'''
-O|X| 
--+-+-
-X|X| 
--+-+-
- |O| 
-'''
-
-    board_3a = Board.from_string(board_string_3a)
-    board_3b = Board.from_string(board_string_3b)
 
     position_1 = test_player_1.take_turn(board_3a)
     position_2 = test_player_2.take_turn(board_3b)
