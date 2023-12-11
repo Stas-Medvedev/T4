@@ -213,6 +213,26 @@ X|X|
 '''
 board_3b = Board.from_string(board_string_3b)
 
+board_string_4a = \
+'''
+X| | 
+-+-+-
+ |O| 
+-+-+-
+ | |X
+'''
+board_4a = Board.from_string(board_string_4a)
+
+board_string_4b = \
+'''
+ | |X
+-+-+-
+ |O| 
+-+-+-
+X| | 
+'''
+board_4b = Board.from_string(board_string_4b)
+
 def test_take_center():
     test_player_1 = player.Hard_CPU_Player(name='CPU', marker='X')
     test_player_2 = player.Hard_CPU_Player(name='CPU', marker='O')
@@ -254,26 +274,7 @@ def test_need_to_cover():
 def test_check_diagonal_case():
     test_player = player.Hard_CPU_Player(name='CPU', marker='O')
     
-    board_string_4a = \
-'''
-X| | 
--+-+-
- |O| 
--+-+-
- | |X
-'''
-
-    board_string_4b = \
-'''
- | |X
--+-+-
- |O| 
--+-+-
-X| | 
-'''
-
-    board_4a = Board.from_string(board_string_4a)
-    board_4b = Board.from_string(board_string_4b)
+    
 
     position_1 = test_player.take_turn(board_4a)
     position_2 = test_player.take_turn(board_4b)
