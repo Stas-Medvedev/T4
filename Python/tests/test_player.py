@@ -233,6 +233,66 @@ X| |
 '''
 board_4b = Board.from_string(board_string_4b)
 
+board_string_5a = \
+'''
+X| | 
+-+-+-
+O|X| 
+-+-+-
+ | |O
+'''
+board_5a = Board.from_string(board_string_5a)
+
+board_string_5b = \
+'''
+ |X| 
+-+-+-
+X|O|X
+-+-+-
+ |O| 
+'''
+board_5b = Board.from_string(board_string_5b)
+
+board_string_6a = \
+'''
+ |O|X
+-+-+-
+ |X|O
+-+-+-
+O|X|O
+'''
+board_6a = Board.from_string(board_string_6a)
+
+board_string_6b = \
+'''
+ | |X
+-+-+-
+X|X|O
+-+-+-
+O| | 
+'''
+board_6b = Board.from_string(board_string_6b)
+
+board_string_6c = \
+'''
+ | | 
+-+-+-
+ |X| 
+-+-+-
+O| | 
+'''
+board_6c = Board.from_string(board_string_6c)
+
+board_string_6d = \
+'''
+ | | 
+-+-+-
+ |X| 
+-+-+-
+ | | 
+'''
+board_6d = Board.from_string(board_string_6d)
+
 def test_take_center():
     test_player_1 = player.Hard_CPU_Player(name='CPU', marker='X')
     test_player_2 = player.Hard_CPU_Player(name='CPU', marker='O')
@@ -281,67 +341,3 @@ def test_check_diagonal_case():
 
     assert position_1 not in [1, 9]
     assert position_2 not in [3, 7]
-
-board_string_5a = \
-'''
-X| | 
--+-+-
-O|X| 
--+-+-
- | |O
-'''
-
-board_string_5b = \
-'''
- |X| 
--+-+-
-X|O|X
--+-+-
- |O| 
-'''
-
-board_5a = Board.from_string(board_string_5a)
-board_5b = Board.from_string(board_string_5b)
-
-# TODO: Consider moving board creation into individual tests
-
-board_string_6a = \
-'''
- |O|X
--+-+-
- |X|O
--+-+-
-O|X|O
-'''
-
-board_string_6b = \
-'''
- | |X
--+-+-
-X|X|O
--+-+-
-O| | 
-'''
-
-board_string_6c = \
-'''
- | | 
--+-+-
- |X| 
--+-+-
-O| | 
-'''
-
-board_string_6d = \
-'''
- | | 
--+-+-
- |X| 
--+-+-
- | | 
-'''
-
-board_6a = Board.from_string(board_string_6a)
-board_6b = Board.from_string(board_string_6b)
-board_6c = Board.from_string(board_string_6c)
-board_6d = Board.from_string(board_string_6d)
