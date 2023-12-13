@@ -293,9 +293,11 @@ board_string_6d = \
 '''
 board_6d = Board.from_string(board_string_6d)
 
+test_player_hard_X = player.Hard_CPU_Player(name='CPU', marker='X')
+test_player_hard_O = player.Hard_CPU_Player(name='CPU', marker='O')
+
+
 def test_take_center():
-    test_player_1 = player.Hard_CPU_Player(name='CPU', marker='X')
-    test_player_2 = player.Hard_CPU_Player(name='CPU', marker='O')
 
     position_1 = test_player_1.take_turn(board_1a)
     position_2 = test_player_2.take_turn(board_1b)
