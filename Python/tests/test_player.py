@@ -141,7 +141,7 @@ board_string_1a = \
 -+-+-
  | | 
 '''
-board_1a = Board.from_string(board_string_1a)
+board_1a_x = Board.from_string(board_string_1a)
 
 board_string_1b = \
 '''
@@ -151,7 +151,7 @@ X| |
 -+-+-
  | | 
 '''
-board_1b = Board.from_string(board_string_1b)
+board_1b_o = Board.from_string(board_string_1b)
 
 board_string_2a = \
 '''
@@ -161,7 +161,7 @@ O|X|
 -+-+-
  |O| 
 '''
-board_2a = Board.from_string(board_string_2a)
+board_2a_x = Board.from_string(board_string_2a)
 
 board_string_2b = \
 '''
@@ -171,7 +171,7 @@ X|X|
 -+-+-
 O| |O
 '''
-board_2b = Board.from_string(board_string_2b)
+board_2b_o = Board.from_string(board_string_2b)
 
 board_string_2c = \
 '''
@@ -181,7 +181,7 @@ O|X|
 -+-+-
 O|O| 
 '''
-board_2c = Board.from_string(board_string_2c)
+board_2c_x = Board.from_string(board_string_2c)
 
 board_string_2d = \
 '''
@@ -191,7 +191,7 @@ X|X|O
 -+-+-
  |X|O
 '''
-board_2d = Board.from_string(board_string_2d)
+board_2d_o = Board.from_string(board_string_2d)
 
 board_string_3a = \
 '''
@@ -201,7 +201,7 @@ X|O|
 -+-+-
  |X| 
 '''
-board_3a = Board.from_string(board_string_3a)
+board_3a_x = Board.from_string(board_string_3a)
 
 board_string_3b = \
 '''
@@ -211,7 +211,7 @@ X|X|
 -+-+-
  |O| 
 '''
-board_3b = Board.from_string(board_string_3b)
+board_3b_o = Board.from_string(board_string_3b)
 
 board_string_4a = \
 '''
@@ -221,7 +221,7 @@ X| |
 -+-+-
  | |X
 '''
-board_4a = Board.from_string(board_string_4a)
+board_4a_o = Board.from_string(board_string_4a)
 
 board_string_4b = \
 '''
@@ -231,7 +231,7 @@ board_string_4b = \
 -+-+-
 X| | 
 '''
-board_4b = Board.from_string(board_string_4b)
+board_4b_o = Board.from_string(board_string_4b)
 
 board_string_5a = \
 '''
@@ -241,7 +241,7 @@ O|X|
 -+-+-
  | |O
 '''
-board_5a = Board.from_string(board_string_5a)
+board_5a_x = Board.from_string(board_string_5a)
 
 board_string_5b = \
 '''
@@ -251,7 +251,7 @@ X|O|X
 -+-+-
  |O| 
 '''
-board_5b = Board.from_string(board_string_5b)
+board_5b_o = Board.from_string(board_string_5b)
 
 board_string_6a = \
 '''
@@ -261,7 +261,7 @@ board_string_6a = \
 -+-+-
 O|X|O
 '''
-board_6a = Board.from_string(board_string_6a)
+board_6a_x = Board.from_string(board_string_6a)
 
 board_string_6b = \
 '''
@@ -271,7 +271,7 @@ X|X|O
 -+-+-
 O| | 
 '''
-board_6b = Board.from_string(board_string_6b)
+board_6b_o = Board.from_string(board_string_6b)
 
 board_string_6c = \
 '''
@@ -281,7 +281,7 @@ board_string_6c = \
 -+-+-
 O| | 
 '''
-board_6c = Board.from_string(board_string_6c)
+board_6c_x = Board.from_string(board_string_6c)
 
 board_string_6d = \
 '''
@@ -291,7 +291,7 @@ board_string_6d = \
 -+-+-
  | | 
 '''
-board_6d = Board.from_string(board_string_6d)
+board_6d_o = Board.from_string(board_string_6d)
 
 test_player_hard_X = player.Hard_CPU_Player(name='CPU', marker='X')
 test_player_hard_O = player.Hard_CPU_Player(name='CPU', marker='O')
@@ -299,18 +299,18 @@ test_player_hard_O = player.Hard_CPU_Player(name='CPU', marker='O')
 
 def test_take_center():
 
-    position_1 = test_player_hard_X.take_turn(board_1a)
-    position_2 = test_player_hard_O.take_turn(board_1b)
+    position_1 = test_player_hard_X.take_turn(board_1a_x)
+    position_2 = test_player_hard_O.take_turn(board_1b_o)
 
     assert position_1 == 5
     assert position_2 == 5
 
 def test_can_win():
 
-    position_1 = test_player_hard_X.take_turn(board_2a)
-    position_2 = test_player_hard_O.take_turn(board_2b)
-    position_3 = test_player_hard_X.take_turn(board_2c)
-    position_4 = test_player_hard_O.take_turn(board_2d)
+    position_1 = test_player_hard_X.take_turn(board_2a_x)
+    position_2 = test_player_hard_O.take_turn(board_2b_o)
+    position_3 = test_player_hard_X.take_turn(board_2c_x)
+    position_4 = test_player_hard_O.take_turn(board_2d_o)
 
     assert position_1 == 1
     assert position_2 == 2
@@ -319,16 +319,16 @@ def test_can_win():
 
 def test_need_to_cover():
 
-    position_1 = test_player_hard_X.take_turn(board_3a)
-    position_2 = test_player_hard_O.take_turn(board_3b)
+    position_1 = test_player_hard_X.take_turn(board_3a_x)
+    position_2 = test_player_hard_O.take_turn(board_3b_o)
 
     assert position_1 == 1
     assert position_2 == 6
 
 def test_check_diagonal_case():
 
-    position_1 = test_player_hard_O.take_turn(board_4a)
-    position_2 = test_player_hard_O.take_turn(board_4b)
+    position_1 = test_player_hard_O.take_turn(board_4a_o)
+    position_2 = test_player_hard_O.take_turn(board_4b_o)
 
     assert position_1 not in [1, 9]
     assert position_2 not in [3, 7]
