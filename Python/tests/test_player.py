@@ -297,7 +297,7 @@ test_player_hard_X = player.Hard_CPU_Player(name='CPU', marker='X')
 test_player_hard_O = player.Hard_CPU_Player(name='CPU', marker='O')
 
 
-def test_take_center():
+def test_take_turn_take_center():
 
     position_1 = test_player_hard_X.take_turn(board_1a_x)
     position_2 = test_player_hard_O.take_turn(board_1b_o)
@@ -305,7 +305,7 @@ def test_take_center():
     assert position_1 == 5
     assert position_2 == 5
 
-def test_can_win():
+def test_take_turn_can_win():
 
     position_1 = test_player_hard_X.take_turn(board_2a_x)
     position_2 = test_player_hard_O.take_turn(board_2b_o)
@@ -317,7 +317,7 @@ def test_can_win():
     assert position_3 in [3, 8]
     assert position_4 == 9
 
-def test_need_to_cover():
+def test_take_turn_need_to_cover():
 
     position_1 = test_player_hard_X.take_turn(board_3a_x)
     position_2 = test_player_hard_O.take_turn(board_3b_o)
@@ -325,7 +325,7 @@ def test_need_to_cover():
     assert position_1 == 1
     assert position_2 == 6
 
-def test_check_diagonal_case():
+def test_take_turn_check_diagonal_case():
 
     position_1 = test_player_hard_O.take_turn(board_4a_o)
     position_2 = test_player_hard_O.take_turn(board_4b_o)
