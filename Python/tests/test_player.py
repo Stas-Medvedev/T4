@@ -293,6 +293,9 @@ board_string_6d = \
 '''
 board_6d_o = Board.from_string(board_string_6d)
 
+game_boards_X = [board_1a_x, board_2a_x, board_2c_x, board_3a_x, board_5a_x, board_6a_x, board_6c_x]
+game_boards_O = [board_1b_o, board_2b_o, board_2d_o, board_3b_o, board_4a_o, board_4b_o, board_5b_o, board_6b_o, board_6d_o]
+
 player_hard_X = player.Hard_CPU_Player(name='CPU', marker='X')
 player_hard_O = player.Hard_CPU_Player(name='CPU', marker='O')
 
