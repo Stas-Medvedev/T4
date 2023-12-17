@@ -299,6 +299,13 @@ game_boards_O = [board_1b_o, board_2b_o, board_2d_o, board_3b_o, board_4a_o, boa
 player_hard_X = player.Hard_CPU_Player(name='CPU', marker='X')
 player_hard_O = player.Hard_CPU_Player(name='CPU', marker='O')
 
+def test_can_win():
+    positions_X = [player_hard_X.can_win(game_board) for game_board in game_boards_X]
+    positions_O = [player_hard_O.can_win(game_board) for game_board in game_boards_O]
+
+    assert positions_X == [0, 1, 8, 0, 0, 0, 0]
+    assert positions_O == [0, 2, 9, 0, 0, 0, 0, 0, 0]
+
 def test_take_turn_take_center():
 
     position_1 = player_hard_X.take_turn(board_1a_x)
