@@ -40,14 +40,19 @@ class Hard_CPU_Player(Player):
         '''
         for positions in self.WINNING_POSITIONS:
             total = 0
+            current_positions = []
             for position in positions:
                 current_position = board.markers[position]
                 # if there's an opponent's marker in the current winning position,
                 # move on to the next winning position
                 if current_position != self.marker and current_position != ' ': break
-                if current_position == self.marker: total += 1
+                if current_position == self.marker:
+                    total += 1
+                    current_positions.append(position+1)
                 if current_position == ' ': blank = position
-            if total == 2: return blank + 1
+            if total == 2: 
+                print(f'Winning positions: {current_positions}')
+                return blank + 1
         return 0
 
     def need_to_cover(self, board: Board) -> int:
