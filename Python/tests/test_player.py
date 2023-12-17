@@ -293,24 +293,23 @@ board_string_6d = \
 '''
 board_6d_o = Board.from_string(board_string_6d)
 
-test_player_hard_X = player.Hard_CPU_Player(name='CPU', marker='X')
-test_player_hard_O = player.Hard_CPU_Player(name='CPU', marker='O')
-
+player_hard_X = player.Hard_CPU_Player(name='CPU', marker='X')
+player_hard_O = player.Hard_CPU_Player(name='CPU', marker='O')
 
 def test_take_turn_take_center():
 
-    position_1 = test_player_hard_X.take_turn(board_1a_x)
-    position_2 = test_player_hard_O.take_turn(board_1b_o)
+    position_1 = player_hard_X.take_turn(board_1a_x)
+    position_2 = player_hard_O.take_turn(board_1b_o)
 
     assert position_1 == 5
     assert position_2 == 5
 
 def test_take_turn_can_win():
 
-    position_1 = test_player_hard_X.take_turn(board_2a_x)
-    position_2 = test_player_hard_O.take_turn(board_2b_o)
-    position_3 = test_player_hard_X.take_turn(board_2c_x)
-    position_4 = test_player_hard_O.take_turn(board_2d_o)
+    position_1 = player_hard_X.take_turn(board_2a_x)
+    position_2 = player_hard_O.take_turn(board_2b_o)
+    position_3 = player_hard_X.take_turn(board_2c_x)
+    position_4 = player_hard_O.take_turn(board_2d_o)
 
     assert position_1 == 1
     assert position_2 == 2
@@ -319,16 +318,16 @@ def test_take_turn_can_win():
 
 def test_take_turn_need_to_cover():
 
-    position_1 = test_player_hard_X.take_turn(board_3a_x)
-    position_2 = test_player_hard_O.take_turn(board_3b_o)
+    position_1 = player_hard_X.take_turn(board_3a_x)
+    position_2 = player_hard_O.take_turn(board_3b_o)
 
     assert position_1 == 1
     assert position_2 == 6
 
 def test_take_turn_check_diagonal_case():
 
-    position_1 = test_player_hard_O.take_turn(board_4a_o)
-    position_2 = test_player_hard_O.take_turn(board_4b_o)
+    position_1 = player_hard_O.take_turn(board_4a_o)
+    position_2 = player_hard_O.take_turn(board_4b_o)
 
     assert position_1 not in [1, 9]
     assert position_2 not in [3, 7]
