@@ -306,6 +306,13 @@ def test_can_win():
     assert positions_X == [0, 1, 8, 0, 0, 0, 0]
     assert positions_O == [0, 2, 9, 0, 0, 0, 0, 0, 0]
 
+def test_need_to_cover():
+    positions_X = [player_hard_X.need_to_cover(game_board) for game_board in game_boards_X]
+    positions_O = [player_hard_O.need_to_cover(game_board) for game_board in game_boards_O]
+
+    assert positions_X == [0, 0, 3, 1, 0, 0, 0]
+    assert positions_O == [0, 2, 1, 6, 0, 0, 0, 0, 0]
+
 def test_take_turn_take_center():
 
     position_1 = player_hard_X.take_turn(board_1a_x)
