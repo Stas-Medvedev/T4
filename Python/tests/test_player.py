@@ -143,16 +143,6 @@ board_string_1a = \
 '''
 board_1a_x = Board.from_string(board_string_1a)
 
-board_string_1b = \
-'''
-X| | 
--+-+-
- | | 
--+-+-
- | | 
-'''
-board_1b_o = Board.from_string(board_string_1b)
-
 board_string_2a = \
 '''
  | |X
@@ -162,16 +152,6 @@ O|X|
  |O| 
 '''
 board_2a_x = Board.from_string(board_string_2a)
-
-board_string_2b = \
-'''
-X|X| 
--+-+-
- |X| 
--+-+-
-O| |O
-'''
-board_2b_o = Board.from_string(board_string_2b)
 
 board_string_2c = \
 '''
@@ -183,16 +163,6 @@ O|O|
 '''
 board_2c_x = Board.from_string(board_string_2c)
 
-board_string_2d = \
-'''
-X|O| 
--+-+-
-X|X|O
--+-+-
- |X|O
-'''
-board_2d_o = Board.from_string(board_string_2d)
-
 board_string_3a = \
 '''
  | |O
@@ -202,6 +172,66 @@ X|O|
  |X| 
 '''
 board_3a_x = Board.from_string(board_string_3a)
+
+board_string_5a = \
+'''
+X| | 
+-+-+-
+O|X| 
+-+-+-
+ | |O
+'''
+board_5a_x = Board.from_string(board_string_5a)
+
+board_string_6a = \
+'''
+ |O|X
+-+-+-
+ |X|O
+-+-+-
+O|X|O
+'''
+board_6a_x = Board.from_string(board_string_6a)
+
+board_string_6c = \
+'''
+ | | 
+-+-+-
+ |X| 
+-+-+-
+O| | 
+'''
+board_6c_x = Board.from_string(board_string_6c)
+
+board_string_1b = \
+'''
+X| | 
+-+-+-
+ | | 
+-+-+-
+ | | 
+'''
+board_1b_o = Board.from_string(board_string_1b)
+
+board_string_2b = \
+'''
+X|X| 
+-+-+-
+ |X| 
+-+-+-
+O| |O
+'''
+board_2b_o = Board.from_string(board_string_2b)
+
+board_string_2d = \
+'''
+X|O| 
+-+-+-
+X|X|O
+-+-+-
+ |X|O
+'''
+board_2d_o = Board.from_string(board_string_2d)
 
 board_string_3b = \
 '''
@@ -233,16 +263,6 @@ X| |
 '''
 board_4b_o = Board.from_string(board_string_4b)
 
-board_string_5a = \
-'''
-X| | 
--+-+-
-O|X| 
--+-+-
- | |O
-'''
-board_5a_x = Board.from_string(board_string_5a)
-
 board_string_5b = \
 '''
  |X| 
@@ -253,16 +273,6 @@ X|O|X
 '''
 board_5b_o = Board.from_string(board_string_5b)
 
-board_string_6a = \
-'''
- |O|X
--+-+-
- |X|O
--+-+-
-O|X|O
-'''
-board_6a_x = Board.from_string(board_string_6a)
-
 board_string_6b = \
 '''
  | |X
@@ -272,16 +282,6 @@ X|X|O
 O| | 
 '''
 board_6b_o = Board.from_string(board_string_6b)
-
-board_string_6c = \
-'''
- | | 
--+-+-
- |X| 
--+-+-
-O| | 
-'''
-board_6c_x = Board.from_string(board_string_6c)
 
 board_string_6d = \
 '''
