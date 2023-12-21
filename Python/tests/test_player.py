@@ -307,11 +307,22 @@ def test_can_win():
     assert positions_O == [0, 2, 9, 0, 0, 0, 0, 0, 0]
 
 def test_need_to_cover():
+    # TODO: Update need_to_cover in player.py
     positions_X = [player_hard_X.need_to_cover(game_board) for game_board in game_boards_X]
     positions_O = [player_hard_O.need_to_cover(game_board) for game_board in game_boards_O]
 
     assert positions_X == [0, 0, 3, 1, 0, 0, 0]
     assert positions_O == [0, 2, 1, 6, 0, 0, 0, 0, 0]
+
+def test_check_marker():
+
+    assert player_hard_X.check_marker('X') == True
+    assert player_hard_X.check_marker(' ') == False
+    assert player_hard_X.check_marker('O') == False
+    assert player_hard_X.check_marker('X', own=False) == False
+    assert player_hard_O.check_marker('O') == True
+    assert player_hard_O.check_marker(' ', own=False) == False
+    assert player_hard_O.check_marker('X') == False
 
 def test_take_turn_take_center():
 
