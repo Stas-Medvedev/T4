@@ -307,12 +307,11 @@ def test_can_win():
     assert positions_O == [0, 2, 9, 0, 0, 0, 0, 0, 0]
 
 def test_need_to_cover():
-    # TODO: Update need_to_cover in player.py
     positions_X = [player_hard_X.need_to_cover(game_board) for game_board in game_boards_X]
     positions_O = [player_hard_O.need_to_cover(game_board) for game_board in game_boards_O]
 
     assert positions_X == [0, 0, 3, 1, 0, 0, 0]
-    assert positions_O == [0, 2, 1, 6, 0, 0, 0, 0, 0]
+    assert positions_O == [0, 9, 1, 6, 0, 0, 0, 0, 0]
 
 def test_check_marker():
 
