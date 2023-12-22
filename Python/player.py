@@ -63,12 +63,15 @@ class Hard_CPU_Player(Player):
         '''
         for positions in self.WINNING_POSITIONS:
             total = 0
+            space_to_cover = False
             for position in positions:
                 current_position = board.markers[position]
                 if current_position != self.marker and current_position != ' ':
                     total += 1
-                if current_position == ' ': blank = position
-            if total == 2: return blank + 1
+                if current_position == ' ':
+                    blank = position
+                    space_to_cover = True
+            if total == 2 and space_to_cover: return blank + 1
         return 0
 
     def check_marker(self, marker: str, own: bool = True) -> bool:
