@@ -313,6 +313,8 @@ def test_need_to_cover():
     assert positions_X == [0, 0, 3, 1, 0, 0, 0]
     assert positions_O == [0, 9, 1, 6, 0, 0, 0, 0, 0]
 
+    # TODO: Write next test
+
 def test_check_marker():
 
     assert player_hard_X.check_marker('X') == True
