@@ -324,7 +324,7 @@ def test_check_marker():
     assert player_hard_O.check_marker('X') == False
 
 def test_can_fork():
-    pass
+    positions_X = [player_hard_X.can_fork(game_board) for game_board in game_boards_X]
 
 def test_take_turn_take_center():
 
