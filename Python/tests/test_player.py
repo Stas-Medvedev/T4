@@ -330,6 +330,9 @@ def test_can_fork():
     assert positions_X == [0, 7, 0, 1, 8, 0, 0]
     assert positions_O == [0, 6, 0, 0, 0, 0, 1, 0, 0] # TODO: Look into why can_fork returns 0 instead of 6
 
+def test_take_corner_or_side():
+    pass
+
 def test_take_turn_take_center():
 
     position_1 = player_hard_X.take_turn(board_1a_x)
