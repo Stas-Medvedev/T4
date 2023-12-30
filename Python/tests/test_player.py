@@ -333,6 +333,9 @@ def test_can_fork():
 def test_take_corner_or_side():
     pass
 
+def test_check_diagonal_case():
+    pass
+
 def test_take_turn_take_center():
 
     position_1 = player_hard_X.take_turn(board_1a_x)
