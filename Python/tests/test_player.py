@@ -331,7 +331,7 @@ def test_can_fork():
     assert positions_O == [0, 6, 0, 0, 0, 0, 1, 0, 0] # TODO: Look into why can_fork returns 0 instead of 6
 
 def test_take_corner_or_side():
-    pass
+    pass # TODO: Write test
 
 def test_check_diagonal_case():
     pass
