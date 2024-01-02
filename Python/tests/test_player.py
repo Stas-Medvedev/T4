@@ -334,7 +334,7 @@ def test_take_corner_or_side():
     pass # TODO: Write test
 
 def test_check_diagonal_case():
-    pass # TODO: Write test
+    pass # TODO: Write test. Check comments at the top once complete.
 
 def test_take_turn_take_center():
 
