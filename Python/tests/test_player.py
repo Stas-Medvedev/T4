@@ -331,7 +331,8 @@ def test_can_fork():
     assert positions_O == [0, 6, 0, 0, 0, 0, 1, 0, 0] # TODO: Look into why can_fork returns 0 instead of 6
 
 def test_take_corner_or_side():
-    pass # TODO: Write test
+    positions_X = [player_hard_X.take_corner_or_side(game_board) for game_board in game_boards_X]
+    positions_O = [player_hard_O.take_corner_or_side(game_board) for game_board in game_boards_O]
 
 def test_check_diagonal_case():
     pass # TODO: Write test. Check comments at the top once complete.
