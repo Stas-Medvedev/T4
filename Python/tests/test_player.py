@@ -335,6 +335,7 @@ def test_take_corner_or_side():
     positions_O = [player_hard_O.take_corner_or_side(game_board) for game_board in game_boards_O]
 
 def test_check_diagonal_case():
+    positions_X = [player_hard_X.check_diagonal_case(game_board) for game_board in game_boards_X]
     pass # TODO: Write test. Check comments at the top once complete.
 
 def test_take_turn_take_center():
