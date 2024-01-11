@@ -336,6 +336,7 @@ def test_take_corner_or_side():
 
     # assert positions_X == []
     # assert positions_O == []
+    # TODO: Actually get the values for the above comparison
 
 def test_check_diagonal_case():
     positions_X = [player_hard_X.check_diagonal_case(game_board) for game_board in game_boards_X]
