@@ -334,6 +334,9 @@ def test_take_corner_or_side():
     positions_X = [player_hard_X.take_corner_or_side(game_board) for game_board in game_boards_X]
     positions_O = [player_hard_O.take_corner_or_side(game_board) for game_board in game_boards_O]
 
+    # TODO: Since values returned by take_corner_or_side are random,
+    # there will need to be two `for` loops for each player with assert statements
+    # that make sure that the returned value is either a corner or a side respectively.
     # assert positions_X == []
     # assert positions_O == []
     # TODO: Actually get the values for the above comparison
