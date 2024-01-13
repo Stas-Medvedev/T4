@@ -337,6 +337,8 @@ def test_take_corner_or_side():
     # TODO: Since values returned by take_corner_or_side are random,
     # there will need to be two `for` loops for each player with assert statements
     # that make sure that the returned value is either a corner or a side respectively.
+    # for position in positions_X:
+    #   assert position in []
     # assert positions_X == []
     # assert positions_O == []
     # TODO: Actually get the values for the above comparison
