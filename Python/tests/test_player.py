@@ -341,7 +341,6 @@ def test_take_corner_or_side():
     # that make sure that the returned value is either a corner or a side respectively.
     # for position in positions_X:
     #   assert position in []
-    # assert positions_X == []
     # assert positions_O == []
     # TODO: Actually get the values for the above comparison
 
