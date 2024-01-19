@@ -331,17 +331,15 @@ def test_can_fork():
     assert positions_O == [0, 6, 0, 0, 0, 0, 1, 0, 0] # TODO: Look into why can_fork returns 0 instead of 6
 
 def test_take_corner_or_side():
-    # TODO: Break apart positions_X and positions_O into two sublists each 
-    # where the functions expects to return a corner or a side respectively
     positions_X = [player_hard_X.take_corner_or_side(game_board) for game_board in game_boards_X]
     positions_O = [player_hard_O.take_corner_or_side(game_board) for game_board in game_boards_O]
 
-    # TODO: Since values returned by take_corner_or_side are random,
-    # there will need to be two `for` loops for each player with assert statements
-    # that make sure that the returned value is either a corner or a side respectively.
-    # for position in positions_X:
-    #   assert position in []
-    # Same as above for positions_O
+    # All test boards have a corner available, so the function should return that
+    for position in positions_X:
+      assert position in [1, 3, 7, 9]
+    
+    for position in positions_O:
+      assert position in [1, 3, 7, 9]
 
 def test_check_diagonal_case():
     positions_X = [player_hard_X.check_diagonal_case(game_board) for game_board in game_boards_X]
