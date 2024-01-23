@@ -346,7 +346,8 @@ def test_check_diagonal_case():
     positions_O = [player_hard_O.check_diagonal_case(game_board) for game_board in game_boards_O]
 
     assert positions_X == [0, 0, 0, 0, 0, 0]
-    # assert positions_O == [] TODO: compete assert for O
+    # assert positions_O == [] TODO: Split this list into values that are 0 (most of them),
+    # and two that aren't (board 4a and 4b)
     
     # TODO: Write test. Check comments at the top once complete.
 
