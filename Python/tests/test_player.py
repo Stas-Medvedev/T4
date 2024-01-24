@@ -344,6 +344,8 @@ def test_take_corner_or_side():
 def test_check_diagonal_case():
     positions_X = [player_hard_X.check_diagonal_case(game_board) for game_board in game_boards_X]
     positions_O = [player_hard_O.check_diagonal_case(game_board) for game_board in game_boards_O]
+    positions_O_0 = positions_O[:4] + positions_O[6:]
+    positions_O_rest = positions_O[4:6]
 
     assert positions_X == [0, 0, 0, 0, 0, 0]
     # assert positions_O == [] TODO: Split this list into values that are 0 (most of them),
