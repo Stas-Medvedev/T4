@@ -348,7 +348,7 @@ def test_check_diagonal_case():
     positions_O_rest = positions_O[4:6]
 
     assert positions_X == [0, 0, 0, 0, 0, 0]
-    # assert positions_O == [] TODO: Split this list into values that are 0 (most of them),
+    assert positions_O_0 == [0, 0, 0, 0, 0, 0]
     # and two that aren't (board 4a and 4b)
     
     # TODO: Write test. Check comments at the top once complete.
