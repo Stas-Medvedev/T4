@@ -349,8 +349,8 @@ def test_check_diagonal_case():
 
     assert positions_X == [0, 0, 0, 0, 0, 0]
     assert positions_O_0 == [0, 0, 0, 0, 0, 0]
-    # and two that aren't (board 4a and 4b)
-    
+    for position in positions_O_rest:
+        assert position in [2, 4, 6, 8]    
     # TODO: Write test. Check comments at the top once complete.
 
 def test_take_turn_take_center():
