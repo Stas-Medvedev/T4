@@ -347,8 +347,8 @@ def test_check_diagonal_case():
     positions_O_0 = positions_O[:4] + positions_O[6:]
     positions_O_rest = positions_O[4:6]
 
-    assert positions_X == [0, 0, 0, 0, 0, 0]
-    assert positions_O_0 == [0, 0, 0, 0, 0, 0]
+    assert positions_X == [0, 0, 0, 0, 0, 0, 0]
+    assert positions_O_0 == [0, 0, 0, 0, 0, 0, 0]
     for position in positions_O_rest:
         assert position in [2, 4, 6, 8]    
     # TODO: Write test. Check comments at the top once complete.
