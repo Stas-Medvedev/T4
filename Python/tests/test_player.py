@@ -350,6 +350,7 @@ def test_check_diagonal_case():
     assert positions_X == [0, 0, 0, 0, 0, 0, 0]
     assert positions_O_0 == [0, 0, 0, 0, 0, 0, 0]
     for position in positions_O_rest:
+        print(position)
         assert position in [2, 4, 6, 8]    
     # TODO: Investigate why one of positions_O_rest returns 0
 
