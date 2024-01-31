@@ -352,7 +352,7 @@ def test_check_diagonal_case():
     for position in positions_O_rest:
         print(position)
         assert position in [2, 4, 6, 8]    
-    # TODO: Investigate why one of positions_O_rest returns 0
+    # TODO: Clean up print statements here and in the function
 
 def test_take_turn_take_center():
 
