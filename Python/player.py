@@ -207,11 +207,11 @@ class Hard_CPU_Player(Player):
         
         corner_1 = self.check_marker(board.markers[0], own=False)
         corner_9 = self.check_marker(board.markers[8], own=False)
-        corner_3 = self.check_marker(board.markers[3], own=False)
+        corner_3 = self.check_marker(board.markers[2], own=False)
         corner_7 = self.check_marker(board.markers[6], own=False)
+        print(f'Corners 1 and 9: {corner_1}, {corner_9}')
+        print(f'Corners 3 and 7: {corner_3}, {corner_7}')
         if (corner_1 and corner_9) or (corner_3 and corner_7):
-            print(f'Corners 1 and 9: {corner_1}, {corner_9}')
-            print(f'Corners 3 and 7: {corner_3}, {corner_7}')
             sides = [2, 4, 6, 8]
             choice = random.choice(sides)
             print(f'Choice: {choice}')
