@@ -329,6 +329,8 @@ def test_can_fork():
 
     assert positions_X == [0, 7, 0, 1, 8, 0, 0]
     assert positions_O == [0, 6, 0, 0, 0, 0, 1, 0, 0] # TODO: Look into why can_fork returns 0 instead of 6
+    # can_fork looks only at candidate winning positions with two spaces. Changing that to >= 1 does not
+    # solve the issue. Need to investigate further.
     # Board causing problems
     # '''
     # X|X| 
