@@ -8,7 +8,7 @@ from pytest import MonkeyPatch
         # - Redo the tests to test specific move functions instead of their performance as part of take_turn
 
 # [Done] TODO: Write tests for Hard_CPU
-# TODO: Add additional test cases for existing tests
+# [All done] TODO: Add additional test cases for existing tests
 #   - Decide if need to write new tests or can add another assert for human player
 #   - Learn how to supply multiple human inputs in PyTest (parametrize?)
 #       -- Need multiple inputs within the same call
