@@ -23,8 +23,7 @@ class Game:
     def accept_turn(self) -> None:
         '''
         Takes in a position, makes sure the position is available,
-        calls update_grid to update current_positions and available_positions,
-        and displays the updated game grid.
+        and updates the board with the selection.
         '''
         position = self.current_player.take_turn(self.board)
         # The take_turn method for human player checks if the position is 
@@ -32,12 +31,6 @@ class Game:
         while position not in self.board.available_positions:
             print(f'{position} is not an available position.')
             position = self.current_player.take_turn(self.board)
-
-        '''
-        update_grid and display_grid methods have been removed. There are
-        replacement methods in the UI (for display_grid) and Board (for 
-        update_grid) classes.
-        '''
 
         self.board.update(position, self.current_player.marker)
         
