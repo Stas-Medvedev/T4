@@ -38,7 +38,7 @@ class Game:
     def check_winner(self) -> list | None:
         '''
         Checks if there is a winner.
-        Returns the winning position and True if there is, None and False otherwise.
+        Returns the winning position if there is, None otherwise.
         '''
         # if there have been less than 5 turns, there can't be a winner
         if len(self.board.available_positions) > 4:
