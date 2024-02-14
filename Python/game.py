@@ -63,7 +63,7 @@ class Game:
 
     def play(self) -> int:
         '''
-        Plays a game of tic-tac-toe
+        Plays a game of tic-tac-toe.
         Action order:
         ============
         Take turn
@@ -72,6 +72,7 @@ class Game:
         If winner: display winner and end game
         Change player
         Repeat
+        If there are no available positions on the board and no winner, declare a tie
         '''
         while True:
             self.accept_turn()
