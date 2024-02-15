@@ -1,5 +1,4 @@
 from interfaces import Board, Player, UI
-# TODO: Update docstrings and comments
 
 class Game:
     '''
