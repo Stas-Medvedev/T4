@@ -1,5 +1,6 @@
 class UI:
-    
+    # TODO: Check docstrings
+    # TODO: Look into writing tests
     @staticmethod
     def get_player_selection() -> tuple[str, str]:
         '''
