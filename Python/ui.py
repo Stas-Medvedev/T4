@@ -74,4 +74,7 @@ class UI:
 
     @staticmethod
     def display_scores(player_names: list[str], scores: list[int]) -> None:
+        '''
+        Displays the number of wins for each player and the number of ties.
+        '''
         print(f'\nScores - {player_names[0]}: {scores[0]}  {player_names[1]}: {scores[1]}  Ties: {scores[2]}')
