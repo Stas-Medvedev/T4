@@ -1,5 +1,6 @@
 class UI:
     # TODO: Look into writing tests
+    #       Write tests for functions with return statements
     @staticmethod
     def get_player_selection() -> tuple[str, str]:
         '''
