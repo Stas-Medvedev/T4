@@ -2,23 +2,6 @@ import player
 from board import Board
 from pytest import MonkeyPatch
 
-# [All done] TODO: Add tests for individual move functions each test using all of the boards
-        # - Move board creation outside individual tests
-        # - Create reusable test player objects outside the tests
-        # - Redo the tests to test specific move functions instead of their performance as part of take_turn
-
-# [Done] TODO: Write tests for Hard_CPU
-# [All done] TODO: Add additional test cases for existing tests
-#   - Decide if need to write new tests or can add another assert for human player
-#   - Learn how to supply multiple human inputs in PyTest (parametrize?)
-#       -- Need multiple inputs within the same call
-#       -- https://pavolkutaj.medium.com/simulating-single-and-multiple-inputs-using-pytest-and-monkeypatch-6968274f7eb9
-
-# Look into parameterizing tests for CPU players with different boards
-# Create multiple boards for different games scenarios
-# and test each CPU class on those boards (mostly, this is for Hard CPU)
-# docs for reference: https://docs.pytest.org/en/6.2.x/parametrize.html
-
 # The boards below are intended to be used as tests for Hard_CPU_Player.take_turn()
 # They can also be used as test for individual turn sub-functions
 # as long as expected returns are adjusted accordingly.
