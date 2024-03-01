@@ -1,8 +1,6 @@
 from ui import UI
 from pytest import MonkeyPatch
 
-# TODO: Write tests for other player selection choices
-
 def test_get_player_selection_1(monkeypatch: MonkeyPatch) -> None:
     inputs = iter(['4', '/', 'b', '1'])
     monkeypatch.setattr("builtins.input", lambda _: next(inputs))
