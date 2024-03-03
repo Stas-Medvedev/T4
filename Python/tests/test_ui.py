@@ -21,3 +21,9 @@ def test_get_player_selection_3(monkeypatch: MonkeyPatch) -> None:
 
 def test_select_CPU_difficulty_1() -> None:
     pass
+
+def test_select_CPU_difficulty_2() -> None:
+    pass
+
+def test_select_CPU_difficulty_3() -> None:
+    pass
