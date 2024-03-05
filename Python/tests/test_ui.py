@@ -1,6 +1,6 @@
 from ui import UI
 from pytest import MonkeyPatch
-# TODO: Add a get_player_selection test with '' as the input
+
 def test_get_player_selection_1(monkeypatch: MonkeyPatch) -> None:
     inputs = iter(['4', '/', 'b', '1'])
     monkeypatch.setattr("builtins.input", lambda _: next(inputs))
@@ -18,6 +18,12 @@ def test_get_player_selection_3(monkeypatch: MonkeyPatch) -> None:
     monkeypatch.setattr("builtins.input", lambda _: next(inputs))
     choice = UI.get_player_selection()
     assert choice == ("cpu", "human")
+
+def test_get_player_selection_4(monkeypatch: MonkeyPatch) -> None:
+    inputs = iter(['Y', ''])
+    monkeypatch.setattr("builtins.input", lambda _: next(inputs))
+    choice = UI.get_player_selection()
+    assert choice == ("human", "human")
 
 def test_select_CPU_difficulty_1() -> None:
     pass
