@@ -25,8 +25,11 @@ def test_get_player_selection_4(monkeypatch: MonkeyPatch) -> None:
     choice = UI.get_player_selection()
     assert choice == ("human", "human")
 
-def test_select_CPU_difficulty_1() -> None:
-    pass
+def test_select_CPU_difficulty_1(monkeypatch: MonkeyPatch) -> None:
+    inputs = iter(['4', '/', 'b', '1'])
+    monkeypatch.setattr("builtins.input", lambda _: next(inputs))
+    choice = UI.select_CPU_difficulty()
+    assert choice == 'easy'
 
 def test_select_CPU_difficulty_2() -> None:
     pass
