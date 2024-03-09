@@ -44,4 +44,7 @@ def test_select_CPU_difficulty_3(monkeypatch: MonkeyPatch) -> None:
     assert choice == 'hard'
 
 def test_select_CPU_difficulty_4(monkeypatch: MonkeyPatch) -> None:
-    pass
+    inputs = iter(['Y', ''])
+    monkeypatch.setattr("builtins.input", lambda _: next(inputs))
+    choice = UI.select_CPU_difficulty()
+    assert choice == 'easy'
