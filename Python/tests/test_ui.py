@@ -49,5 +49,8 @@ def test_select_CPU_difficulty_4(monkeypatch: MonkeyPatch) -> None:
     choice = UI.select_CPU_difficulty()
     assert choice == 'easy'
 
-def test_check_restart(monkeypatch: MonkeyPatch) -> None:
-    pass
+def test_check_restart_yes(monkeypatch: MonkeyPatch) -> None:
+    inputs = iter(['a', '8', 'Y'])
+    monkeypatch.setattr("builtins.input", lambda _: next(inputs))
+    choice = UI.check_restart()
+    assert choice == True
