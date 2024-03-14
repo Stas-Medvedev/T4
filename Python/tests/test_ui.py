@@ -60,3 +60,9 @@ def test_check_restart_yes_2(monkeypatch: MonkeyPatch) -> None:
     monkeypatch.setattr("builtins.input", lambda _: next(inputs))
     choice = UI.check_restart()
     assert choice == True
+
+def test_check_restart_no(monkeypatch: MonkeyPatch) -> None:
+    inputs = iter(['x', '0', 'n'])
+    monkeypatch.setattr("builtins.input", lambda _: next(inputs))
+    choice = UI.check_restart()
+    assert choice == False
