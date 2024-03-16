@@ -1,9 +1,6 @@
 import random
 from interfaces import Board
 
-# TODO: One of Hard CPU turn functions returns a None. Needs to be fixed.
-#       - Add unit tests for this (Installed pytest and pytest-cov. Upgraded to Python 3.11.3)
-
 class Player:
     '''
     Player class for human player.
