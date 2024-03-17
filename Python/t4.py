@@ -5,6 +5,8 @@
 #           - Player vs Medium CPU
 #           - Player vs Hard CPU
 
+# TODO: Find things to do
+
 from game_manager import GameManager
 
 def main() -> None:
