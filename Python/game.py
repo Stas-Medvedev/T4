@@ -1,5 +1,5 @@
 from interfaces import Board, Player, UI
-
+# TODO: Look into writing unit tests for this class
 class Game:
     '''
     Game class that manages an instance of one game and its dependencies.
