@@ -2,7 +2,9 @@ from game import Game
 from player import Player, Easy_CPU_Player, Medium_CPU_Player, Hard_CPU_Player
 from board import Board
 from ui import UI
-# TODO: Look into writing unit tests for this class
+# TODO: Look into writing unit tests for this class. 
+# Possibly write tests for functions with return statements.
+# Will need to figure out how to check that the returned objects are correct. 
 class GameManager:
     '''
     The purpose of the GameManager class is to manage game instances.
