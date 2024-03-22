@@ -5,10 +5,11 @@ class Player:
     '''
     Player class for human player.
     '''
+    difficulty = 'human'
+
     def __init__(self, name: str, marker:str) -> None:
         self.name = name
         self.marker = marker
-        self.difficulty = 'human'
 
     def take_turn(self, board: Board) -> int:
         available_positions_strings = [str(position) for position in board.available_positions]
