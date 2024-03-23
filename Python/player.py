@@ -23,6 +23,8 @@ class Easy_CPU_Player(Player):
     '''
     Easy CPU player selects an available space at random
     '''
+    difficulty = 'easy'
+    
     def take_turn(self, board: Board) -> int:
         return random.choice(board.available_positions)
 
