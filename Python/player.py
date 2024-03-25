@@ -260,6 +260,8 @@ class Medium_CPU_Player(Hard_CPU_Player):
     '''
     Medium CPU player randomly chooses between Easy and Hard CPU players' moves
     '''
+    difficulty = 'medium'
+    
     def take_turn(self, board: Board) -> int:
         move_choice = random.choice([0,1])
         if move_choice == 0:
